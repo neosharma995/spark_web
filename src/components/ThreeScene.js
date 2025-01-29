@@ -24,7 +24,7 @@ export const ThreeRenderScene = () => {
 
         // 4. Initial Properties
         const initialProps = {
-            radius: 1.2,
+            radius: 1.22,
             widthSegments: 32,
             heightSegments: 32,
             color: LIL_GUI_COLOR,
