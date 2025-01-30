@@ -3,6 +3,7 @@ import { useEffect, useRef, useContext } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { SectorDataContext } from "@/context/apiContext";
+// import { RGBELoader } from "three/examples/jsm/Addons.js";
  
  
 
@@ -33,6 +34,14 @@ export default function MatrixEffect() {
     }
 
 
+    // let rgbLoader=new RGBELoader()
+    // rgbLoader.load('/images/hdr.hdr',(e)=>{
+    //   e.mapping=THREE.EquirectangularReflectionMapping
+    //   scene.environment=e
+    //   scene.background=e
+    // })
+
+
     let loadingContainer=document.querySelector('.loading')
 
     loadingManager.onLoad = function () {
@@ -50,7 +59,7 @@ export default function MatrixEffect() {
     const loader = new THREE.TextureLoader(loadingManager);
 
    
-    let texture1 = loader.load('/images/p4.jpg');
+    let texture1 = loader.load('/images/p4.png');
     texture1.colorSpace = THREE.SRGBColorSpace
 
     
