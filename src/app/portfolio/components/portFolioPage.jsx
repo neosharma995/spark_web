@@ -74,7 +74,7 @@ export default function MatrixEffect() {
     cube.position.set(0, -30, 0);
     scene.add(cube);
 
-    const geometry1 = new THREE.BoxGeometry(30, 30, 4,10,10,10);
+    const geometry1 = new THREE.BoxGeometry(20, 20, 5,10,10,10);
 
     for (let i = 0; i < 100; i++) {
       const textureIndex = i % textures.length;
