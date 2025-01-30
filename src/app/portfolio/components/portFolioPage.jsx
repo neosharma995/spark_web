@@ -82,7 +82,7 @@ export default function MatrixEffect() {
 
       const cube1 = new THREE.Mesh(geometry1, material1);
       cube1.position.x = Math.random() * 800 - 400;
-      cube1.position.y = 0;
+      cube1.position.y = 0
       cube1.position.z = Math.random() * 800 - 400;
       scene.add(cube1);
     }
