@@ -76,6 +76,8 @@ export const ThreeRenderScene = () => {
         let index = 0;
         const fullText = `welcome to the starkweb solutions`;
 
+
+
         loader.load('./fonts/Montserrat-Regular.ttf', function (json) {
             const font = fontLoader.parse(json);
 
@@ -83,7 +85,7 @@ export const ThreeRenderScene = () => {
             textGeometry = new TextGeometry('', {
                 font: font,
                 size: 1,
-                depth: 0, // Replaced `height` with `depth`
+                depth: 0,  
                 bevelEnabled: false,
                 bevelThickness: 0,
                 bevelSize: 0,
@@ -95,23 +97,26 @@ export const ThreeRenderScene = () => {
 
             // Create text mesh
             textMesh = new THREE.Mesh(textGeometry, textMaterial);
-            // scene.add(textMesh);
+            scene.add(textMesh);
 
-            textMesh.position.y = -1.5;
-            textMesh.position.x = -4;
+            
+            textMesh.position.set(-4, -1.5, 0)
             textMesh.scale.set(0.1, 0.1, 0.1);
- 
+
+
             function typeText() {
-                if (index >= fullText.length) return; // Stop unnecessary updates
+                if (index > fullText.length) {
+                    index = 0;
+                    setTimeout(typeText, 1000);
+                    return;
+                }
 
-                index++;
-
-                // Update text geometry only when needed
+                // Update text geometry
                 textMesh.geometry.dispose();
                 textMesh.geometry = new TextGeometry(fullText.substring(0, index), {
                     font: font,
                     size: 1,
-                    depth: 0, // Replaced `height` with `depth`
+                    depth: 0,
                     bevelEnabled: false,
                     bevelThickness: 0,
                     bevelSize: 0,
@@ -119,10 +124,14 @@ export const ThreeRenderScene = () => {
                     bevelSegments: 0
                 });
 
-                requestAnimationFrame(typeText); // ✅ Smooth updates
+                index++;
+
+
+                setTimeout(typeText, 200);
             }
 
             typeText();
+
         });
 
 
@@ -196,7 +205,9 @@ export const ThreeRenderScene = () => {
         const controls = new OrbitControls(camera, canvas);
         controls.enableDamping = true;
         controls.maxDistance = 5;
+      
 
+    
         // Handle scroll to the next section
         const nextSection = document.querySelector('.section_1');
         const handleScroll = (event) => {
@@ -213,7 +224,7 @@ export const ThreeRenderScene = () => {
 
         canvas.addEventListener('wheel', handleScroll, { passive: false });
 
-        const toggleButton = document.getElementById('toggle'); 
+        const toggleButton = document.getElementById('toggle');
         const toggleGUIAndButton = () => {
             const section1 = document.querySelector('.section_1');
             const section0 = document.querySelector('.section_0');
@@ -227,20 +238,12 @@ export const ThreeRenderScene = () => {
                     if (toggleButton) toggleButton.style.display = 'none';
                 } else if (section0Rect.top <= window.innerHeight / 2 && section0Rect.bottom >= 0) {
                     gui.show();
-                    if (toggleButton) toggleButton.style.display = 'block'; 
+                    if (toggleButton) toggleButton.style.display = 'block';
                 }
             }
         };
 
         window.addEventListener('scroll', toggleGUIAndButton);
-
-
-
-
-
-
-
-
 
         // 11. Handle Window Resize
         window.addEventListener('resize', () => {
@@ -252,8 +255,8 @@ export const ThreeRenderScene = () => {
         });
 
 
-       
-         
+
+
 
         const toggleFullscreen = () => {
             if (!document.fullscreenElement) {
@@ -265,7 +268,7 @@ export const ThreeRenderScene = () => {
             }
         };
 
-       
+
         canvas.addEventListener('dblclick', toggleFullscreen);
         toggleButton.addEventListener('click', toggleFullscreen);
 
@@ -288,7 +291,7 @@ export const ThreeRenderScene = () => {
 
         // 13. Animation
         const clock = new THREE.Clock();
-      
+
         const tick = () => {
             const elapsedTime = clock.getElapsedTime();
 
@@ -296,12 +299,25 @@ export const ThreeRenderScene = () => {
             particles.rotation.y = elapsedTime * ANIMATION_SPEED;
             sphere.rotation.y = elapsedTime * ANIMATION_SPEED;
 
+
+
+            if (textMesh) {
+                textMesh.quaternion.copy(camera.quaternion);
+                controls.enabled = true; 
+            }
+            
+            
+
+
+
+
             // Update controls
+
             controls.update();
 
             // Render the scene
             renderer.render(scene, camera);
-            
+
 
             // Call tick again on the next frame
             window.requestAnimationFrame(tick);
@@ -319,6 +335,7 @@ export const ThreeRenderScene = () => {
     return (
         <>
             <canvas ref={canvasRef} className="app" />
+
 
         </>
     );
