@@ -10,9 +10,8 @@ const Page = () => {
 
 
     setTimeout(()=>{
-
-      toast.warning('Please Press the right click button and see the more about protfoilio')
-    },5000)
+      toast.warning('Please right-click and drag to explore more about the portfolio.')
+    },2500)
     
   
 
