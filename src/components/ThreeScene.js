@@ -97,7 +97,7 @@ export const ThreeRenderScene = () => {
 
             // Create text mesh
             textMesh = new THREE.Mesh(textGeometry, textMaterial);
-            scene.add(textMesh);
+            // scene.add(textMesh);
 
             
             textMesh.position.set(-4, -1.5, 0)
@@ -335,8 +335,6 @@ export const ThreeRenderScene = () => {
     return (
         <>
             <canvas ref={canvasRef} className="app" />
-
-
         </>
     );
 };

@@ -5,6 +5,7 @@ import SecondSectionOld from './Components/secondSection'
 import SecondSectionResponsive from './Components/secondSectionResponsive'
 import AboutUsSection from './Components/aboutUsSection';
 import OurServices from './Components/ourServices';
+import FullScreenView from './Components/fullScreen';
 
 import TestimonialSection from './Components/testimonialSection';
 import ProjectSection from './Components/projectSection';
@@ -58,9 +59,7 @@ function HomePage() {
 
 
 
-      <button id="toggle">
-        <img src="./images/preview.png" alt="Exit Fullscreen" />
-      </button>
+      <FullScreenView/>
 
       {showButton && (
         <button id="scrollDown" onClick={scrollToSecondSection}>
