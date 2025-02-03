@@ -170,7 +170,12 @@
   /* Thin */
   font-style: normal;
 }
-
+.footer_wrapper {
+  padding: 14px;
+}
+.r_o_padding {
+  padding: 14px!important;
+}
 
 button#scrollDown {
   background: none;
@@ -337,7 +342,7 @@ p {
 
 .container {
   max-width: 1820px;
-  padding: 20px;
+  padding: 20x 0px;
   margin: auto;
 }
 
@@ -2891,6 +2896,7 @@ body.light-mode {
 
 //****** 1024 PX ******//
 @media only screen and (max-width: 1024px) {
+
 
 
   // Global Typography

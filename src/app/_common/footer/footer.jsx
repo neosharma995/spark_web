@@ -3,7 +3,7 @@ import MainFooter from './components/mainFooter'
 
 const Footer = () => {
   return (
-   <div className='container'>
+   <div className='container footer_wrapper'>
     <MainFooter/>
    </div>
   )

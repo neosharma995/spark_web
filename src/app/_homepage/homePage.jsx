@@ -76,43 +76,43 @@ function HomePage() {
         <ThreeRenderScene />
       </div>
 
-      <div className="second-section-animated" ref={secondSectionRef}>
-        <div className={`${section_1} section_outer_wrapper`}>
+      <div className="second-section-animated r_o_padding" ref={secondSectionRef}>
+        <div className={`${section_1} section_outer_wrapper r_o_padding`}>
           <SecondSectionOld section_1={section_1} />
         </div>
       </div>
-      <div className="second-section-redponsive container" ref={secondSectionRef}>
+      <div className="second-section-redponsive container r_o_padding" ref={secondSectionRef}>
         <SecondSectionResponsive />
       </div>
 
 
-      <div className={`${section_2} section_outer_wrapper`}>
+      <div className={`${section_2} section_outer_wrapper r_o_padding`}>
         <AboutUsSection />
       </div>
 
-      <div className={`${section_3} section_outer_wrapper`}>
+      <div className={`${section_3} section_outer_wrapper r_o_padding`}>
         <HomeOurService section_3={section_3} />
       </div>
 
-      <div className="our_services_section_resp" id='service_p_r_view'>
+      <div className="our_services_section_resp r_o_padding" id='service_p_r_view'>
         <HomeOurServiceResp />
       </div>
 
 
 
-      <div className={`${section_4} section_outer_wrapper`}>
+      <div className={`${section_4} section_outer_wrapper r_o_padding`}>
         <ProjectSection section_4={section_4} />
       </div>
 
 
 
 
-      <div className="project_section_resp" id='p_r_view'>
+      <div className="project_section_resp r_o_padding" id='p_r_view'>
         <ProjectSectionResp />
       </div>
 
 
-      <div className={`${section_5} section_outer_wrapper`}>
+      <div className={`${section_5} section_outer_wrapper r_o_padding`}>
         <TestimonialSection />
       </div>
 
