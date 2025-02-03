@@ -158,6 +158,9 @@ div#proj_container {
  
 
 @media only screen and (max-width:768px) {
+    .r_l_section h4 {
+        font-size: 24px;
+    }
     .proj_images img {
         width: 100%;
         height: 400px;
@@ -177,7 +180,7 @@ div#proj_container {
         z-index: 1;
         position: relative;
         padding: 10px;
-        background: #00000094;
+        /* background: #00000094; */
         height: 100%;
     }
     div#resp_proj_container .proj_images {

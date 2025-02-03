@@ -32,7 +32,7 @@ const ProjectSectionResp = () => {
                 <div className="proj_right_section resp_view_proj">
                     <div className='proj_section'>
                         {mainData?.projects?.length > 0 && (
-                            <div className="prog_content active">
+                            <div className="prog_inner_content">
                                 <div className="r_l_section">
 
                                     <h4>{mainData.projects[activeIndex]?.name}</h4>
@@ -40,9 +40,7 @@ const ProjectSectionResp = () => {
                                     <p>{mainData.projects[activeIndex]?.description}</p>
                                 </div>
                               
-                                <div className="r_r_section">
-                                <img src={mainData.projects[activeIndex]?.image} alt='image'/> 
-                                </div>
+                                
                             </div>
 
 

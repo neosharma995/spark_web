@@ -76,6 +76,13 @@ div#p_h_heading_2 span {
  
 
 @media only screen and (max-width:768px) {
+
+  #service_p_r_view{
+    display: block;
+  }
+  .section_3{
+    display: none;
+  }
   
 
   .p_r_inner {
