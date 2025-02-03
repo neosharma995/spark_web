@@ -124,15 +124,44 @@ div#section_section {
 
 
 
- /* ******************************************** Media Query Start ****************************************************** */
+ 
 
 
 
 
 
+@media only screen and (max-width:1400px){
+    div#section_section {
+        display: grid;
+        grid-template-columns: 30% 1fr;
+        grid-gap: 30px;
+        gap: 30px;
+    }
+}
+@media only screen and (max-width:1268){
+    div#section_section {
+    
+        grid-template-columns: 25% 1fr;
+      
+    }
+}
 
-/****** 1024 PX ******/
+
+ 
 @media only screen and (max-width: 1024px) {
+    .tab-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+    }
+    .tab-item {
+        margin: 0px!important;
+        height: 100%;
+        background: #111216;
+        padding: 22px;
+        border-radius: 4px;
+        border: 2px solid rgb(44 44 44 / 65%)!important;
+    }
     .second-section-redponsive {
         display: block
     }
@@ -145,12 +174,13 @@ div#section_section {
         cursor: pointer;
         border: none;
         background-color: white;
-        border-radius: 40px;
+        border-radius: 10px;
         margin-right: 5px;
         font-size: 20px;
         font-weight: 600;
         font-family: Saira;
         color: #F24B74;
+        text-wrap: nowrap;
     }
     .second-section-inner-res .tabs-container .tab-button-second.active  {
         background-color: #F24B74;
@@ -158,8 +188,6 @@ div#section_section {
     }
     .second-section-inner-res .tabs-container {
         display: flex;
-        gap: 20px;
-        justify-content: center;
         margin-bottom: 30px;
     }
     .second-section-inner-res .tab-item {
@@ -168,4 +196,39 @@ div#section_section {
         margin-bottom: 25px;
     }
     
+}
+
+@media only screen and (max-width:768px){
+    .second-section-inner-res .tabs-container {
+        display: flex;
+        gap: 0px;
+        margin-bottom: 30px;
+        overflow-x: scroll;
+    }
+    .tab-item h3 {
+        font-size: 32px;
+    }
+    .p_inner_content {
+        text-align: center;
+    }
+    .p_img {
+        text-align: center;
+    }
+    
+}
+
+@media only screen and (max-width:668px) {
+    .gallery {
+        position: unset;
+        overflow-x: scroll;
+    }
+    .short-description {
+        position: unset;
+        font-size: 18px!important;
+    }
+    
+}
+
+@media only screen and (max-width:480px) {
+  
 }

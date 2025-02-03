@@ -184,3 +184,13 @@ a {
     color-scheme: dark;
   }
 }
+
+@media only screen  and (max-width:480px){
+  .proj_heading h2 {
+    font-size: 58px!important;
+  }
+  h1.mian-about-heading {
+    font-size: 58px;
+}
+  
+}
