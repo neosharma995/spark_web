@@ -173,6 +173,13 @@
 .footer_wrapper {
   padding: 14px;
 }
+
+
+.mobile_view{
+  display: none;
+
+}
+ 
  
 
 button#scrollDown {
@@ -3449,6 +3456,14 @@ body.light-mode {
 
 //************** 768 PX ***************//
 @media only screen and (max-width: 768px) {
+  .mobile_view{
+    display: block;
+
+  }
+  .desktop_view{
+    display: none;
+
+  }
 
   // Global Typography 
   .second-section-inner-res {

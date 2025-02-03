@@ -21,7 +21,7 @@ export default function MatrixEffect() {
     const scene = new THREE.Scene();
     let toggleButton = document.querySelector('#toggle');
     const loadingManager = new THREE.LoadingManager();
-    let loadingWrapper = document.querySelector('#progress');
+    let loadingWrapper = document.querySelector('.loading');
 
     loadingManager.onProgress = function (loaded, total) {
       let percentLoaded = Math.floor((loaded / total) * 100);
@@ -55,12 +55,12 @@ export default function MatrixEffect() {
     cube.position.set(0, -30, 0);
     scene.add(cube);
 
-    // Portfolio cubes (duplicated 6 times)
+    
     const cubes = [];
     const geometry1 = new THREE.BoxGeometry(20, 20, 5, 10, 10, 10);
 
     for (let i = 0; i < images.length * 6; i++) {
-      const originalIndex = i % images.length; // Ensure each image is repeated 6 times
+      const originalIndex = i % images.length; 
       const material1 = new THREE.MeshBasicMaterial({ map: textures[originalIndex] });
       const cube1 = new THREE.Mesh(geometry1, material1);
 
@@ -161,7 +161,7 @@ export default function MatrixEffect() {
 
       <div className="loading">
         <h1>Loading...</h1>
-        <h2 id="progress" value='0' max='100' style={{ color: '#fff' }}>0%</h2>
+       
       </div>
     </>
   );
