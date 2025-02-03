@@ -334,7 +334,50 @@ export const ThreeRenderScene = () => {
 
     return (
         <>
-            <canvas ref={canvasRef} className="app" />
+            <canvas ref={canvasRef} className="three-canvas" />
+            <style jsx>{`
+                .three-canvas {
+                    width: 100%;
+                    height: 700px;
+                }
+
+                @media (max-width: 992px) {
+                    .three-canvas {
+                        height: 700px;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .three-canvas {
+                        height: 600px;
+                    }
+                }
+
+                @media (max-width: 600px) {
+                    .three-canvas {
+                        height: 500px;
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    .three-canvas {
+                        height: 500px;
+                    }
+                }
+
+                @media (max-width: 400px) {
+                    .three-canvas {
+                        height: 500px;
+                    }
+                }
+
+                @media (max-width: 320px) {
+                    .three-canvas {
+                        height: 500px;
+                    }
+                }
+            `}</style>
         </>
+
     );
 };
