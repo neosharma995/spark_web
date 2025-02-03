@@ -162,6 +162,24 @@ div#proj_container {
         width: 100%;
         height: 400px;
     }
+    .r_r_section {
+        position: absolute;
+        width: 100%;
+    }
+    
+    .r_r_section img {
+        width: 100%;
+        height: 266px;
+        object-fit: cover;
+    }
+    
+    .r_l_section {
+        z-index: 1;
+        position: relative;
+        padding: 10px;
+        background: #00000094;
+        height: 100%;
+    }
     div#resp_proj_container .proj_images {
         position: relative;
         opacity: 1;
@@ -212,10 +230,7 @@ div#proj_container {
         overflow-x: scroll;
         order: 2;
     }
-    div#resp_proj_container .r_r_section img {
-        width: 100px;
-        height: 100px;
-    }
+ 
     
     div#resp_proj_container .prog_content {
         display: flex;
