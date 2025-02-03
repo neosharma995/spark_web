@@ -160,6 +160,7 @@ div#proj_container {
 @media only screen and (max-width:768px) {
     .r_l_section h4 {
         font-size: 24px;
+        text-transform: capitalize;
     }
     .proj_images img {
         width: 100%;
