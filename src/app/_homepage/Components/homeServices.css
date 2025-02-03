@@ -94,7 +94,7 @@ div#p_h_heading_2 span {
   .p_c_wrapper {
     height: 100%;
     background: #111216;
-    padding: 22px;
+    padding: 20px 16px;
     border-radius: 4px;
     border: 2px solid rgb(44 44 44 / 65%);
   }
