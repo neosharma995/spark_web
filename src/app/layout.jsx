@@ -1,10 +1,12 @@
 import "./globals.css";
 import "./style/global.scss";
 import Layout from "./_common/layout";
-import { SectorDataProvider } from "../context/apiContext";
-import { ThemeProvider } from "@/context/ThemeContext";
+ 
+ 
 
 import { Toaster } from "sonner";
+import { ThemeProvider } from "@/context/ThemeContext";
+ 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
