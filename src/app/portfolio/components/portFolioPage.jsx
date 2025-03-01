@@ -1,168 +1,185 @@
-"use client";
-import { useEffect, useRef, useContext } from "react";
+'use client'
+import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { SectorDataContext } from "@/context/apiContext";
-// import { RGBELoader } from "three/examples/jsm/Addons.js";
 
 export default function MatrixEffect() {
   const canvasRef = useRef();
-  const pagesDataApi = useContext(SectorDataContext);
-  const mainData = pagesDataApi?.pagesDataApi?.find(page => page.slug === 'portfolio')?.acf;
-  console.log(mainData);
-
-  const images = mainData?.portfolio?.map((e) => e.image) || [];
-  const links = mainData?.portfolio?.map((e) => e.link) || [];
 
   useEffect(() => {
-    if (images.length === 0 || links.length === 0) return;
-
+    // Canvas and Renderer
     const canvas = canvasRef.current;
+    const renderer = new THREE.WebGLRenderer({ canvas });
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.autoClear = false; // Prevent clearing between renders
+
+    // Main Scene
     const scene = new THREE.Scene();
-    let toggleButton = document.querySelector('#toggle');
-    const loadingManager = new THREE.LoadingManager();
-    let loadingWrapper = document.querySelector('.loading');
+    const matrixScene = new THREE.Scene();
 
-    loadingManager.onProgress = function (loaded, total) {
-      let percentLoaded = Math.floor((loaded / total) * 100);
-      if (loadingWrapper) {
-        loadingWrapper.value = percentLoaded;
-        loadingWrapper.innerText = `${percentLoaded}%`;
-      }
-    };
+    // Cameras
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
+    camera.position.z = 20;
+    scene.add(camera);
 
-    let loadingContainer = document.querySelector('.loading');
-    loadingManager.onLoad = function () {
-      loadingContainer.style.display = 'none';
-    };
+    const matrixCamera = new THREE.OrthographicCamera(
+      -window.innerWidth / 2,
+      window.innerWidth / 2,
+      window.innerHeight / 2,
+      -window.innerHeight / 2,
+      -1,
+      1
+    );
+    matrixCamera.position.z = 1;
 
-    const sizes = { width: window.innerWidth, height: window.innerHeight };
-    const camera = new THREE.PerspectiveCamera(50, sizes.width / sizes.height, 0.1, 2000);
-    camera.position.set(0, 0, 100);
-
-    const loader = new THREE.TextureLoader(loadingManager);
-    let texture1 = loader.load('/images/p4.png');
-    texture1.colorSpace = THREE.SRGBColorSpace;
-
-    const textures = images.map((imageUrl) => loader.load(imageUrl));
-    textures.colorSpace = THREE.SRGBColorSpace;
-
-    // Plane Geometry (Kept unchanged)
-    const geometry = new THREE.PlaneGeometry(1000, 1000);
-    geometry.rotateX(4.7);
-    const material = new THREE.MeshBasicMaterial({ map: texture1 });
-    const cube = new THREE.Mesh(geometry, material);
-    cube.position.set(0, -30, 0);
-    scene.add(cube);
-
-    
-    const cubes = [];
-    const geometry1 = new THREE.BoxGeometry(20, 20, 5, 10, 10, 10);
-
-    for (let i = 0; i < images.length * 6; i++) {
-      const originalIndex = i % images.length; 
-      const material1 = new THREE.MeshBasicMaterial({ map: textures[originalIndex] });
-      const cube1 = new THREE.Mesh(geometry1, material1);
-
-      cube1.position.x = Math.random() * 800 - 400;
-      cube1.position.y = 0;
-      cube1.position.z = Math.random() * 800 - 400;
-
-      cube1.userData = { link: links[originalIndex] }; // Assign correct link
-      scene.add(cube1);
-      cubes.push(cube1);
-    }
-
-    // Raycaster for detecting clicks on portfolio cubes
-    const raycaster = new THREE.Raycaster();
-    const mouse = new THREE.Vector2();
-
-    const onMouseClick = (event) => {
-      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-
-      raycaster.setFromCamera(mouse, camera);
-      const intersects = raycaster.intersectObjects(cubes);
-
-      if (intersects.length > 0) {
-        const clickedCube = intersects[0].object;
-        const link = clickedCube.userData.link;
-        if (link) window.open(link, "_blank"); // Open link in new tab
-      }
-    };
-
-    // Change cursor to pointer when hovering over a portfolio cube
-    const onMouseMove = (event) => {
-      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-
-      raycaster.setFromCamera(mouse, camera);
-      const intersects = raycaster.intersectObjects(cubes);
-
-      if (intersects.length > 0) {
-        canvas.style.cursor = "pointer";
-      } else {
-        canvas.style.cursor = "default";
-      }
-    };
-
-    window.addEventListener("click", onMouseClick);
-    window.addEventListener("mousemove", onMouseMove);
-
+    // Controls
     const controls = new OrbitControls(camera, canvas);
-    controls.screenSpacePanning = false;
     controls.enableDamping = true;
-    controls.minDistance = 50;
-    controls.maxDistance = 400;
-    controls.maxPolarAngle = Math.PI / 2;
+    controls.maxDistance = 50;
+    controls.minDistance = 10;
 
-    window.addEventListener('resize', () => {
-      sizes.width = window.innerWidth;
-      sizes.height = window.innerHeight;
-      camera.aspect = sizes.width / sizes.height;
-      camera.updateProjectionMatrix();
-      renderer.setSize(sizes.width, sizes.height);
+    // Textures
+    const textureLoader = new THREE.TextureLoader();
+    const textures = [
+      "./images/377dfb3a6f6be92038a856784c55436b.jpg",
+      "./images/377dfb3a6f6be92038a856784c55436b.jpg",
+      "./images/377dfb3a6f6be92038a856784c55436b.jpg",
+      "./images/377dfb3a6f6be92038a856784c55436b.jpg",
+      "./images/377dfb3a6f6be92038a856784c55436b.jpg",
+      "./images/377dfb3a6f6be92038a856784c55436b.jpg",
+    ].map((path) => {
+      const texture = textureLoader.load(path);
+      texture.colorSpace = THREE.SRGBColorSpace;
+      return texture;
     });
 
-    const toggleFullscreen = () => {
-      if (!document.fullscreenElement) {
-        canvas.requestFullscreen().catch(err => {
-          console.error(`Fullscreen request failed: ${err.message}`);
-        });
-      } else {
-        document.exitFullscreen();
+    // Sprites
+    const createMesh = (texture) => {
+      const material = new THREE.SpriteMaterial({ map: texture, depthWrite: true });
+      const sprite = new THREE.Sprite(material);
+      sprite.scale.set(6, 6, 1); // Scale to fit the image aspect ratio
+      return sprite;
+    };
+
+    const sprites = textures.map((texture, index) => {
+      const sprite = createMesh(texture);
+      const row = Math.floor(index / 3);
+      const col = index % 3;
+      sprite.position.set(-10 + col * 10, 5 - row * 10, 0);
+      scene.add(sprite);
+      return sprite;
+    });
+
+    // Matrix Effect
+    const fontSize = 12;
+    const languages = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    const canvasMatrix = document.createElement("canvas");
+    const ctxMatrix = canvasMatrix.getContext("2d");
+    canvasMatrix.width = 2048;
+    canvasMatrix.height = 1024;
+
+    const columns = Math.floor(canvasMatrix.width / fontSize);
+    const rows = Math.floor(canvasMatrix.height / fontSize);
+    const drawText = Array(columns).fill().map(() => Array(rows).fill(""));
+    const drawStatus = Array(columns).fill().map(() => Array(rows).fill(0));
+
+    const randomSizeColumn = (col) => {
+      for (let y = 0; y < rows; y++) {
+        drawText[col][y] = languages[Math.floor(Math.random() * languages.length)];
       }
     };
 
-    canvas.addEventListener('dblclick', toggleFullscreen);
-    toggleButton.addEventListener('click', toggleFullscreen);
+    const randomStart = () => {
+      if (Math.random() > 0.5) {
+        const column = Math.floor(Math.random() * columns);
+        if (drawStatus[column].every((status) => status === 0)) {
+          drawStatus[column][0] = 100;
+        }
+      }
+    };
 
-    const renderer = new THREE.WebGLRenderer({ canvas: canvas });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-
-    function animate() {
-      renderer.render(scene, camera);
-      controls.update();
-      window.requestAnimationFrame(animate);
+    const fallSpeed = 2;
+    let frameCounter = 0;
+    
+    function drawMatrixEffect() {
+      ctxMatrix.fillStyle = "rgba(0, 0, 0, 0.1)";
+      ctxMatrix.fillRect(0, 0, canvasMatrix.width, canvasMatrix.height);
+    
+      for (let x = 0; x < columns; x++) {
+        for (let y = 0; y < rows; y++) {
+          if (drawStatus[x][y] === 100) {
+            if (frameCounter % fallSpeed === 0) {
+              drawStatus[x][y] = 0;
+              ctxMatrix.font = `${fontSize}px Monospace`;
+              ctxMatrix.fillStyle = "green";
+              ctxMatrix.fillText(drawText[x][y], x * fontSize, y * fontSize);
+    
+              if (y + 1 < rows) {
+                drawStatus[x][y + 1] = 100;
+              } else {
+                randomSizeColumn(x);
+              }
+            }
+            break;
+          }
+        }
+      }
+    
+      frameCounter++;
     }
+    
+    
+
+    const matrixTexture = new THREE.CanvasTexture(canvasMatrix);
+    const matrixMaterial = new THREE.MeshBasicMaterial({ map: matrixTexture });
+    const matrixPlane = new THREE.Mesh(
+      new THREE.PlaneGeometry(window.innerWidth, window.innerHeight),
+      matrixMaterial
+    );
+    matrixScene.add(matrixPlane);
+
+    // Resize Handler
+    const onResize = () => {
+      renderer.setSize(window.innerWidth, window.innerHeight);
+
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+
+      matrixPlane.geometry = new THREE.PlaneGeometry(window.innerWidth, window.innerHeight);
+      matrixTexture.needsUpdate = true;
+    };
+    window.addEventListener("resize", onResize);
+
+    // Animation Loop
+    const clock = new THREE.Clock();
+    const animate = () => {
+      const elapsedTime = clock.getElapsedTime();
+
+      randomStart();
+      drawMatrixEffect();
+      matrixTexture.needsUpdate = true;
+
+      sprites.forEach((sprite, index) => {
+        sprite.rotation.z = Math.sin(elapsedTime + index) * 0.5;
+      });
+
+      controls.update();
+
+      renderer.clear();
+      renderer.render(matrixScene, matrixCamera);
+      renderer.render(scene, camera);
+
+      requestAnimationFrame(animate);
+    };
 
     animate();
 
     return () => {
+      window.removeEventListener("resize", onResize);
       renderer.dispose();
-      window.removeEventListener("click", onMouseClick);
-      window.removeEventListener("mousemove", onMouseMove);
     };
-  }, [images, links]);
+  }, []);
 
-  return (
-    <>
-      <canvas ref={canvasRef} className="app" />
-
-      <div className="loading">
-        <h1>Loading...</h1>
-       
-      </div>
-    </>
-  );
+  return <canvas ref={canvasRef} className="app" />;
 }

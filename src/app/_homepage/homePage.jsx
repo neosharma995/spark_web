@@ -4,21 +4,16 @@ import { ThreeRenderScene } from '@/components/ThreeScene'
 import SecondSectionOld from './Components/secondSection'
 import SecondSectionResponsive from './Components/secondSectionResponsive'
 import AboutUsSection from './Components/aboutUsSection';
-import HomeOurService from './Components/ourServices';
-import FullScreenView from './Components/fullScreen';
+import OurServices from './Components/ourServices';
 
 import TestimonialSection from './Components/testimonialSection';
 import ProjectSection from './Components/projectSection';
-import ProjectSectionResp from './Components/ProjectSectionResp';
-import HomeOurServiceResp from './Components/OurServiceResp';
 import { useEffect, useRef, useState } from 'react';
 
 
 
 
 function HomePage() {
-
-
   let section_0 = 'section_0'
   let section_1 = 'section_1'
   let section_2 = 'section_2'
@@ -58,16 +53,18 @@ function HomePage() {
 
 
 
-
-
   return (
     <>
 
-      <FullScreenView />
+
+
+      <button id="toggle">
+        <img src="./images/preview.png" alt="Exit Fullscreen" />
+      </button>
 
       {showButton && (
         <button id="scrollDown" onClick={scrollToSecondSection}>
-          <img src="./images/swipe-down.png" alt="" />
+          <img src="./images/swipe-down.png" alt=""  />
         </button>
       )}
 
@@ -76,43 +73,32 @@ function HomePage() {
         <ThreeRenderScene />
       </div>
 
-      <div className="second-section-animated r_o_padding" ref={secondSectionRef}>
-        <div className={`${section_1} section_outer_wrapper r_o_padding`}>
-          <SecondSectionOld section_1={section_1} />
-        </div>
-      </div>
-      <div className="second-section-redponsive container r_o_padding" ref={secondSectionRef}>
-        <SecondSectionResponsive />
-      </div>
-
-
-      <div className={`${section_2} section_outer_wrapper r_o_padding`}>
+      <div className={`${section_2} section_outer_wrapper`}>
         <AboutUsSection />
       </div>
 
-      <div className={`${section_3} section_outer_wrapper r_o_padding`}>
-        <HomeOurService section_3={section_3} />
+
+      <div className="second-section-animated" ref={secondSectionRef}>
+        <div className={`${section_1} section_outer_wrapper`}>
+          <SecondSectionOld section_1={section_1} />
+        </div>
+      </div>     
+     
+
+      <div className="second-section-redponsive container" ref={secondSectionRef}>
+        <SecondSectionResponsive />
+      </div>
+      
+      <div className={`${section_3} section_outer_wrapper`}>
+        <OurServices section_3={section_3} />
       </div>
 
-      <div className="our_services_section_resp r_o_padding" id='service_p_r_view'>
-        <HomeOurServiceResp />
-      </div>
 
-
-
-      <div className={`${section_4} section_outer_wrapper r_o_padding`}>
+      <div className={`${section_4} section_outer_wrapper`}>
         <ProjectSection section_4={section_4} />
       </div>
 
-
-
-
-      <div className="project_section_resp r_o_padding" id='p_r_view'>
-        <ProjectSectionResp />
-      </div>
-
-
-      <div className={`${section_5} section_outer_wrapper r_o_padding`}>
+      <div className={`${section_5} section_outer_wrapper`}>
         <TestimonialSection />
       </div>
 

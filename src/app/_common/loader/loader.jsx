@@ -9,14 +9,12 @@ const Loader = () => {
           <Image
             src="/siteLogo/logo.jpg"
             alt="Loading..."
-            width={100}
+            width={300}
             height={100}
             className="loading-img"
           />
         </div>
-        <div className="loader-text">
-          <h1>Welcome!  to the Sparkweb Solutions</h1>
-        </div>
+   
       </div>
     </div>
   );
