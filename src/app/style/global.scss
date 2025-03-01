@@ -170,7 +170,17 @@
   /* Thin */
   font-style: normal;
 }
+.footer_wrapper {
+  padding: 14px;
+}
 
+
+.mobile_view{
+  display: none;
+
+}
+ 
+ 
 
 button#scrollDown {
   background: none;
@@ -255,23 +265,6 @@ body {
 }
 
 
-
-
-.loader h1 {
-  font-family: 'Basement Grotesque';
-  color: #F24B74;
-  font-size: 30px;
-  margin-top: 50px !important;
-  line-height: 84px;
-  width: 70%;
-  margin: auto !important;
-  margin: 18px 0;
-  text-align: center;
-  line-height: 30px;
-}
-
-
-
 h1 {
   font-family: 'Basement Grotesque';
   color: #F24B74;
@@ -292,15 +285,10 @@ h6 {
 
 p {
   font-family: Nunito;
-  font-size: 25px;
+  font-size: 30px;
   font-weight: 600;
   line-height: 50px;
 }
-
-
-
-
-
 
 
 
@@ -309,98 +297,6 @@ p {
   flex-direction: column;
   gap: 40px;
 }
-
-
-
-body.light-mode .description_area {
-  background:white;
-  box-shadow:2px 0px 12px rgba(0, 0, 0, 0.567)
-}
-
-body.light-mode .tab{
-  background-color: white !important;
-}
-
-body.light-mode .about-us-home .main-description {
-  color: black;
-
-}
-body.light-mode .about-us-home .about-home-inr-cont .about-sec-right .short-description {
-  font-size: 35px;
-  color: rgb(0 0 0);
-  font-family: "Nunito";
-  line-height: 45px;
-  position: relative;
-  left: -175px;
-}
-
-body.light-mode .about-us-home .about-home-inr-cont .about-sec-right h2.fade-bt-heading {
-  position: absolute;
-  font-size: 70px;
-  z-index: -1;
-  top: 35%;
-  color: rgb(242 75 116);
-  left: 16%;
-}
-
-body.light-mode  .header-section { 
-  background-color: white; 
-}
-
-body.light-mode .p_card_section {
-  padding: 22px 30px;
-  background: #ffffff;
-  border-radius: 4px;
-  display: block;
-  align-items: center;
-  gap: 12px;
-  box-shadow: 2px 2px 8px #0000004d;
-}
-
-body.light-mode .testimonials .testimonials-pagination .testimonial-heading button img {
-  width: 50px;
-  height: 50px;
-  filter: invert(1);
-}
-
-body.light-mode .p_content h2 {
-  margin: 0px;
-  font-size: 25px;
-  text-transform: capitalize;
-  color: #f24b74;
-  text-wrap: wrap;
-}
-
-
-body.light-mode .prog_content.active h4 {
-  color: #000;
-}
-body.light-mode .prog_content.active p {
-  color: #000;
-}
-
-
-body.light-mode .p_img img {
-  width: 80px;
-  height: 80px;
-  filter: invert(1);
-}
-
-body.light-mode div#p_h_heading_2 span {
-  color: black !important;
-}
-
-body.light-mode .testimonials .testimonials-pagination .testimonial-heading h3 {
-  color: #000000;
-  font-size: 36px;
-  font-weight: 700;
-  line-height: 56.66px;
-  text-align: center;
-}
-
-
-
-
 
 
 
@@ -477,11 +373,6 @@ body.light-mode .testimonials .testimonials-pagination .testimonial-heading h3 {
 }
 
 
-.tab_left_img img {
-  transform: scale(0.7) !important;
-  position: absolute;
-  left: -193px;
-}
 
 
 
@@ -499,11 +390,10 @@ body.light-mode .testimonials .testimonials-pagination .testimonial-heading h3 {
   }
 
   .main-description {
-    font-size: 32px;
-    color: rgba(255, 255, 255, 0.6509803922);
-    font-family: "Nunito";
-    line-height: 44px;
-
+    font-size: 40px;
+    color: #FFFFFFA6;
+    font-family: 'Nunito';
+    line-height: 66px;
   }
 
   .about-home-inr-cont {
@@ -527,14 +417,12 @@ body.light-mode .testimonials .testimonials-pagination .testimonial-heading h3 {
         left: 16%;
       }
 
-    
-
 
       .short-description {
-        font-size: 35px;
-        color: rgba(255, 255, 255, 0.6509803922);
-        font-family: "Nunito";
-        line-height: 45px;
+        font-size: 40px;
+        color: #FFFFFFA6;
+        font-family: 'Nunito';
+        line-height: 66px;
         position: relative;
         left: -175px;
       }
@@ -558,7 +446,7 @@ body.light-mode .testimonials .testimonials-pagination .testimonial-heading h3 {
 
           .overlay {
             position: absolute;
-            background-color: #f24b7499;
+            background-color: #F24B74;
             top: 0;
             left: 0;
             right: 0;
@@ -572,9 +460,8 @@ body.light-mode .testimonials .testimonials-pagination .testimonial-heading h3 {
       width: 60%;
 
       .preview-img {
-        height: 660px !important;
+        height: 660px;
         width: 100%;
-        height: 100%;
         object-fit: cover;
       }
     }
@@ -759,14 +646,14 @@ body.light-mode {
   z-index: 99999;
 
   .scroll-img {
-    max-width: 75px !important;
+    max-width: 100px !important;
     width: 100% !important;
     position: fixed;
-    bottom: 82px;
+    bottom: 50px;
     z-index: 99999;
     background-color: black;
     background-color: #ffffff;
-    padding: 10px;
+    padding: 19px;
     border-radius: 25px;
   }
 }
@@ -809,9 +696,9 @@ body.light-mode .sticky-header {
 
 .navigation-inner {
   position: fixed;
-  bottom: 86px;
+  bottom: 50px;
   z-index: 99999;
-  max-width: 320px;
+  max-width: 380px;
   width: 100%;
 }
 
@@ -881,7 +768,7 @@ nav.main-header-navigation {
   ul {
     li {
       a {
-        font-size: 30px;
+        font-size: 35px;
         font-weight: 500;
       }
     }
@@ -1060,7 +947,7 @@ body.light-mode {
 .footer {
   background-color: #18191D;
   border-radius: 50px;
-  margin: 0px 0 10px 0;
+  margin: 0px 0 70px 0;
 
   .footer-inner {
     padding: 50px 77px;
@@ -1128,10 +1015,10 @@ body.light-mode {
   .footer-inner {
     .section {
       p {
-        font-size: 22px;
+        font-size: 25px;
         color: #FFFFFF91;
         font-weight: 500;
-        line-height: 28px;
+        line-height: 33px;
       }
     }
   }
@@ -1635,7 +1522,7 @@ body.light-mode {
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: #f24b7485;
+        background-color: #F24B74;
       }
     }
   }
@@ -2225,7 +2112,7 @@ button.sticky-form-button:hover {
 
 .navigation-container {
   button.navbar-buttons-main {
-    font-size: 22px;
+    font-size: 25px;
     font-family: 'Saira';
     padding: 10px 30px;
     background-color: transparent;
@@ -2249,7 +2136,6 @@ button.sticky-form-button:hover {
     display: flex;
     background-color: #ffffff;
     width: 100%;
-    box-shadow: 2px 2px 2px black;
   }
 } 
 
@@ -2501,9 +2387,8 @@ button.navbar-buttons-main.navigation-contact-btn {
       .headings {
         h2 {
           color: #FFFFFF;
-          font-size: 65px;
+          font-size: 100px;
           font-weight: 600;
-          line-height: 55px;
         }
       } 
 
@@ -2621,7 +2506,7 @@ button.navbar-buttons-main.navigation-contact-btn {
 
   .step {
     h3 {
-      font-size: 30px;
+      font-size: 40px;
       font-weight: 600;
       color: #ffffff;
     }
@@ -2630,10 +2515,10 @@ button.navbar-buttons-main.navigation-contact-btn {
   .stickey-form {
     .option-container {
       label {
-        font-size: 20px;
+        font-size: 30px;
         font-weight: 600;
         font-family: 'Saira';
-        line-height: 38px;
+        line-height: 48px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -2657,7 +2542,7 @@ button.navbar-buttons-main.navigation-contact-btn {
   .first-section {
     display: flex;
     background: linear-gradient(95.49deg, #18191D 1.53%, #1D1E21 50.01%, #363C48 99.61%);
-    padding: 30px 0px 30px 30px;
+    padding: 30px 0px 0px 30px;
     border-radius: 8px;
   }
 
@@ -3018,6 +2903,7 @@ body.light-mode {
 @media only screen and (max-width: 1024px) {
 
 
+
   // Global Typography
   h1 {
     font-size: 50px;
@@ -3099,6 +2985,7 @@ body.light-mode {
 
       .about-sec-right {
         width: 100%;
+        
 
         .short-description {
           position: unset;
@@ -3111,7 +2998,7 @@ body.light-mode {
         }
 
         .gallery {
-          flex-wrap: wrap;
+          flex-wrap: nowrap;
           justify-content: center;
           order: -1;
         }
@@ -3569,8 +3456,23 @@ body.light-mode {
 
 //************** 768 PX ***************//
 @media only screen and (max-width: 768px) {
+  .mobile_view{
+    display: block;
+
+  }
+  .desktop_view{
+    display: none;
+
+  }
 
   // Global Typography 
+  .second-section-inner-res {
+    margin: 0px!important;
+    padding-top: 30px;
+}
+.section_2 {
+  padding: 40px 0px 0px 0px;
+}
 
   h1 {
     font-size: 35px;
@@ -3592,6 +3494,15 @@ body.light-mode {
   .intership-popup-outer {
     .internsip-popup-inner {
       padding: 30px !important;
+    }
+  }
+
+  .about-sec-right{
+
+    .preview-img {
+      height: 350px!important;
+      transform: scale(0.8);
+  
     }
   }
 
@@ -3784,13 +3695,6 @@ body.light-mode {
     }
   }
 
-
-
-
-  .xyz {
-    top: 5px;
-    position: relative;
-}
 
 
 
@@ -4020,6 +3924,10 @@ body.light-mode {
         grid-template-columns: 1fr;
       }
     }
+  }
+  .preview-img {
+    height: 350px!important;
+   
   }
 
   button#scrollDown {

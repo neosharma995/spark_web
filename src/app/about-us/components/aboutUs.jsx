@@ -79,7 +79,7 @@ const AboutUsMain = () => {
                       src={image.images}
                       alt={`Thumbnail ${index + 1}`}
                       layout="fixed"
-                      width={200}
+                      width={100}
                       height={100}
                       className="thumbnail-image"
                     />

@@ -7,21 +7,15 @@ import { FiMenu, FiX } from 'react-icons/fi';
 import EnquiryPopup from '../../popup/enqueryPopup';
 import StickeyForm from '../../stickeyForm/stickeyForm';
 import Logo from '../../logo/logo';
-import { FaMobile } from "react-icons/fa";
-
 import { gsap } from 'gsap';
-import { useTheme } from '@/context/ThemeContext';
- 
 
 const HeaderContent = () => {
-  const { isLightMode, toggleTheme } = useTheme();
-
   const { headerDataApi } = useContext(SectorDataContext);
   const mainData = headerDataApi?.find((page) => page.slug === 'header')?.acf;
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [audio, setAudio] = useState(null);
-  
+  const [isLiteMode, setIsDarkMode] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isStickyFormOpen, setIsStickyFormOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -55,11 +49,13 @@ const HeaderContent = () => {
   };
 
   const toggleDarkMode = () => {
-   
+    setIsDarkMode((prevMode) => !prevMode);
     setIsMobileMenuOpen(false);
   };
 
- 
+  useEffect(() => {
+    document.body.classList.toggle('light-mode', isLiteMode);
+  }, [isLiteMode]);
 
   const togglePopup = () => {
     setIsPopupOpen((prev) => !prev);
@@ -124,11 +120,8 @@ const HeaderContent = () => {
     <div>
       <div className="header">
         <div className="call-header-buttons">
-          <Link href={`tel:${mainData?.contact_no}`} className="desktop-call">            
-           <span>
-           <FaMobile />
-           <h3>{mainData?.contact_no}</h3>
-           </span>
+          <Link href={`tel:${mainData?.contact_no}`} className="desktop-call">
+            <h3>{mainData?.contact_no}</h3>
           </Link>
           <button onClick={toggleStickyForm} className="sticky-form-button">
             <img src='/images/support.png' />
@@ -149,7 +142,7 @@ const HeaderContent = () => {
         {/* Header Logo */}
         <div className="header-logo-main">
           <Link href="/">
-            <Logo />
+            <Logo isLiteMode={isLiteMode} />
           </Link>
         </div>
 
@@ -164,10 +157,10 @@ const HeaderContent = () => {
             style={{ cursor: 'pointer' }}
           />
           <Image
-            src={isLightMode ? mainData?.dark_mode_icon : mainData?.light_mode_icon}
+            src={isLiteMode ? mainData?.dark_mode_icon : mainData?.light_mode_icon}
             alt="Mode Icon"
             className="lite-dark-mode"
-            onClick={toggleTheme}
+            onClick={toggleDarkMode}
             width={35}
             height={35}
             style={{ cursor: 'pointer' }}
@@ -185,7 +178,7 @@ const HeaderContent = () => {
         <div className="mobile-menu-2-icons">
           <div className="menu-item" onClick={toggleDarkMode}>
             <Image
-              src={isLightMode ? mainData?.dark_mode_icon : mainData?.light_mode_icon}
+              src={isLiteMode ? mainData?.dark_mode_icon : mainData?.light_mode_icon}
               alt="Mode Icon"
               width={30}
               height={30}

@@ -4,7 +4,7 @@ export const ANIMATION_SPEEDD=30
 export const LIL_GUI_COLOR='#ff3d3d'
 export const PARTICLE_GEOMETRY__COLOR='#ffffff'
 export const SPHERE_GEOMETRY_COLOR='#ffffff'
-
+ 
 
      
  

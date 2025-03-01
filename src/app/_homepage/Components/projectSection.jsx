@@ -19,7 +19,7 @@ const ProjectSection = ({ section_4 }) => {
         let sections = gsap.utils.toArray('.prog_content');
         if (sections.length === 0) return;
 
-        // Enhanced smooth scrolling configuration
+     
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: `.${section_4}`,

@@ -2,10 +2,8 @@
 import { useContext } from 'react';
 import Image from 'next/image';
 import { SectorDataContext } from '@/context/apiContext';
-import { useTheme } from '@/context/ThemeContext';
- 
-const Logo = ( ) => {
-  const { isLightMode } = useTheme();  
+
+const Logo = ({ isLiteMode }) => {
   const { headerDataApi } = useContext(SectorDataContext);
   const mainData = headerDataApi?.find(page => page.slug === 'header')?.acf;
 
@@ -21,7 +19,7 @@ const Logo = ( ) => {
       }}
     >
       <Image
-        src={isLightMode ? mainData.lite_mode_logo : mainData.logo}
+        src={isLiteMode ? mainData.lite_mode_logo : mainData.logo}
         alt="Logo"
         width={200} // Ensure the width matches the container
         height={80} // Ensure the height matches the container

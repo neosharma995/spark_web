@@ -18,16 +18,16 @@ const HomeOurService = () => {
             const w = section.querySelector(".p_service_wrapper");
             if (w) {
                 const [x, xEnd] =
-                    index % 1
-                        ? ["100%", (w.scrollWidth - section.offsetWidth) * 0]
-                        : [w.scrollWidth * 0, 0];
+                    index % 2
+                        ? ["100%", (w.scrollWidth - section.offsetWidth) * -1]
+                        : [w.scrollWidth * -1, 0];
 
                 gsap.fromTo(w, { x }, {
                     x: xEnd,
                     scrollTrigger: {
                         trigger: section,
-                        scrub: 0,
-                        delay: 0,
+                        scrub: 6,
+                        delay: 4,
                     }
                 });
             }
@@ -35,7 +35,7 @@ const HomeOurService = () => {
 
        
         gsap.to("#p_h_heading_1", {
-            x: "-140%",  
+            x: "40%",  
             repeat: -1,
             duration: 8,
             ease: "linear",
@@ -45,7 +45,7 @@ const HomeOurService = () => {
         gsap.to("#p_h_heading_2", {
             x: "-40%",  
             repeat: -1,
-            duration: 5,
+            duration: 8,
             ease: "linear",
             yoyo: true,  
         });
@@ -56,7 +56,7 @@ const HomeOurService = () => {
             <div className="container" id="h_p_service">
                 <div className="p_heading_wrapper">
                     <div id="p_h_heading_1" className="p_head_wrap">
-                        {Array.from({ length:6 }).map((_, index) => (
+                        {Array.from({ length: 6 }).map((_, index) => (
                             <h1 key={index}> <span>{main_data?.heading}</span></h1>
                         ))}
                     </div>
@@ -86,7 +86,7 @@ const HomeOurService = () => {
                     </div>
                 </div>
 
-                <div className="p_service_container bottom1">
+                <div className="p_service_container bottom">
                     <div className="p_service_wrapper">
                         {cards_two.map((ele, index) => (
                             <div className="p_card_section" key={index}>

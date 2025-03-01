@@ -30,7 +30,7 @@ const SecondSection = ({ section_1 }) => {
                 pin: true,
                 start: 'top top',
                
-                scrub: 4, 
+                scrub: 3, 
                 snap: {
                     snapTo: 2 / (sections.length - 1),
                     duration: { min: 2, max: 4 },
@@ -67,17 +67,13 @@ const SecondSection = ({ section_1 }) => {
     };
 
     return (
-        <div className='both_section_tabs container'>
-            <h1 className='process_c'>Our Process</h1>
         <div 
             className="container" 
             id="section_section" 
             ref={containerRef}
         >
-           
             {/* Left Section - Tabs */}
-          
-            <div className="left_section">           
+            <div className="left_section">
               <div className="tab_left_img">
               <img src="./images/circle.png" alt="" />
               </div>
@@ -119,8 +115,6 @@ const SecondSection = ({ section_1 }) => {
                         </div>
                     ))}
                 </div>
-            </div>
-
             </div>
         </div>
     );
