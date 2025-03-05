@@ -3,6 +3,7 @@ const nextConfig = {
   images: {
     domains: ['api.sparkweb.co.in'],
   },
+ 
   
 };
 

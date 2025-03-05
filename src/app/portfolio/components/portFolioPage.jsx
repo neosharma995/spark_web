@@ -14,6 +14,8 @@ export default function MatrixEffect() {
   const images = mainData?.portfolio?.map((e) => e.image) || [];
   const links = mainData?.portfolio?.map((e) => e.link) || [];
 
+ 
+
   useEffect(() => {
     if (images.length === 0 || links.length === 0) return;
 
