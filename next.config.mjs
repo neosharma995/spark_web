@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-      domains: ['api.sparkweb.co.in'],
-    },
-    reactStrictMode: false
-  };
+  images: {
+    domains: ['api.sparkweb.co.in'],
+  },
   
-  export default nextConfig;
-  
+};
+
+export default nextConfig;

@@ -170,17 +170,7 @@
   /* Thin */
   font-style: normal;
 }
-.footer_wrapper {
-  padding: 14px;
-}
 
-
-.mobile_view{
-  display: none;
-
-}
- 
- 
 
 button#scrollDown {
   background: none;
@@ -265,6 +255,23 @@ body {
 }
 
 
+
+
+.loader h1 {
+  font-family: 'Basement Grotesque';
+  color: #F24B74;
+  font-size: 30px;
+  margin-top: 50px !important;
+  line-height: 84px;
+  width: 70%;
+  margin: auto !important;
+  margin: 18px 0;
+  text-align: center;
+  line-height: 30px;
+}
+
+
+
 h1 {
   font-family: 'Basement Grotesque';
   color: #F24B74;
@@ -285,10 +292,15 @@ h6 {
 
 p {
   font-family: Nunito;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 600;
   line-height: 50px;
 }
+
+
+
+
+
 
 
 
@@ -297,6 +309,229 @@ p {
   flex-direction: column;
   gap: 40px;
 }
+
+
+
+body.light-mode {
+
+  .stikey-side-popup .step h3 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.intership-popup-outer .internsip-popup-inner {
+  background-color: rgb(255 255 255 / 96%);
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.contact-us-page .contact-card .card .sub-heading {
+  color: #000000;
+}
+
+
+.contact-us-page .contact-card .card .card-ipper-sec {
+  background: white; 
+}
+
+.contact-us-page .contact-card .card .bottom-bar {
+  background: white;
+}
+
+.contact-card .card {
+  
+  box-shadow: 0px 0px 10px #8080803d;
+}
+
+  .enquery-popup .enquery-popup-container .enquery-popup-content .form-inner-overlay {
+    background-color: rgb(255, 255, 255);
+  }
+  .enquery-popup .enquery-popup-container {
+       background: #ffeac4;
+  }
+
+ .stikey-side-popup .stickey-form .option-container label {
+       background: #f24b74;
+}
+
+.stikey-side-popup .stickey-form .next-btn-st-form button.proceed-button{
+  border: 1px solid;
+}
+.stikey-side-popup .stickey-form .form-header .headings h2 {
+  color: #606060;
+
+}
+
+.service-popup .service-popup-content {
+  background-color: rgb(255 255 255 / 96%);
+  padding: 40px;
+  border-radius: 20px;
+}
+
+
+  .hover-effect-btn {
+      border: 1px solid;   
+}
+
+.form-input-design {
+  border: 1px solid #242A34;
+  background: linear-gradient(95.49deg, #ffffff 1.53%, #f4f6ff 50.01%, #ffffff 99.61%);
+  color: white;
+}
+
+
+  .description_area {
+    background: white;
+    box-shadow: 2px 0px 12px rgba(0, 0, 0, 0.567);
+  }
+
+  .tab {
+    background-color: white !important;
+  }
+
+  .about-us-home {
+    .main-description {
+      color: black;
+    }
+
+    .about-home-inr-cont {
+      .about-sec-right {
+        .short-description {
+          font-size: 35px;
+          color: rgb(0, 0, 0);
+          font-family: "Nunito";
+          line-height: 45px;
+          position: relative;
+          
+        }
+        h2.fade-bt-heading {
+          position: absolute;
+          font-size: 70px;
+          z-index: -1;
+          top: 35%;
+          color: rgb(242, 75, 116);
+          left: 16%;
+        }
+      }
+    }
+  }
+
+  .internship {
+    .first-section {
+      background: white;
+      box-shadow: 2px 0px 10px #80808099;
+    }
+
+    .single-course-wrapper {
+      background: white;
+      box-shadow: 2px 0px 10px #80808099;
+    }
+
+    .page-title {
+      img {
+        margin-left: 305px;
+        filter: invert(1);
+      }
+    }
+  }
+
+  .header-section {
+    background-color: white;
+  }
+
+  .p_card_section {
+    padding: 22px 30px;
+    background: #ffffff;
+    border-radius: 4px;
+    display: block;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 2px 2px 8px #0000004d;
+  }
+
+  .testimonials {
+    .testimonials-pagination {
+      .testimonial-heading {
+        button {
+          img {
+            width: 50px;
+            height: 50px;
+            filter: invert(1);
+          }
+        }
+        h3 {
+          color: #000000;
+          font-size: 36px;
+          font-weight: 700;
+          line-height: 56.66px;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .p_content {
+    h2 {
+      margin: 0;
+      font-size: 25px;
+      text-transform: capitalize;
+      color: #f24b74;
+      text-wrap: wrap;
+    }
+  }
+
+  .prog_content {
+    &.active {
+      h4 {
+        color: #000;
+      }
+      p {
+        color: #000;
+      }
+    }
+  }
+
+  .p_img {
+    img {
+      width: 80px;
+      height: 80px;
+      filter: invert(1);
+    }
+  }
+
+  div#p_h_heading_2 {
+    span {
+      color: black !important;
+    }
+  }
+
+  .services-page {
+    .expertise {
+      .expertise-card {
+        background: white;
+        box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.581);
+      }
+    }
+  }
+
+  .stikey-side-popup {
+    .stickey-form {
+      background-color: #ffffff;
+      .option-container {
+        label {
+          font-size: 20px;
+          font-weight: 600;
+          font-family: "Saira";
+          line-height: 38px;
+          display: flex;
+        
+        }
+      }
+    }
+      }
+    }
+
 
 
 
@@ -373,13 +608,17 @@ p {
 }
 
 
+.tab_left_img img {
+  transform: scale(0.7) !important;
+  position: absolute;
+  left: -193px;
+}
 
 
 
 
 
 .about-us-home {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -390,10 +629,12 @@ p {
   }
 
   .main-description {
-    font-size: 40px;
-    color: #FFFFFFA6;
-    font-family: 'Nunito';
-    line-height: 66px;
+    font-size: 32px;
+    color: rgba(255, 255, 255, 0.6509803922);
+    font-family: "Nunito";
+    line-height: 44px;
+    padding-bottom: 30px;
+
   }
 
   .about-home-inr-cont {
@@ -417,14 +658,17 @@ p {
         left: 16%;
       }
 
+    
+
 
       .short-description {
-        font-size: 40px;
-        color: #FFFFFFA6;
-        font-family: 'Nunito';
-        line-height: 66px;
+        font-size: 35px;
+        color: rgba(255, 255, 255, 0.6509803922);
+        font-family: "Nunito";
+        line-height: 45px;
         position: relative;
-        left: -175px;
+        left: 0px;
+        top: 60px;
       }
 
       .gallery {
@@ -446,7 +690,7 @@ p {
 
           .overlay {
             position: absolute;
-            background-color: #F24B74;
+            background-color: #f24b7499;
             top: 0;
             left: 0;
             right: 0;
@@ -460,8 +704,9 @@ p {
       width: 60%;
 
       .preview-img {
-        height: 660px;
+        height: 660px !important;
         width: 100%;
+        height: 100%;
         object-fit: cover;
       }
     }
@@ -475,7 +720,9 @@ p {
   justify-content: center;
 }
 
-
+.single-course-wrapper ul {
+  list-style-type: none;
+}
 
 
 
@@ -646,15 +893,16 @@ body.light-mode {
   z-index: 99999;
 
   .scroll-img {
-    max-width: 100px !important;
+    max-width: 75px !important;
     width: 100% !important;
     position: fixed;
-    bottom: 50px;
+    bottom: 82px;
     z-index: 99999;
     background-color: black;
     background-color: #ffffff;
-    padding: 19px;
+    padding: 10px;
     border-radius: 25px;
+    box-shadow: 2px 2px 10px grey;
   }
 }
 
@@ -696,9 +944,9 @@ body.light-mode .sticky-header {
 
 .navigation-inner {
   position: fixed;
-  bottom: 50px;
+  bottom: 86px;
   z-index: 99999;
-  max-width: 380px;
+  max-width: 320px;
   width: 100%;
 }
 
@@ -768,7 +1016,7 @@ nav.main-header-navigation {
   ul {
     li {
       a {
-        font-size: 35px;
+        font-size: 30px;
         font-weight: 500;
       }
     }
@@ -947,7 +1195,7 @@ body.light-mode {
 .footer {
   background-color: #18191D;
   border-radius: 50px;
-  margin: 0px 0 70px 0;
+  margin: 0px 0 10px 0;
 
   .footer-inner {
     padding: 50px 77px;
@@ -1015,10 +1263,10 @@ body.light-mode {
   .footer-inner {
     .section {
       p {
-        font-size: 25px;
+        font-size: 22px;
         color: #FFFFFF91;
         font-weight: 500;
-        line-height: 33px;
+        line-height: 28px;
       }
     }
   }
@@ -1359,7 +1607,7 @@ body.light-mode {
       .send-msg-cplumn {
         h3 {
           font-size: 30px;
-          color: #464646;
+          color: #fff;
           line-height: 47.22px;
         }
       }
@@ -1451,11 +1699,41 @@ body.light-mode {
 
 
 
+h3.technologys {
+  background: #ed4561;
+  color: white !important;
+  padding: 0px 15px;
+  width: max-content;
+  border-radius: 44px;
+  font-size: 18px !important;
+}
+
+
+
+
 
 
 //about us page css Start
 
 body.light-mode {
+
+  .contact-us-page .contact-card .card .send-msg-cplumn h3 {
+    font-size: 30px;
+    color: #f24b74;
+    line-height: 47.22px;
+}
+
+.form_section .left-side input, .form_section .left-side textarea {
+  background: linear-gradient(95.49deg, #ffffff 1.53%, #ffffff 50.01%, #ffffff 99.61%);
+  outline: none;
+  border: 1px solid black;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 35px;
+  border-radius: 5px;
+}
+
   .about-us-page {
     .para-section {
       .about-card {
@@ -1466,6 +1744,7 @@ body.light-mode {
     }
   }
 }
+
 
 
 
@@ -1480,10 +1759,16 @@ body.light-mode {
     height: 660px;
   }
 
+
+  .short-description {
+    padding: 20px 0px;
+   }
+
+  
+
   .description-column-main {
     width: 50%;
     top: 30px;
-    left: -150px;
     position: relative;
     height: 100%;
     display: flex;
@@ -1522,7 +1807,7 @@ body.light-mode {
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: #F24B74;
+        background-color: #f24b7485;
       }
     }
   }
@@ -2010,7 +2295,7 @@ body.light-mode {
 
   .card-small-headings {
     h3 {
-      font-size: 25px;
+      font-size: 22px;
       line-height: 39.79px;
       text-transform: uppercase;
       color: white;
@@ -2112,7 +2397,7 @@ button.sticky-form-button:hover {
 
 .navigation-container {
   button.navbar-buttons-main {
-    font-size: 25px;
+    font-size: 22px;
     font-family: 'Saira';
     padding: 10px 30px;
     background-color: transparent;
@@ -2129,6 +2414,7 @@ button.sticky-form-button:hover {
   overflow: hidden;
   width: 100%;
   margin-top: 20px;
+  box-shadow: 0px 0px 10px #80808036;
 }
 
 .navigation-container {
@@ -2136,6 +2422,7 @@ button.sticky-form-button:hover {
     display: flex;
     background-color: #ffffff;
     width: 100%;
+    box-shadow: 2px 2px 2px black;
   }
 } 
 
@@ -2387,8 +2674,9 @@ button.navbar-buttons-main.navigation-contact-btn {
       .headings {
         h2 {
           color: #FFFFFF;
-          font-size: 100px;
+          font-size: 65px;
           font-weight: 600;
+          line-height: 55px;
         }
       } 
 
@@ -2506,7 +2794,7 @@ button.navbar-buttons-main.navigation-contact-btn {
 
   .step {
     h3 {
-      font-size: 40px;
+      font-size: 30px;
       font-weight: 600;
       color: #ffffff;
     }
@@ -2515,10 +2803,10 @@ button.navbar-buttons-main.navigation-contact-btn {
   .stickey-form {
     .option-container {
       label {
-        font-size: 30px;
+        font-size: 20px;
         font-weight: 600;
         font-family: 'Saira';
-        line-height: 48px;
+        line-height: 38px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -2542,7 +2830,7 @@ button.navbar-buttons-main.navigation-contact-btn {
   .first-section {
     display: flex;
     background: linear-gradient(95.49deg, #18191D 1.53%, #1D1E21 50.01%, #363C48 99.61%);
-    padding: 30px 0px 0px 30px;
+    padding: 30px 0px 30px 30px;
     border-radius: 8px;
   }
 
@@ -2593,7 +2881,8 @@ button.navbar-buttons-main.navigation-contact-btn {
     background-color: white;
     border-radius: 40px;
     margin-right: 5px;
-    font-size: 25px;
+    font-size: 24px;
+    line-height: 22px;
     font-weight: 600;
     font-family: Saira;
     color: #F24B74;
@@ -2903,7 +3192,6 @@ body.light-mode {
 @media only screen and (max-width: 1024px) {
 
 
-
   // Global Typography
   h1 {
     font-size: 50px;
@@ -2960,7 +3248,6 @@ body.light-mode {
 
 
   .about-us-home {
-
     height: unset;
 
     .mian-about-heading {
@@ -2985,7 +3272,6 @@ body.light-mode {
 
       .about-sec-right {
         width: 100%;
-        
 
         .short-description {
           position: unset;
@@ -2998,7 +3284,7 @@ body.light-mode {
         }
 
         .gallery {
-          flex-wrap: nowrap;
+          flex-wrap: wrap;
           justify-content: center;
           order: -1;
         }
@@ -3351,6 +3637,8 @@ body.light-mode {
 
       li a {
         font-size: 30px;
+        color: white;
+        font-family: 'Basement Grotesque';
       }
     }
 
@@ -3456,23 +3744,129 @@ body.light-mode {
 
 //************** 768 PX ***************//
 @media only screen and (max-width: 768px) {
-  .mobile_view{
-    display: block;
 
-  }
-  .desktop_view{
-    display: none;
-
+  .single-post .heading-seaction h1 {
+    font-size: 29px;
+    line-height: 38px;
   }
 
-  // Global Typography 
-  .second-section-inner-res {
-    margin: 0px!important;
-    padding-top: 30px;
+  .section_2 {
+    padding: 10px 0px 0px 0px;
+   }
+.p_card_section {
+  width: 100%;
+}
+
+div#proj_container {
+  display: block !important;
+}
+
+.section_4.section_outer_wrapper {
+  height: auto !important;
+  max-height: auto !important;
+  width: auto; 
+}
+
+.section_3 {
+  height: auto !important;
+  display: flex;
+}
+
+.prog_content h1 {
+  position: relative !important;
+  left: 0px !important;
+  width: 100% !important;
+  z-index: 999;
+  color: #2c2c2c;
+}
+
+.prog_content {
+  height: 51vh !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.proj_images img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+}
+
+.prog_content h4 {
+  font-size: 32px !important;
+  color: #2c2c2c;
+  line-height: 40px;
+}
+
+.prog_content p {
+  font-size: 20px;
+  color: #2c2c2c;
+  line-height: 27px;
+  margin-top: 10px;
+}
+
+
+
+
+div#proj_container {
+  display: block !important;
+}
+
+  .about-us-home .about-home-inr-cont .about-sec-left .preview-img {
+    height: 292px !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.about-us-home .about-home-inr-cont .about-sec-right .gallery .thumb-image {
+  width: 77px;
+  height: 60px;
+  cursor: pointer;
+}
+
+body.light-mode .about-us-home .about-home-inr-cont .about-sec-right .short-description {
+  font-size: 35px;
+  color: rgb(0, 0, 0);
+  font-family: "Nunito";
+  line-height: 45px;
+  position: relative;
+  left: 0px;
 }
 .section_2 {
-  padding: 40px 0px 0px 0px;
+  padding: 10px 0px 0px 0px;
 }
+
+body.light-mode .about-us-home .about-home-inr-cont .about-sec-right .short-description {
+  font-size: 28px;
+  color: rgb(0, 0, 0);
+  font-family: "Nunito";
+  line-height: 33px;
+  position: relative;
+  left: 0px;
+  top: 23px;
+}
+
+.second-section-inner-res {
+  margin-top: 20px !important;
+}
+div#p_h_heading_2 h1 {
+  margin: 0px !important;
+}
+
+div#h_p_service {
+  width: 100%;
+}
+
+.p_service_wrapper {
+  flex-wrap: wrap;
+}
+
+.p_h_heading_1{
+  margin: 0px !important;
+}
+
+  // Global Typography 
 
   h1 {
     font-size: 35px;
@@ -3494,15 +3888,6 @@ body.light-mode {
   .intership-popup-outer {
     .internsip-popup-inner {
       padding: 30px !important;
-    }
-  }
-
-  .about-sec-right{
-
-    .preview-img {
-      height: 350px!important;
-      transform: scale(0.8);
-  
     }
   }
 
@@ -3695,6 +4080,13 @@ body.light-mode {
     }
   }
 
+
+
+
+  .xyz {
+    top: 5px;
+    position: relative;
+}
 
 
 
@@ -3925,10 +4317,6 @@ body.light-mode {
       }
     }
   }
-  .preview-img {
-    height: 350px!important;
-   
-  }
 
   button#scrollDown {
 
@@ -4009,6 +4397,25 @@ body.light-mode {
 
 //**************** 468 PX *******************//
 @media only screen and (max-width: 468px) {
+
+  .tab-panel h3 {
+    font-size: 25px;
+    line-height: 28px;
+}
+
+
+  .prog_content p {
+    font-size: 19px !important; 
+    line-height: 28px !important;   
+}
+
+.about-us-home .main-description {
+  font-size: 18px;
+  line-height: 28px;
+}
+p.short-description {
+  margin-top: 50px;
+}
 
   h1 {
     font-size: 25px;
