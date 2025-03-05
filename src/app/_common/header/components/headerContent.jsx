@@ -183,7 +183,7 @@ const HeaderContent = () => {
         </div>
 
         <div className="mobile-menu-2-icons">
-          <div className="menu-item"  >
+          <div className="menu-item" onClick={toggleDarkMode}>
             <Image
               src={isLightMode ? mainData?.dark_mode_icon : mainData?.light_mode_icon}
               alt="Mode Icon"
