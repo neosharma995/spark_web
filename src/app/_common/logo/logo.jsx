@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import Image from 'next/image';
 import { SectorDataContext } from '@/context/apiContext';
 import { useTheme } from '@/context/ThemeContext';
+ 
 
 const Logo = ( ) => {
   const { isLightMode } = useTheme();  

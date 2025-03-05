@@ -11,6 +11,7 @@ import { FaMobile } from "react-icons/fa";
 
 import { gsap } from 'gsap';
 import { useTheme } from '@/context/ThemeContext';
+ 
 
 const HeaderContent = () => {
   const { isLightMode, toggleTheme } = useTheme();

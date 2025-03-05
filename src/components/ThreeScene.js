@@ -7,6 +7,7 @@ import GUI from 'lil-gui';
 import { COUNT_OF_VERTEXES, ANIMATION_SPEED, LIL_GUI_COLOR, PARTICLE_GEOMETRY__COLOR } from '@/utils/constents';
 import { FontLoader, TextGeometry, TTFLoader } from 'three/examples/jsm/Addons.js';
 import { useTheme } from '@/context/ThemeContext';
+ 
 
 export const ThreeRenderScene = () => {
 
