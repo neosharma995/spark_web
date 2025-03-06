@@ -138,7 +138,7 @@ const HeaderContent = () => {
           </button>
           <div className="mobile-call mobile-menu-1-icons">
             <div className="menu-item" onClick={togglePopup}>
-              <Image src={mainData?.enquery_icon} alt="Enquiry Icon" width={30} height={30} />
+              <Image src={mainData?.enquery_icon} alt="Enquiry Icon" width={38} height={38} />
             </div>
             <div className="menu-item" onClick={toggleMusic}>
               <Image src={mainData?.music_icon} alt="Music Icon" width={30} height={30} />
@@ -159,8 +159,8 @@ const HeaderContent = () => {
             src={mainData?.enquery_icon}
             alt="Enquiry Icon"
             onClick={togglePopup}
-            width={35}
-            height={35}
+            width={38}
+            height={38}
             style={{ cursor: 'pointer' }}
           />
           <Image
@@ -176,8 +176,8 @@ const HeaderContent = () => {
             src={mainData?.music_icon}
             alt="Music Icon"
             onClick={toggleMusic}
-            width={35}
-            height={35}
+            width={32}
+            height={32}
             style={{ cursor: 'pointer' }}
           />
         </div>

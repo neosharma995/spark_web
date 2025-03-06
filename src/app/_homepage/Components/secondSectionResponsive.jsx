@@ -10,7 +10,7 @@ const SecondSectionResponsive = () => {
   const [activeTab, setActiveTab] = useState(mainData?.[0]?.main_heading || ''); // Default to first item
 
   return (
-    <div className="second-section-inner-res" style={{marginTop:'130px'}}>
+    <div className="second-section-inner-res" style={{marginTop:'50px'}}>
       <div className="tabs-container">
         {mainData.map((section, index) => (
           <button
