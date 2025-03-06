@@ -86,7 +86,7 @@ export const ThreeRenderScene = () => {
 
 
         
-        const fireTexture = new THREE.TextureLoader().load('./textures/fire.jpg'); // Load fire texture
+      //  const fireTexture = new THREE.TextureLoader().load('./textures/water.jpg'); // Load fire texture
         loader.load('./fonts/Montserrat-Regular.ttf', function (json) {
         const font = fontLoader.parse(json);
 
