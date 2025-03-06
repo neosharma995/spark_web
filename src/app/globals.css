@@ -97,6 +97,90 @@ button#toggle img {
 
 
 
+
+.section_3{
+  height: 100vh;
+  display: flex;
+   
+}
+.p_head_wrap {
+  display: flex;
+  gap: 30px;
+}
+
+
+div#h_p_service {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.p_h_heading h1 {
+  font-size: 70px;
+}
+div#p_h_heading_1 {
+  font-size: 48px;
+  text-wrap: nowrap;
+}
+div#p_h_heading_2 {
+  font-size: 48px;
+  text-wrap: nowrap;
+  color:#fff!important;
+}
+div#p_h_heading_2 span {
+  color:#fff!important;
+}
+.p_card_section {
+  padding: 22px 30px;
+  background: #19191E;
+  border-radius: 4px;
+  display: block;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+}
+
+
+
+.p_content h2 {
+  margin: 0px;
+  font-size: 25px;
+  text-transform: capitalize;
+  color: #fff;
+  text-wrap: wrap;
+  
+}
+
+.p_content p {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+div#p_h_heading_1 h1 {
+  line-height: 15px;
+}
+
+
+.p_img img {
+  width: 80px;
+  height: 80px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .navigation_buttons button p {
   border-radius: 100%;
   transition: background 0.3s ease, height 0.3s ease, width 0.3s ease;

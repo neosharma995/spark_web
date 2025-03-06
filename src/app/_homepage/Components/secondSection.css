@@ -45,8 +45,15 @@ div#section_section {
 
 .description_area h3 {
     font-size: 25px;
+    text-transform: uppercase;
 }
-
+.description_area p {
+    font-size: 18px;
+    line-height: 30px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+    letter-spacing: 0.4px;
+  }
 
 
 .des_flex {
@@ -56,11 +63,11 @@ div#section_section {
 }
 
 .des_flex h1 {
-    font-size: 300px;
+    font-size: 400px;
     color: #111216;
     text-shadow: 0px 4px 30px #F24B74;
-    margin-top: 38px;
-}
+    font-family: 'Saira';
+  }
 
 .tab_left_img {
     position: relative;

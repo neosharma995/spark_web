@@ -623,11 +623,12 @@ body.light-mode {
 
       h2.fade-bt-heading {
         position: absolute;
-        font-size: 70px;
+        font-size: 85px;
         z-index: -1;
         top: 35%;
-        color: rgba(255, 255, 255, 0.1);
-        left: 16%;
+        color: #27272769;
+        left: 0%;
+        font-family: 'Basement Grotesque';
       }
 
       .short-description {
@@ -2951,23 +2952,135 @@ body.light-mode {
 
 // ******************************************** Media Query Start ******************************************************//
 
-//****** 1024PX ******//
+@media only screen and (max-width: 1300px) {
+  .about-us-home .main-description {
+    font-size: 25px;
+    padding-bottom: 30px;
+    line-height: 40px;
+  }
+  .about-us-home .about-home-inr-cont .about-sec-right .short-description {
+    font-size: 30px;
+    left: 0px;
+  }
+  .about-us-home .about-home-inr-cont .about-sec-left .preview-img {
+    height: 560px !important;
+  }
+  .about-us-home .about-home-inr-cont .about-sec-right .gallery .thumb-image {
+    width: 100px;
+    object-fit: cover;
+  }
+  .description_area h3 {
+    line-height: 32px;
+  }
+  .description_area p {
+    font-size: 16px;
+    line-height: 27px;
+  }
+  .des_flex h1 {
+    font-size: 250px;
+    position: absolute;
+    left: -100px;
+  }
+  .p_service_container.bottom1 {
+    margin-left: 0px;
+  }
+  .p_content h2 {
+    margin-bottom: 10px;
+    line-height: 27px;
+    font-size: 22px;
+  }
+  .p_img img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+  }
+  .p_heading_wrapper h1 {
+    font-size: 60px;
+    margin: 10px 0px;
+  }
+  .proj_heading h2 {
+    font-size: 70px;
+  }
+  .prog_content p {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .prog_content h1 {
+    left: -550px;
+  }
+  .swiper-wrapper {
+    gap: 50px;
+  }
+
+}
 @media only screen and (max-width: 1024px) {
-  // Global Typography
+  .p_service_wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+    .second-section-redponsive {
+        display: block
+    }
+   .second-section-animated {
+    display: none;
+    }
+    
+    .tab-panel h3 {
+        font-size: 32px;
+    }
+
+    .send-msg-cplumn {
+        display: none;
+    }
+
+    .second-section-inner-res .tabs-container .tab-button-second  {
+        padding: 10px 25px;
+        background-color: white;
+        border-radius: 8px;
+        font-size: 20px;
+        color: #F24B74;
+        border: none;
+    }
+    .second-section-inner-res .tabs-container .tab-button-second.active  {
+        background-color: #F24B74;
+        color: white;
+    }
+
+    div#p_h_heading_1 h1 {
+        color: #f24b74 !important;
+        font-size: 35px;
+    }
+
+    div#p_h_heading_2 h1 {
+
+        font-size: 35px;
+    }
+    .second-section-inner-res .tabs-container {
+        display: flex;
+        gap: 9px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .second-section-inner-res .tab-item {
+      padding: 20px;
+      border: 1px solid #ffffff3d;
+      margin-bottom: 25px;
+      border-radius: 8px;
+    }
+  .about-us-home .about-home-inr-cont .about-sec-left .preview-img {
+    height: 450px !important;
+}
   h1 {
     font-size: 50px;
     line-height: 65px;
   }
-
   button#scrollDown {
     display: block;
   }
-
   p {
     font-size: 25px;
     line-height: 40px;
   }
-
   button.sticky-form-button {
     bottom: 20px;
     right: 10px;
@@ -2979,356 +3092,232 @@ body.light-mode {
     text-align: center;
     height: 70px;
     width: 70px;
-
-    .enq-now-text {
-      display: none;
-    }
-
-    img {
-      display: block;
-      height: 100%;
-      width: 100%;
-    }
   }
-
-  // Testimonial CSS Responsive
-
-  .testimonials {
-    .testimonials-pagination {
-      .testimonial-heading {
-        h3 {
-          font-size: 30px;
-        }
-      }
-    }
+  button.sticky-form-button .enq-now-text {
+    display: none;
   }
-
+  button.sticky-form-button img {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+  .testimonials .testimonials-pagination .testimonial-heading h3 {
+    font-size: 30px;
+  }
   .about-us-home {
     height: unset;
-
-    .mian-about-heading {
-      display: block;
-    }
-
-    .main-description {
-      font-size: 25px;
-      line-height: 40px;
-    }
-
-    .about-home-inr-cont {
-      flex-direction: column;
-
-      .about-sec-right .gallery {
-        position: unset;
-      }
-
-      .about-sec-left {
-        width: 100%;
-      }
-
-      .about-sec-right {
-        width: 100%;
-
-        .short-description {
-          position: unset;
-          font-size: 25px;
-          line-height: 40px;
-        }
-
-        h2.fade-bt-heading {
-          display: none;
-        }
-
-        .gallery {
-          flex-wrap: wrap;
-          justify-content: center;
-          order: -1;
-        }
-      }
-    }
   }
-
-  .stickey-form {
-    .form-group {
-      flex-direction: column;
-    }
+  .about-us-home .mian-about-heading {
+    display: block;
   }
-
-  .stikey-side-popup {
-    .stickey-form {
-      .option-container {
-        label {
-          font-size: 26px;
-        }
-      }
-
-      .step {
-        h3 {
-          font-size: 30px;
-        }
-      }
-
-      .form-header {
-        .headings {
-          h2 {
-            font-size: 60px;
-          }
-
-          h5 {
-            font-size: 30px;
-          }
-        }
-      }
-    }
+  .about-us-home .main-description {
+    font-size: 20px;
+    line-height: 35px;
+    letter-spacing: 0.5px;
+}
+  .about-us-home .about-home-inr-cont {
+    flex-direction: column;
   }
-
-  // Contact us page
-  .contact-us-page {
-    .form_section {
-      .inner-section {
-        flex-direction: column;
-        gap: 40px;
-
-        .left-side {
-          width: 100%;
-
-          .left-inner {
-            max-width: 100%;
-
-            .form-inner-section {
-              .upper-section {
-                display: flex;
-                width: 100%;
-                gap: 20px;
-
-                .form-control {
-                  width: 50%;
-                }
-              }
-            }
-          }
-        }
-
-        .right-section {
-          width: 100%;
-        }
-      }
-    }
-
-    .contact-map-section {
-      flex-direction: column;
-    }
+  .about-us-home .about-home-inr-cont .about-sec-right .gallery {
+    position: unset;
   }
-
-  // Internship Page Responsie
-  .internship {
-    .first-section {
-      flex-direction: column;
-      row-gap: 30px;
-      padding: 30px;
-
-      .image-section {
-        border-radius: 22px;
-
-        img {
-          border-radius: 22px;
-        }
-      }
-    }
-
-    .paragraph-section {
-      p {
-        padding: 0 !important;
-      }
-    }
-
-    .second-section {
-      margin: 50px auto;
-
-      h2 {
-        font-size: 40px;
-        line-height: 55px;
-      }
-    }
-
-    .courses-main-outer {
-      .tabs-container-btns {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 16px;
-        width: 100%;
-        justify-content: center;
-
-        .tabs-button {
-          font-size: 22px;
-
-          flex: 0 1 calc(50% - 16px);
-          box-sizing: border-box;
-
-          &:nth-child(odd):last-child {
-            flex: 0 1 100%;
-          }
-        }
-      }
-
-      .tab-content-wrapper {
-        grid-template-columns: 1fr;
-      }
-    }
+  .about-us-home .about-home-inr-cont .about-sec-left {
+    width: 100%;
   }
-
-  .portfolio {
-    .overlay {
-      padding: 25px;
-
-      p {
-        font-size: 18px;
-      }
-    }
+  .about-us-home .about-home-inr-cont .about-sec-right {
+    width: 100%;
   }
-
-  //about page responsive
-  .about-us-page {
-    .about-us-main {
-      .short-description {
-        p {
-          font-size: 25px;
-          line-height: 40px;
-        }
-      }
-    }
-
-    .image-gallery-container {
-      .page-heading.lite-bg-heading {
-        font-size: 50px;
-      }
-    }
-
-    .para-section {
-      margin: 0;
-
-      .card-heading {
-        h2 {
-          font-size: 50px;
-        }
-      }
-
-      .about-card {
-        flex-direction: column;
-        padding: 30px;
-        row-gap: 30px;
-
-        .desc-inner {
-          width: 100%;
-
-          .card-description {
-            p {
-              padding: 0px;
-              font-size: 25px;
-              line-height: 40px;
-              text-align: justify;
-            }
-          }
-        }
-
-        .card-img-sec {
-          display: block;
-          width: 100%;
-
-          .card-img-inner {
-            padding: 20px;
-            border-radius: 22px;
-
-            img {
-              max-width: 100%;
-              max-height: 350px;
-              height: 100%;
-              border-radius: 8px;
-            }
-          }
-        }
-      }
-    }
-
-    .image-gallery-container {
-      flex-direction: column;
-
-      .top-big-image {
-        width: 100%;
-      }
-
-      .description-column-main {
-        width: 100%;
-        position: unset;
-        gap: 0;
-
-        h2.lite-bg-heading {
-          position: unset;
-          color: #f24b74;
-          margin: 70px 0px 20px 0px;
-        }
-
-        .main-description {
-          p {
-            line-height: 40px;
-            text-align: justify;
-          }
-        }
-      }
-
-      .image-gallery.inline-thumbnails {
-        position: unset;
-        order: -1;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-    }
+  .about-us-home .about-home-inr-cont .about-sec-right .short-description {
+    position: unset;
+    font-size: 25px;
+    line-height: 40px;
   }
-
-  //Header CSS
-  .header-section {
-    .navigation-container {
-      display: none;
-    }
+  .about-us-home .about-home-inr-cont .about-sec-right h2.fade-bt-heading {
+    display: none;
   }
-
-  // Lite mode
-  body.light-mode {
-    .mobile-menu-2-icons {
-      .menu-item {
-        img {
-          filter: brightness(0.1);
-        }
-      }
-    }
+  .about-us-home .about-home-inr-cont .about-sec-right .gallery {
+    flex-wrap: wrap;
+    justify-content: center;
+    order: -1;
   }
-
+  .stickey-form .form-group {
+    flex-direction: column;
+  }
+  .stikey-side-popup .stickey-form .option-container label {
+    font-size: 26px;
+  }
+  .stikey-side-popup .stickey-form .step h3 {
+    font-size: 30px;
+  }
+  .stikey-side-popup .stickey-form .form-header .headings h2 {
+    font-size: 60px;
+  }
+  .stikey-side-popup .stickey-form .form-header .headings h5 {
+    font-size: 30px;
+  }
+  .contact-us-page .form_section .inner-section {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .contact-us-page .form_section .inner-section .left-side {
+    width: 100%;
+  }
+  .contact-us-page .form_section .inner-section .left-side .left-inner {
+    max-width: 100%;
+  }
+  .contact-us-page .form_section .inner-section .left-side .left-inner .form-inner-section .upper-section {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+  }
+  .contact-us-page .form_section .inner-section .left-side .left-inner .form-inner-section .upper-section .form-control {
+    width: 50%;
+  }
+  .contact-us-page .form_section .inner-section .right-section {
+    width: 100%;
+  }
+  .contact-us-page .contact-map-section {
+    flex-direction: column;
+  }
+  .internship .first-section {
+    flex-direction: column;
+    row-gap: 30px;
+    padding: 30px;
+  }
+  .internship .first-section .image-section {
+    border-radius: 22px;
+  }
+  .internship .first-section .image-section img {
+    border-radius: 22px;
+  }
+  .internship .paragraph-section p {
+    padding: 0 !important;
+  }
+  .internship .second-section {
+    margin: 50px auto;
+  }
+  .internship .second-section h2 {
+    font-size: 40px;
+    line-height: 55px;
+  }
+  .internship .courses-main-outer .tabs-container-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 100%;
+    justify-content: center;
+  }
+  .internship .courses-main-outer .tabs-container-btns .tabs-button {
+    font-size: 22px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: calc(50% - 16px);
+    box-sizing: border-box;
+  }
+  .internship .courses-main-outer .tabs-container-btns .tabs-button:nth-child(odd):last-child {
+    flex: 0 1 100%;
+  }
+  .internship .courses-main-outer .tab-content-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .portfolio .overlay {
+    padding: 25px;
+  }
+  .portfolio .overlay p {
+    font-size: 18px;
+  }
+  .about-us-page .about-us-main .short-description p {
+    font-size: 25px;
+    line-height: 40px;
+  }
+  .about-us-page .image-gallery-container .page-heading.lite-bg-heading {
+    font-size: 50px;
+  }
+  .about-us-page .para-section {
+    margin: 0;
+  }
+  .about-us-page .para-section .card-heading h2 {
+    font-size: 50px;
+  }
+  .about-us-page .para-section .about-card {
+    flex-direction: column;
+    padding: 30px;
+    row-gap: 30px;
+  }
+  .about-us-page .para-section .about-card .desc-inner {
+    width: 100%;
+  }
+  .about-us-page .para-section .about-card .desc-inner .card-description p {
+    padding: 0px;
+    font-size: 25px;
+    line-height: 40px;
+    text-align: justify;
+  }
+  .about-us-page .para-section .about-card .card-img-sec {
+    display: block;
+    width: 100%;
+  }
+  .about-us-page .para-section .about-card .card-img-sec .card-img-inner {
+    padding: 20px;
+    border-radius: 22px;
+  }
+  .about-us-page .para-section .about-card .card-img-sec .card-img-inner img {
+    max-width: 100%;
+    max-height: 350px;
+    height: 100%;
+    border-radius: 8px;
+  }
+  .about-us-page .image-gallery-container {
+    flex-direction: column;
+  }
+  .about-us-page .image-gallery-container .top-big-image {
+    width: 100%;
+  }
+  .about-us-page .image-gallery-container .description-column-main {
+    width: 100%;
+    position: unset;
+    gap: 0;
+  }
+  .about-us-page .image-gallery-container .description-column-main h2.lite-bg-heading {
+    position: unset;
+    color: #f24b74;
+    margin: 70px 0px 20px 0px;
+  }
+  .about-us-page .image-gallery-container .description-column-main .main-description p {
+    line-height: 40px;
+    text-align: justify;
+  }
+  .about-us-page .image-gallery-container .image-gallery.inline-thumbnails {
+    position: unset;
+    order: -1;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .header-section .navigation-container {
+    display: none;
+  }
+  body.light-mode .mobile-menu-2-icons .menu-item img {
+    filter: brightness(0.1);
+  }
   .header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-
-    .mobile-menu-2-icons {
-      display: flex;
-      justify-content: flex-end;
-      gap: 20px;
-    }
-
-    .icons {
-      display: none;
-    }
-
-    .call-header-buttons {
-      .mobile-menu-1-icons {
-        display: flex;
-        gap: 20px;
-      }
-
-      .desktop-call {
-        display: none;
-      }
-    }
   }
-
+  .header .mobile-menu-2-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+  }
+  .header .icons {
+    display: none;
+  }
+  .header .call-header-buttons .mobile-menu-1-icons {
+    display: flex;
+    gap: 20px;
+  }
+  .header .call-header-buttons .desktop-call {
+    display: none;
+  }
   .mobile-menu {
     position: fixed;
     right: 0;
@@ -3339,133 +3328,112 @@ body.light-mode {
     background-color: black;
     padding: 50px 20px;
     gap: 20px;
-    z-index: 99999999999999999999;
+    z-index: 100000000000000000000;
     top: 80px;
     width: 100%;
-
-    nav ul {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-
-      li a {
-        font-size: 30px;
-        color: white;
-        font-family: "Basement Grotesque";
-      }
-    }
   }
-
-  // Service page meadia query
-  .services-page {
-    .inner-service-content {
-      h1 {
-        font-size: 45px;
-      }
-
-      p {
-        font-size: 30px;
-        line-height: 40px;
-      }
-    }
+  .mobile-menu nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
-
-  //Blog Page
-
-  .blogs {
-    .blogs-inner {
-      grid-template-columns: 1fr 1fr;
-    }
+  .mobile-menu nav ul li a {
+    font-size: 30px;
+    color: white;
+    font-family: "Basement Grotesque";
+    letter-spacing: 0.5;
   }
-
-  // Footer CSS
-  .footer {
-    .footer-inner {
-      display: grid !important;
-      grid-template-columns: 1fr 1fr;
-      padding: 40px;
-      gap: 10px;
-
-      .section {
-        text-align: center;
-
-        .open-map {
-          justify-content: center;
-        }
-      }
-
-      .first-section {
-        width: 100%;
-      }
-
-      .second-section {
-        width: 100%;
-      }
-
-      .third-section {
-        width: 100%;
-      }
-
-      .forth-section {
-        width: 100%;
-      }
-    }
+  .services-page .inner-service-content h1 {
+    font-size: 45px;
   }
-
-  .footer {
-    .footer-inner {
-      .section {
-        p {
-          font-size: 22px;
-        }
-
-        .open-map {
-          font-size: 22px;
-        }
-
-        h3 {
-          font-size: 28px;
-        }
-      }
-    }
-
-    .forth-section {
-      img {
-        max-width: 200px;
-      }
-    }
+  .services-page .inner-service-content p {
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .blogs .blogs-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer .footer-inner {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    padding: 40px;
+    grid-gap: 10px;
+    gap: 10px;
+  }
+  .footer .footer-inner .section {
+    text-align: center;
+  }
+  .footer .footer-inner .section .open-map {
+    justify-content: center;
+  }
+  .footer .footer-inner .first-section {
+    width: 100%;
+  }
+  .footer .footer-inner .second-section {
+    width: 100%;
+  }
+  .footer .footer-inner .third-section {
+    width: 100%;
+  }
+  .footer .footer-inner .forth-section {
+    width: 100%;
+  }
+  .footer .footer-inner .section p {
+    font-size: 22px;
+  }
+  .footer .footer-inner .section .open-map {
+    font-size: 22px;
+  }
+  .footer .footer-inner .section h3 {
+    font-size: 28px;
+  }
+  .footer .forth-section img {
+    max-width: 200px;
   }
 }
-
-//************** 768PX ***************//
 @media only screen and (max-width: 768px) {
+  .testimonials .testimonial-background-img {
+    background-size: 100%;
+}
+  .swiper-wrapper {
+    gap: 0px;
+}
+  .proj_heading h2 {
+    font-size: 35px;
+    line-height: 55px;
+}
+  .tab-panel h3 {
+    font-size: 25px;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+.tab-content .tab-item p {
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: 0.5px;
+}
+  .proj_images img {
+    filter: brightness(0.2);
+  }
   .single-post .heading-seaction h1 {
     font-size: 29px;
     line-height: 38px;
   }
-
   .section_2 {
     padding: 10px 0px 0px 0px;
   }
   .p_card_section {
     width: 100%;
   }
-
-  div#proj_container {
-    display: block !important;
-  }
-
   .section_4.section_outer_wrapper {
     height: auto !important;
     max-height: auto !important;
     width: auto;
   }
-
   .section_3 {
     height: auto !important;
     display: flex;
   }
-
   .prog_content h1 {
     position: relative !important;
     left: 0px !important;
@@ -3474,36 +3442,20 @@ body.light-mode {
     color: #2c2c2c;
   }
 
-  .prog_content {
-    height: 51vh !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .proj_images img {
-    width: 100%;
-    height: 250px;
-    object-fit: contain;
-  }
-
   .prog_content h4 {
     font-size: 32px !important;
     color: #2c2c2c;
     line-height: 40px;
   }
-
   .prog_content p {
     font-size: 20px;
     color: #2c2c2c;
     line-height: 27px;
     margin-top: 10px;
   }
-
   div#proj_container {
     display: block !important;
   }
-
   .about-us-home .about-home-inr-cont .about-sec-left .preview-img {
     height: 292px !important;
     width: 100%;
@@ -3515,12 +3467,7 @@ body.light-mode {
     height: 60px;
     cursor: pointer;
   }
-
-  body.light-mode
-    .about-us-home
-    .about-home-inr-cont
-    .about-sec-right
-    .short-description {
+  body.light-mode .about-us-home .about-home-inr-cont .about-sec-right .short-description {
     font-size: 35px;
     color: rgb(0, 0, 0);
     font-family: "Nunito";
@@ -3531,12 +3478,7 @@ body.light-mode {
   .section_2 {
     padding: 10px 0px 0px 0px;
   }
-
-  body.light-mode
-    .about-us-home
-    .about-home-inr-cont
-    .about-sec-right
-    .short-description {
+  body.light-mode .about-us-home .about-home-inr-cont .about-sec-right .short-description {
     font-size: 28px;
     color: rgb(0, 0, 0);
     font-family: "Nunito";
@@ -3545,506 +3487,306 @@ body.light-mode {
     left: 0px;
     top: 23px;
   }
-
   .second-section-inner-res {
     margin-top: 20px !important;
   }
   div#p_h_heading_2 h1 {
     margin: 0px !important;
   }
-
   div#h_p_service {
     width: 100%;
-  }
-
-  .p_service_wrapper {
-    flex-wrap: wrap;
   }
 
   .p_h_heading_1 {
     margin: 0px !important;
   }
-
-  // Global Typography
-
   h1 {
     font-size: 35px;
     line-height: 55px;
   }
-
   p {
     font-size: 22px;
     line-height: 35px;
   }
-
   button.sticky-form-button {
     height: 50px;
     width: 50px;
   }
-
-  .intership-popup-outer {
-    .internsip-popup-inner {
-      padding: 30px !important;
-    }
+  .intership-popup-outer .internsip-popup-inner {
+    padding: 30px !important;
   }
-
-  .internsip-popup {
-    .internsip-popup-form {
-      gap: 12px;
-
-      .form-group {
-        gap: 5px;
-
-        label {
-          font-size: 20px;
-        }
-
-        input {
-          padding: 12px;
-          font-size: 14px;
-        }
-
-        select {
-          padding: 12px;
-          font-size: 14px;
-        }
-      }
-    }
+  .internsip-popup .internsip-popup-form {
+    gap: 12px;
   }
-
-  .about-us-home {
-    .main-description {
-      font-size: 22px;
-      line-height: 35px;
-    }
+  .internsip-popup .internsip-popup-form .form-group {
+    gap: 5px;
   }
-
-  .service-popup {
-    .service-popup-content {
-      .service-popup-form {
-        .service-popup-form-inner {
-          .form-group {
-            gap: 1px;
-
-            label {
-              font-size: 20px;
-            }
-
-            input {
-              font-size: 18px;
-              padding: 12px;
-            }
-          }
-        }
-      }
-    }
+  .internsip-popup .internsip-popup-form .form-group label {
+    font-size: 20px;
   }
-
-  .testimonials {
-    .testimonials-pagination {
-      .testimonial-heading {
-        button {
-          img {
-            height: 30px;
-            width: 30px;
-          }
-        }
-
-        h3 {
-          font-size: 25px;
-        }
-      }
-    }
+  .internsip-popup .internsip-popup-form .form-group input {
+    padding: 12px;
+    font-size: 14px;
   }
-
-  .stikey-side-popup {
-    .stickey-form {
-      top: 0;
-
-      .class-stickey-popup-formss.second-form {
-        .form-inner {
-          gap: 15px;
-        }
-      }
-
-      .form-group {
-        gap: 5px;
-
-        label {
-          font-size: 18px;
-        }
-
-        .form-input-design {
-          font-size: 16px;
-          padding: 12px;
-        }
-      }
-
-      .next-btn-st-form {
-        button.proceed-button {
-          padding: 5px 35px;
-          font-size: 18px;
-        }
-
-        justify-content: space-around;
-        gap: 0;
-      }
-
-      .option-container {
-        label {
-          font-size: 22px;
-          line-height: 35px;
-        }
-      }
-
-      .step {
-        h3 {
-          font-size: 25px;
-        }
-      }
-
-      .form-header {
-        .headings {
-          h2 {
-            font-size: 45px;
-          }
-
-          h5 {
-            font-size: 25px;
-          }
-        }
-      }
-    }
+  .internsip-popup .internsip-popup-form .form-group select {
+    padding: 12px;
+    font-size: 14px;
   }
-
-  .about-us-page {
-    .about-us-main {
-      .short-description {
-        p {
-          font-size: 22px;
-          line-height: 35px;
-        }
-      }
-    }
-
-    .image-gallery-container {
-      .image-gallery.inline-thumbnails {
-        transform: scale(0.8);
-      }
-
-      .description-column-main {
-        h2.lite-bg-heading {
-          font-size: 35px;
-          line-height: 55px;
-        }
-      }
-    }
-
-    .para-section {
-      .card-heading {
-        h2 {
-          font-size: 35px;
-          line-height: 55px;
-          margin: 20px 0;
-        }
-      }
-
-      .about-card {
-        padding: 20px;
-
-        .desc-inner {
-          .card-description {
-            p {
-              font-size: 22px;
-              line-height: 35px;
-            }
-          }
-        }
-      }
-    }
+  .about-us-home .main-description {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+}
+  .service-popup .service-popup-content .service-popup-form .service-popup-form-inner .form-group {
+    gap: 1px;
   }
-
+  .service-popup .service-popup-content .service-popup-form .service-popup-form-inner .form-group label {
+    font-size: 20px;
+  }
+  .service-popup .service-popup-content .service-popup-form .service-popup-form-inner .form-group input {
+    font-size: 18px;
+    padding: 12px;
+  }
+  .testimonials .testimonials-pagination .testimonial-heading button img {
+    height: 30px;
+    width: 30px;
+  }
+  .testimonials .testimonials-pagination .testimonial-heading h3 {
+    font-size: 25px;
+  }
+  .stikey-side-popup .stickey-form {
+    top: 0;
+  }
+  .stikey-side-popup .stickey-form .class-stickey-popup-formss.second-form .form-inner {
+    gap: 15px;
+  }
+  .stikey-side-popup .stickey-form .form-group {
+    gap: 5px;
+  }
+  .stikey-side-popup .stickey-form .form-group label {
+    font-size: 18px;
+  }
+  .stikey-side-popup .stickey-form .form-group .form-input-design {
+    font-size: 16px;
+    padding: 12px;
+  }
+  .stikey-side-popup .stickey-form .next-btn-st-form {
+    justify-content: space-around;
+    gap: 0;
+  }
+  .stikey-side-popup .stickey-form .next-btn-st-form button.proceed-button {
+    padding: 5px 35px;
+    font-size: 18px;
+  }
+  .stikey-side-popup .stickey-form .option-container label {
+    font-size: 22px;
+    line-height: 35px;
+  }
+  .stikey-side-popup .stickey-form .step h3 {
+    font-size: 25px;
+  }
+  .stikey-side-popup .stickey-form .form-header .headings h2 {
+    font-size: 45px;
+  }
+  .stikey-side-popup .stickey-form .form-header .headings h5 {
+    font-size: 25px;
+  }
+  .about-us-page .about-us-main .short-description p {
+    font-size: 22px;
+    line-height: 35px;
+  }
+  .about-us-page .image-gallery-container .image-gallery.inline-thumbnails {
+    transform: scale(0.8);
+  }
+  .about-us-page .image-gallery-container .description-column-main h2.lite-bg-heading {
+    font-size: 35px;
+    line-height: 55px;
+  }
+  .about-us-page .para-section .card-heading h2 {
+    font-size: 35px;
+    line-height: 55px;
+    margin: 20px 0;
+  }
+  .about-us-page .para-section .about-card {
+    padding: 20px;
+  }
+  .about-us-page .para-section .about-card .desc-inner .card-description p {
+    font-size: 22px;
+    line-height: 35px;
+  }
   .xyz {
     top: 5px;
     position: relative;
   }
-
-  .internship {
-    .tabs-container-btns {
-      .tabs-button {
-        font-size: 20px !important;
-      }
-    }
-
-    .single-course-wrapper {
-      h3 {
-        font-size: 25px;
-        line-height: 35px;
-      }
-
-      p {
-        margin: 5px 0;
-        line-height: 35px;
-      }
-
-      button {
-        font-size: 22px !important;
-      }
-    }
-
-    .page-title {
-      display: flex;
-      flex-direction: column;
-      margin: 0px 0px 30px 0px;
-
-      .programe-img {
-        display: flex;
-        justify-content: center;
-
-        img {
-          margin: 0;
-          height: 80px;
-          width: 80px;
-        }
-      }
-
-      h1 {
-        margin: 0;
-      }
-
-      .programe-name-heading {
-        display: flex;
-        justify-content: end;
-
-        h1 {
-          margin: 0;
-        }
-      }
-    }
-
-    .second-section {
-      margin: 30px 0 0 0;
-
-      h2 {
-        font-size: 30px;
-        line-height: 45px;
-      }
-    }
+  .internship .tabs-container-btns .tabs-button {
+    font-size: 20px !important;
   }
-
-  .header {
-    .mob-no-header {
-      font-size: 16px;
-    }
+  .internship .single-course-wrapper h3 {
+    font-size: 25px;
+    line-height: 35px;
   }
-
-  .blogs {
-    .blogs-inner {
-      grid-template-columns: 1fr;
-    }
+  .internship .single-course-wrapper p {
+    margin: 5px 0;
+    line-height: 35px;
   }
-
-  .portfolio {
-    .overlay {
-      display: none;
-    }
-
-    .portfolio-inner {
-      .cards {
-        grid-template-columns: 1fr;
-
-        .portfolio-card {
-          img {
-            height: 400px !important;
-          }
-        }
-      }
-    }
-
-    .overlay {
-      padding: 20px;
-
-      p {
-        font-size: 20px;
-      }
-    }
+  .internship .single-course-wrapper button {
+    font-size: 22px !important;
   }
-
-  .stikey-side-popup {
-    .stickey-form {
-      .class-stickey-popup-formss.second-form {
-        .form-inner {
-          grid-template-columns: 1fr;
-        }
-      }
-    }
+  .internship .page-title {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 0px 30px 0px;
   }
-
-  .about-us-page {
-    .image-gallery-container {
-      .top-big-image {
-        height: 500px;
-
-        img {
-          max-height: 100%;
-        }
-      }
-
-      .description-column-main {
-        .main-description p {
-          font-size: 22px;
-          line-height: 35px;
-        }
-      }
-    }
+  .internship .page-title .programe-img {
+    display: flex;
+    justify-content: center;
   }
-
+  .internship .page-title .programe-img img {
+    margin: 0;
+    height: 80px;
+    width: 80px;
+  }
+  .internship .page-title h1 {
+    margin: 0;
+  }
+  .internship .page-title .programe-name-heading {
+    display: flex;
+    justify-content: end;
+  }
+  .internship .page-title .programe-name-heading h1 {
+    margin: 0;
+  }
+  .internship .second-section {
+    margin: 30px 0 0 0;
+  }
+  .internship .second-section h2 {
+    font-size: 30px;
+    line-height: 45px;
+  }
+  .header .mob-no-header {
+    font-size: 16px;
+  }
+  .blogs .blogs-inner {
+    grid-template-columns: 1fr;
+  }
+  .portfolio .overlay {
+    display: none;
+  }
+  .portfolio .portfolio-inner .cards {
+    grid-template-columns: 1fr;
+  }
+  .portfolio .portfolio-inner .cards .portfolio-card img {
+    height: 400px !important;
+  }
+  .portfolio .overlay {
+    padding: 20px;
+  }
+  .portfolio .overlay p {
+    font-size: 20px;
+  }
+  .stikey-side-popup .stickey-form .class-stickey-popup-formss.second-form .form-inner {
+    grid-template-columns: 1fr;
+  }
+  .about-us-page .image-gallery-container .top-big-image {
+    height: 500px;
+  }
+  .about-us-page .image-gallery-container .top-big-image img {
+    max-height: 100%;
+  }
+  .about-us-page .image-gallery-container .description-column-main .main-description p {
+    font-size: 22px;
+    line-height: 35px;
+  }
   .footer {
     margin: 0;
-
-    .footer-inner {
-      padding: 30px;
-
-      .section {
-        p {
-          font-size: 20px;
-        }
-
-        .open-map {
-          font-size: 20px;
-        }
-
-        h3 {
-          font-size: 25px;
-        }
-      }
-    }
-
-    .forth-section {
-      img {
-        max-width: 200px;
-      }
-    }
+  }
+  .footer .footer-inner {
+    padding: 30px;
+  }
+  .footer .footer-inner .section p {
+    font-size: 20px;
+  }
+  .footer .footer-inner .section .open-map {
+    font-size: 20px;
+  }
+  .footer .footer-inner .section h3 {
+    font-size: 25px;
+  }
+  .footer .forth-section img {
+    max-width: 200px;
   }
 }
-
-//****** 700PX ******//
 @media only screen and (max-width: 700px) {
-  .footer {
-    .footer-inner {
-      display: grid !important;
-      grid-template-columns: 1fr;
-    }
+  .footer .footer-inner {
+    display: grid !important;
+    grid-template-columns: 1fr;
   }
 }
-
-//****** 600 PX ******//
 @media only screen and (max-width: 600px) {
-
-  // Popup Break
-  .enquery-popup {
-    .enquery-popup-container {
-      .form-control {
-        gap: 5px;
-
-        label {
-          font-size: 20px;
-        }
-
-        input {
-          font-size: 16px;
-          padding: 12px;
-        }
-      }
-
-      .enquery-popup-content {
-        padding: 20px;
-      }
-
-      .container-for-four {
-        grid-template-columns: 1fr;
-      }
-    }
+  .p_service_wrapper {
+    grid-template-columns:1fr;
+}
+  .enquery-popup .enquery-popup-container .form-control {
+    gap: 5px;
   }
-
+  .enquery-popup .enquery-popup-container .form-control label {
+    font-size: 20px;
+  }
+  .enquery-popup .enquery-popup-container .form-control input {
+    font-size: 16px;
+    padding: 12px;
+  }
+  .enquery-popup .enquery-popup-container .enquery-popup-content {
+    padding: 20px;
+  }
+  .enquery-popup .enquery-popup-container .container-for-four {
+    grid-template-columns: 1fr;
+  }
   button#scrollDown {
     width: 100px;
     animation: moveUpDown 2s linear infinite;
   }
-
-  .testimonials {
-    .testimonials-pagination {
-      .testimonial-heading {
-        h3 {
-          font-size: 22px;
-          line-height: 30px;
-        }
-      }
-    }
+  .testimonials .testimonials-pagination .testimonial-heading h3 {
+    font-size: 22px;
+    line-height: 30px;
   }
-
-  .service-popup {
-    .service-popup-content {
-      padding: 20px;
-
-      .service-popup-form {
-        .service-popup-form-inner {
-          gap: 12px;
-
-          .form-group {
-            gap: 1px;
-
-            label {
-              font-size: 20px;
-            }
-
-            input {
-              padding: 10px;
-              font-size: 14px;
-            }
-
-            select {
-              font-size: 14px;
-              padding: 10px;
-            }
-          }
-        }
-      }
-    }
+  .service-popup .service-popup-content {
+    padding: 20px;
   }
-
+  .service-popup .service-popup-content .service-popup-form .service-popup-form-inner {
+    gap: 12px;
+  }
+  .service-popup .service-popup-content .service-popup-form .service-popup-form-inner .form-group {
+    gap: 1px;
+  }
+  .service-popup .service-popup-content .service-popup-form .service-popup-form-inner .form-group label {
+    font-size: 20px;
+  }
+  .service-popup .service-popup-content .service-popup-form .service-popup-form-inner .form-group input {
+    padding: 10px;
+    font-size: 14px;
+  }
+  .service-popup .service-popup-content .service-popup-form .service-popup-form-inner .form-group select {
+    font-size: 14px;
+    padding: 10px;
+  }
   .hover-effect-btn {
     font-size: 18px;
     padding: 8px 50px;
   }
-
-  .portfolio {
-    .portfolio-inner {
-      .cards {
-        .portfolio-card {
-          img {
-            height: 350px !important;
-          }
-        }
-      }
-    }
+  .portfolio .portfolio-inner .cards .portfolio-card img {
+    height: 350px !important;
   }
 }
-
-//**************** 468PX *******************//
 @media only screen and (max-width: 468px) {
-
   .tab-panel h3 {
     font-size: 25px;
     line-height: 28px;
   }
-
-
   .prog_content p {
     font-size: 19px !important;
     line-height: 28px !important;
   }
-
   .about-us-home .main-description {
     font-size: 18px;
     line-height: 28px;
@@ -4052,380 +3794,210 @@ body.light-mode {
   p.short-description {
     margin-top: 50px;
   }
-
   h1 {
     font-size: 25px;
     line-height: 35px;
   }
-
   p {
     font-size: 18px;
     line-height: 25px;
   }
-
   .close-btn-x {
     width: 20px;
   }
-
   .mobile-menu {
     top: 56px;
   }
-
-
-  .portfolio {
-    .portfolio-inner {
-      .cards {
-        .portfolio-card {
-          img {
-            height: 250px !important;
-          }
-        }
-      }
-    }
+  .portfolio .portfolio-inner .cards .portfolio-card img {
+    height: 250px !important;
   }
-
-
-  .header-section {
-    .header {
-      .menu-item {
-        img {
-          width: 25px;
-          height: 25px;
-        }
-      }
-
-      .hamburger-menu {
-        svg {
-          height: 25px;
-          width: 25px;
-        }
-      }
-    }
+  .header-section .header .menu-item img {
+    width: 25px;
+    height: 25px;
   }
-
-  .intership-popup-outer {
-    .internsip-popup-inner {
-      padding: 20px !important;
-    }
+  .header-section .header .hamburger-menu svg {
+    height: 25px;
+    width: 25px;
   }
-
-  .internsip-popup {
-    .internsip-popup-form {
-      gap: 5px;
-
-      .form-group {
-        label {
-          font-size: 18px;
-        }
-
-        input {
-          padding: 10px;
-          font-size: 14px;
-        }
-
-        select {
-          padding: 10px;
-          font-size: 14px;
-        }
-      }
-    }
+  .intership-popup-outer .internsip-popup-inner {
+    padding: 20px !important;
   }
-
-  // Popup Break
-  .enquery-popup {
-    .enquery-popup-container {
-      .form-control {
-        gap: 5px;
-        margin-top: 10px;
-
-        label {
-          font-size: 16px;
-        }
-
-        input {
-          font-size: 14px;
-          padding: 10px;
-        }
-      }
-    }
+  .internsip-popup .internsip-popup-form {
+    gap: 5px;
   }
-
-  .service-popup {
-    .service-popup-content {
-      .service-popup-form {
-        .service-popup-form-inner {
-          gap: 5px;
-
-          .form-group {
-            label {
-              font-size: 16px;
-            }
-          }
-        }
-      }
-    }
+  .internsip-popup .internsip-popup-form .form-group label {
+    font-size: 18px;
   }
-
-  .stikey-side-popup {
-    .stickey-form {
-      .class-stickey-popup-formss.second-form .form-inner {
-        gap: 5px;
-      }
-
-      padding: 20px;
-      top: 0;
-
-      .form-group {
-        label {
-          font-size: 16px;
-        }
-
-        .form-input-design {
-          font-size: 14px;
-          padding: 10px;
-        }
-      }
-
-      .next-btn-st-form {
-        button.proceed-button {
-          padding: 5px 25px;
-          font-size: 16px;
-        }
-      }
-
-      .option-container {
-        label {
-          font-size: 18px;
-          line-height: 25px;
-        }
-      }
-
-      .step {
-        h3 {
-          font-size: 20px;
-        }
-      }
-
-      .form-header {
-        .headings {
-          h2 {
-            font-size: 35px;
-          }
-
-          h5 {
-            font-size: 20px;
-          }
-        }
-      }
-    }
+  .internsip-popup .internsip-popup-form .form-group input {
+    padding: 10px;
+    font-size: 14px;
   }
-
-  .about-us-page {
-    .about-us-main {
-      .short-description {
-        p {
-          font-size: 18px;
-          line-height: 25px;
-        }
-      }
-    }
-
-    .para-section {
-      .about-card-outer {
-        .card-heading {
-          h2 {
-            font-size: 25px;
-            margin: 10px 0;
-          }
-        }
-      }
-
-      .about-card {
-        .card-img-sec {
-          .card-img-inner {
-            img {
-              max-height: 220px;
-            }
-          }
-        }
-
-        .desc-inner {
-          .card-description {
-            p {
-              font-size: 18px;
-              line-height: 25px;
-            }
-          }
-        }
-      }
-    }
-
-    .image-gallery-container {
-      gap: 20px;
-
-      .top-big-image {
-        height: 300px;
-      }
-
-      .image-gallery.inline-thumbnails {
-        flex-wrap: nowrap;
-        transform: scale(0.5);
-      }
-
-      .description-column-main {
-        h2.lite-bg-heading {
-          margin: 20px 0;
-          font-size: 25px;
-        }
-
-        .main-description {
-          p {
-            font-size: 18px;
-            line-height: 25px;
-          }
-
-          h2 {
-            font-size: 25px;
-            line-height: 35px;
-          }
-        }
-      }
-    }
+  .internsip-popup .internsip-popup-form .form-group select {
+    padding: 10px;
+    font-size: 14px;
   }
-
+  .enquery-popup .enquery-popup-container .form-control {
+    gap: 5px;
+    margin-top: 10px;
+  }
+  .enquery-popup .enquery-popup-container .form-control label {
+    font-size: 16px;
+  }
+  .enquery-popup .enquery-popup-container .form-control input {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .service-popup .service-popup-content .service-popup-form .service-popup-form-inner {
+    gap: 5px;
+  }
+  .service-popup .service-popup-content .service-popup-form .service-popup-form-inner .form-group label {
+    font-size: 16px;
+  }
+  .stikey-side-popup .stickey-form {
+    padding: 20px;
+    top: 0;
+  }
+  .stikey-side-popup .stickey-form .class-stickey-popup-formss.second-form .form-inner {
+    gap: 5px;
+  }
+  .stikey-side-popup .stickey-form .form-group label {
+    font-size: 16px;
+  }
+  .stikey-side-popup .stickey-form .form-group .form-input-design {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .stikey-side-popup .stickey-form .next-btn-st-form button.proceed-button {
+    padding: 5px 25px;
+    font-size: 16px;
+  }
+  .stikey-side-popup .stickey-form .option-container label {
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .stikey-side-popup .stickey-form .step h3 {
+    font-size: 20px;
+  }
+  .stikey-side-popup .stickey-form .form-header .headings h2 {
+    font-size: 35px;
+  }
+  .stikey-side-popup .stickey-form .form-header .headings h5 {
+    font-size: 20px;
+  }
+  .about-us-page .about-us-main .short-description p {
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .about-us-page .para-section .about-card-outer .card-heading h2 {
+    font-size: 25px;
+    margin: 10px 0;
+  }
+  .about-us-page .para-section .about-card .card-img-sec .card-img-inner img {
+    max-height: 220px;
+  }
+  .about-us-page .para-section .about-card .desc-inner .card-description p {
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .about-us-page .image-gallery-container {
+    gap: 20px;
+  }
+  .about-us-page .image-gallery-container .top-big-image {
+    height: 300px;
+  }
+  .about-us-page .image-gallery-container .image-gallery.inline-thumbnails {
+    flex-wrap: nowrap;
+    transform: scale(0.5);
+  }
+  .about-us-page .image-gallery-container .description-column-main h2.lite-bg-heading {
+    margin: 20px 0;
+    font-size: 25px;
+  }
+  .about-us-page .image-gallery-container .description-column-main .main-description p {
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .about-us-page .image-gallery-container .description-column-main .main-description h2 {
+    font-size: 25px;
+    line-height: 35px;
+  }
   .header-section {
     border-bottom: 1px solid #f24b74;
-
-    .header {
-      .header-logo-main {
-        img {
-          max-width: 200px;
-          width: 100%;
-          height: 55px;
-        }
-      }
-    }
   }
-
-  .internship {
-    .page-title {
-      .programe-img {
-        img {
-          height: 50px;
-          width: 50px;
-        }
-      }
-    }
-
-    .second-section {
-      h2 {
-        font-size: 25px;
-        line-height: 35px;
-      }
-    }
-
-    .tabs-container-btns {
-      .tabs-button {
-        font-size: 18px !important;
-        padding: 10px;
-        width: 100%;
-        flex-basis: unset !important;
-      }
-    }
-
-    .single-course-wrapper {
-      padding: 22px;
-
-      p {
-        font-size: 18px;
-        line-height: 30px;
-      }
-
-      h3 {
-        font-size: 20px;
-      }
-
-      button {
-        font-size: 20px !important;
-      }
-    }
+  .header-section .header .header-logo-main img {
+    max-width: 200px;
+    width: 100%;
+    height: 55px;
   }
-
-  .contact-us-page {
-    .form_section {
-      .left-inner {
-        .form-inner-section {
-          .upper-section {
-            flex-direction: column;
-            gap: 0 !important;
-
-            .form-control {
-              width: 100% !important;
-            }
-          }
-        }
-      }
-    }
+  .internship .page-title .programe-img img {
+    height: 50px;
+    width: 50px;
   }
-
-  .testimonials {
-    .testimonials-pagination {
-      .testimonial-heading {
-        h3 {
-          font-size: 18px;
-          line-height: 30px;
-        }
-      }
-    }
+  .internship .second-section h2 {
+    font-size: 25px;
+    line-height: 35px;
   }
-
-  .services-page {
-    h1 {
-      font-size: 30px;
-    }
-
-    .inner-service-content {
-      h1 {
-        font-size: 30px;
-      }
-
-      p {
-        font-size: 22px;
-        line-height: 32px;
-      }
-
-      .btn {
-        padding: 10px 36px;
-        font-size: 18px;
-      }
-    }
+  .internship .tabs-container-btns .tabs-button {
+    font-size: 18px !important;
+    padding: 10px;
+    width: 100%;
+    flex-basis: unset !important;
   }
-
-  .footer {
-    .footer-inner {
-      padding: 25px;
-
-      .section {
-        gap: 0;
-
-        p {
-          font-size: 18px;
-        }
-
-        .open-map {
-          font-size: 18px;
-        }
-
-        h3 {
-          font-size: 22px;
-        }
-      }
-    }
-
-    .forth-section {
-      img {
-        max-width: 175px;
-      }
-    }
+  .internship .single-course-wrapper {
+    padding: 22px;
+  }
+  .internship .single-course-wrapper p {
+    font-size: 18px;
+    line-height: 30px;
+  }
+  .internship .single-course-wrapper h3 {
+    font-size: 20px;
+  }
+  .internship .single-course-wrapper button {
+    font-size: 20px !important;
+  }
+  .contact-us-page .form_section .left-inner .form-inner-section .upper-section {
+    flex-direction: column;
+    gap: 0 !important;
+  }
+  .contact-us-page .form_section .left-inner .form-inner-section .upper-section .form-control {
+    width: 100% !important;
+  }
+  .testimonials .testimonials-pagination .testimonial-heading h3 {
+    font-size: 18px;
+    line-height: 30px;
+  }
+  .services-page h1 {
+    font-size: 30px;
+  }
+  .services-page .inner-service-content h1 {
+    font-size: 30px;
+  }
+  .services-page .inner-service-content p {
+    font-size: 22px;
+    line-height: 32px;
+  }
+  .services-page .inner-service-content .btn {
+    padding: 10px 36px;
+    font-size: 18px;
+  }
+  .footer .footer-inner {
+    padding: 25px;
+  }
+  .footer .footer-inner .section {
+    gap: 0;
+  }
+  .footer .footer-inner .section p {
+    font-size: 18px;
+  }
+  .footer .footer-inner .section .open-map {
+    font-size: 18px;
+  }
+  .footer .footer-inner .section h3 {
+    font-size: 22px;
+  }
+  .footer .forth-section img {
+    max-width: 175px;
   }
 }
+

@@ -2,7 +2,7 @@
 
 import React, { useContext } from "react";
 import { SectorDataContext } from "@/context/apiContext";
-import './homeServices.css';
+
 
 const HomeOurService = () => {
     const { pagesDataApi } = useContext(SectorDataContext);
