@@ -922,7 +922,7 @@ nav {
 nav.main-header-navigation > ul {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
   padding: 20px;
 }
 
@@ -938,7 +938,7 @@ nav.main-header-navigation > ul {
 
 .main-header-navigation {
   .after-nav-area {
-    border-top: 1px solid;
+    border-top: 2px solid #E9E9E9;
   }
 }
 
@@ -947,6 +947,7 @@ nav.main-header-navigation > ul {
     background: white;
     color: black;
     border-radius: 20px;
+    box-shadow: 0px 0px 11px 1px #0000002e;
   }
 }
 
@@ -955,6 +956,7 @@ nav.main-header-navigation > ul {
     background: white;
     color: black;
     border-radius: 20px;
+    box-shadow: 0px 0px 11px 1px #0000002e;
   }
 }
 
@@ -972,6 +974,7 @@ nav.main-header-navigation {
       a {
         font-size: 30px;
         font-weight: 500;
+        font-family: "saira";
       }
     }
   }
@@ -1028,7 +1031,7 @@ nav.main-header-navigation {
 
 .contact-menu-wrapper {
   .after-nav-area {
-    border-top: 1px solid;
+    border-top: 2px solid #E9E9E9;
   }
 }
 
