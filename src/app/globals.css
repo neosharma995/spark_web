@@ -25,30 +25,27 @@ body {
 }
 
 
-/*raaj css*/
 
 .section_2 {
-  padding:40px 0px 0px 0px;
+  padding: 40px 0px 0px 0px;
 }
 
-.lil-gui>button {
-  background: #F24B74 !important;
+.lil-gui > button {
+  background: #f24b74 !important;
   font-size: 16px;
-  font-family: 'Basement Grotesque';
-
+  font-family: "Basement Grotesque";
 }
 
 .lil-gui.autoPlace {
   right: 0px !important;
   bottom: 0px;
-  background: #19191E;
+  background: #19191e;
 }
-
 
 .left_section h1 {
   line-height: 30px;
   margin-top: 72px;
-    margin-bottom: -47px;
+  margin-bottom: -47px;
 }
 
 .description_area p {
@@ -56,12 +53,10 @@ body {
   line-height: 30px;
 }
 
-
-
 .lil-gui {
   right: 0px !important;
   bottom: 0px;
-  top: unset !important
+  top: unset !important;
 }
 
 button#toggle {
@@ -96,18 +91,10 @@ button#toggle img {
 }
 
 
-
-
-.section_3{
-  height: 100vh;
-  display: flex;
-   
-}
 .p_head_wrap {
   display: flex;
   gap: 30px;
 }
-
 
 div#h_p_service {
   display: flex;
@@ -115,9 +102,6 @@ div#h_p_service {
   gap: 18px;
 }
 
-.p_h_heading h1 {
-  font-size: 70px;
-}
 div#p_h_heading_1 {
   font-size: 48px;
   text-wrap: nowrap;
@@ -125,61 +109,50 @@ div#p_h_heading_1 {
 div#p_h_heading_2 {
   font-size: 48px;
   text-wrap: nowrap;
-  color:#fff!important;
+  color: #fff !important;
 }
 div#p_h_heading_2 span {
-  color:#fff!important;
+  color: #fff !important;
 }
 .p_card_section {
   padding: 22px 30px;
-  background: #19191E;
+  background: #19191e;
   border-radius: 4px;
   display: block;
   align-items: center;
   gap: 12px;
   text-align: left;
+  width: 100%;
 }
-
-
-
+.p_service_container.bottom1 {
+  margin-left: 50px;
+}
 .p_content h2 {
   margin: 0px;
   font-size: 25px;
   text-transform: capitalize;
   color: #fff;
   text-wrap: wrap;
-  
+  font-weight: 600;
 }
 
 .p_content p {
   margin: 0px;
   font-size: 18px;
   line-height: 28px;
+  color: #ffffff7a;
+  letter-spacing: 0.3px;
 }
 
 div#p_h_heading_1 h1 {
   line-height: 15px;
 }
 
-
 .p_img img {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
+  margin-bottom: 5px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .navigation_buttons button p {
   border-radius: 100%;
@@ -187,7 +160,7 @@ div#p_h_heading_1 h1 {
 }
 
 button.active p {
-  background: #F24B74;
+  background: #f24b74;
   height: 12px;
   width: 12px;
 }
@@ -217,7 +190,7 @@ button.active {
   transition: background 0.3s ease, padding 0.3s ease;
 }
 
-/*raaj css ends*/
+
 
 /* Service gsap */
 
@@ -232,12 +205,253 @@ a {
   text-decoration: none;
 }
 
+.section_4 {
+  overflow: hidden;
+}
 
+.proj_image img {
+  width: 100%;
+}
+.prog_content h4 {
+  font-size: 42px;
+  color: #2c2c2c;
+  line-height: 49px;
+  letter-spacing: 0.5px;
+}
 
+.prog_content p {
+  font-size: 24px;
+  color: #2c2c2c;
+  line-height: 32px;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+}
 
+.prog_content.active h4 {
+  color: #fff;
+}
+.prog_content.active p {
+  color: #ffffffe0;
+}
 
+.proj_images img {
+  width: 100%;
+  height: 650px;
+  object-fit: contain;
+  filter: brightness(0.9);
+}
 
+.prog_content h1 {
+  font-size: 35px;
+  position: absolute;
+  left: -910px;
+  width: 100%;
+  z-index: 999;
+  color: #2c2c2c;
+}
+.prog_content h1:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #2c2c2c;
+  top: 36px;
+  left: 22px;
+}
 
+.proj_heading:nth-child(1) {
+  grid-column: 1/3;
+}
+
+div#proj_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.proj_section {
+  align-self: flex-start;
+  height: 100vh;
+}
+
+.prog_content {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.prog_content.active h1 {
+  color: #fff;
+}
+.prog_content.active h1:before {
+  background: #fff;
+}
+
+.proj_left_section {
+  position: relative;
+}
+.prog_content.active {
+  opacity: 1;
+}
+
+.prog_content {
+  margin-bottom: 20px;
+}
+
+.proj_images {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.proj_images.active {
+  opacity: 1;
+}
+
+.p_service_wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 18px;
+}
+.p_h_heading h1 {
+  font-size: 70px;
+}
+
+/* Second Section Css Start here  */
+div#section_section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.left_section img {
+  position: absolute;
+}
+
+.left_section {
+  position: relative;
+}
+
+.section_1 {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.second_section {
+  align-self: flex-start;
+}
+
+.content_section_wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.description_outer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.description_area {
+  background: linear-gradient(to bottom, #18191d 0%, #1d1e21 50%, #363c48 100%);
+  padding: 22px;
+  border-radius: 6px;
+  z-index: 9;
+  position: relative;
+}
+
+.description_area h3 {
+  font-size: 25px;
+  text-transform: uppercase;
+}
+.description_area p {
+  font-size: 18px;
+  line-height: 30px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+  letter-spacing: 0.4px;
+}
+
+.des_flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.des_flex h1 {
+  font-size: 300px;
+  color: #111216;
+  text-shadow: 0px 4px 30px #f24b74;
+  font-family: "Saira";
+}
+
+.tab_left_img {
+  position: relative;
+  top: -79px;
+}
+h1.process_c {
+  margin-bottom: -42px;
+  margin-top: 20px;
+}
+
+h1.process_c {
+  margin-bottom: -42px;
+  margin-top: 63px;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.tabs_holder {
+  height: 557px;
+  position: relative;
+  display: flex;
+  margin-top: 140px;
+  margin-left: 160px;
+}
+
+.tab.active {
+  background: #f24b74;
+}
+
+.tab {
+  background: #583c43;
+  padding: 8px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  font-size: 22px;
+  width: 168px;
+}
+
+.tab:nth-child(2) {
+  margin-left: 208px;
+}
+
+.tab:nth-child(3) {
+  margin-left: 300px;
+}
+
+.tab:nth-child(4) {
+  margin-left: 208px;
+}
+
+.second-section-redponsive {
+  display: none;
+}
+
+/* Second section end here  */
 
 @media (prefers-color-scheme: dark) {
   html {

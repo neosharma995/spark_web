@@ -3,7 +3,7 @@ import { useContext, useEffect, useState, useRef } from 'react';
 import { SectorDataContext } from '@/context/apiContext';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import './project.css';
+
 
 gsap.registerPlugin(ScrollTrigger);
 

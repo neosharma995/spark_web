@@ -2949,8 +2949,26 @@ body.light-mode {
     font-weight: 600;
   }
 }
+.proj_heading h2 {
+  font-size: 70px;
+  position: relative;
+  z-index: 999;
+}
 
 // ******************************************** Media Query Start ******************************************************//
+
+@media only screen and (max-width: 1440px) {
+  .description_outer {
+    margin-left: 80px;
+  }
+  .des_flex h1 {
+    position: absolute;
+    left: -50px;
+  }
+  .prog_content h1 {
+    left: -720px;
+  }
+}
 
 @media only screen and (max-width: 1300px) {
   .about-us-home .main-description {
@@ -2978,8 +2996,6 @@ body.light-mode {
   }
   .des_flex h1 {
     font-size: 250px;
-    position: absolute;
-    left: -100px;
   }
   .p_service_container.bottom1 {
     margin-left: 0px;
@@ -3006,14 +3022,69 @@ body.light-mode {
     line-height: 30px;
   }
   .prog_content h1 {
-    left: -550px;
+    left: -600px;
   }
   .swiper-wrapper {
     gap: 50px;
   }
 
 }
+@media only screen and (max-width: 1200px) { 
+  .swiper-wrapper {
+    gap: 0px; 
+}
+  .tab_left_img img {
+    left: -250px;
+  }
+  .tabs_holder {
+    margin-left: 80px;
+  }
+  .p_service_container.bottom1 {
+    margin-left: 0px;
+}
+}
 @media only screen and (max-width: 1024px) {
+  .prog_content h1 {
+    left: -400px;
+  }
+    .prog_content {
+      height: 80vh;
+  }
+  .second-section-redponsive {
+    display: block
+    }
+    .second-section-animated {
+    display: none;
+    }
+    .tab-panel h3 {
+        font-size: 32px;
+    }
+
+    .send-msg-cplumn {
+        display: none;
+    }
+
+    .second-section-inner-res .tabs-container .tab-button-second.active  {
+        background-color: #F24B74;
+        color: white;
+    }
+
+    div#p_h_heading_1 h1 {
+        color: #f24b74 !important;
+        font-size: 35px;
+    }
+
+    div#p_h_heading_2 h1 {
+
+        font-size: 35px;
+    }
+    .second-section-inner-res .tabs-container {
+        display: flex;
+        gap: 9px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
   .p_service_wrapper {
     grid-template-columns: 1fr 1fr;
   }
@@ -3392,8 +3463,8 @@ body.light-mode {
   }
 }
 @media only screen and (max-width: 768px) {
-  .testimonials .testimonial-background-img {
-    background-size: 100%;
+  .prog_content {
+    height: 60vh;
 }
   .swiper-wrapper {
     gap: 0px;
@@ -3413,7 +3484,7 @@ body.light-mode {
   letter-spacing: 0.5px;
 }
   .proj_images img {
-    filter: brightness(0.2);
+    filter: brightness(0.3);
   }
   .single-post .heading-seaction h1 {
     font-size: 29px;
@@ -3779,10 +3850,9 @@ body.light-mode {
   }
 }
 @media only screen and (max-width: 468px) {
-  .tab-panel h3 {
-    font-size: 25px;
-    line-height: 28px;
-  }
+  .testimonials .testimonial-background-img {
+    background-size: 100%;
+}
   .prog_content p {
     font-size: 19px !important;
     line-height: 28px !important;
