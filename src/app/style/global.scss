@@ -313,6 +313,11 @@ a.desktop-call h3 {
   font-size: 20px;
 }
 body.light-mode {
+   .tabs_holder .tab.active {
+      background-color: #f24b74; 
+      color:#fff
+        
+    }
   a.desktop-call h3 {
     color: #f24b74;
 }
@@ -395,7 +400,7 @@ body.light-mode {
   }
 
   .tab {
-    background-color: white !important;
+    background-color: white ;
   }
 
   .about-us-home {
@@ -3067,7 +3072,15 @@ body.light-mode {
 }
 }
 @media only screen and (max-width: 1024px) {
-
+  .light-mode 
+  {
+    .second-section-inner-res .tab-item {
+      border: 1px solid #ccc;
+    }
+    .second-section-inner-res .tabs-container .tab-button-second {
+      border: 1px solid #f24b74;
+    }
+  }
 .close-btn-x {
   padding: 5px;
 }
