@@ -46,8 +46,8 @@ const StickeyForm = ({ onClose }) => {
     <div className="stickey-form">
       <div className="form-header">
         <div className="headings">
-          <h2>Welcome To</h2>
-          <h5>Spark Web Solutions</h5>
+          {/* <h2>Welcome To</h2>
+          <h5>Spark Web Solutions</h5> */}
         </div>
         <div className="close-popup">
           <button className="close-btn-x" onClick={onClose}>

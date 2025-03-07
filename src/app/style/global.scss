@@ -210,6 +210,9 @@ body::selection {
 
 // CSS For light mode
 body.light-mode {
+  .stikey-side-popup .stickey-form .class-stickey-popup-formss.second-form .form-inner .form-group option {
+    background-color: #f24b74;
+  }
   background-color: #ffffff;
   color: #18191d !important;
 
@@ -226,6 +229,12 @@ body.light-mode {
 
   img.lite-dark-mode {
     filter: brightness(0.1);
+  }
+  .description_area p {
+    color: #222;
+  }
+  .p_content p {
+    color: #222;
   }
 }
 
@@ -294,10 +303,22 @@ p {
 .stickey-form .step {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
+  margin-top:10px;
 }
-
+a.desktop-call h3 {
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1.3px;
+  font-size: 20px;
+}
 body.light-mode {
+  a.desktop-call h3 {
+    color: #f24b74;
+}
+  .testimonials .testimonials-pagination .pagination-top span.swiper-pagination-bullet {
+    background: #f24b74;
+  }
   .stikey-side-popup .step h3 {
     font-size: 30px;
     font-weight: 600;
@@ -365,7 +386,7 @@ body.light-mode {
       #f4f6ff 50.01%,
       #ffffff 99.61%
     );
-    color: white;
+    color: #222;
   }
 
   .description_area {
@@ -443,7 +464,7 @@ body.light-mode {
           img {
             width: 50px;
             height: 50px;
-            filter: invert(1);
+            filter: brightness(0.1);
           }
         }
         h3 {
@@ -532,8 +553,8 @@ body.light-mode {
   );
   border-radius: 8px;
   padding: 14px;
-  color: white;
-  font-size: 18px;
+  color: #a1a1a1;
+  font-size: 16px;
 }
 
 // Universal button with hover effect
@@ -2235,12 +2256,7 @@ button.sticky-form-button:hover {
     display: flex;
     gap: 10px;
 
-    label {
-      font-family: "Nunito";
-      font-size: 25px;
-      font-weight: 600;
-      line-height: 34.1px;
-    }
+ 
 
     .resume-inp-typ {
       height: 100%;
@@ -2533,13 +2549,13 @@ button.navbar-buttons-main.navigation-contact-btn {
         background-color: white;
         padding: 10px 50px;
         border-radius: 30px;
-        margin-top: 20px;
+        margin-top: 30px;
         border: none;
         cursor: pointer;
         color: #f24b74;
-        font-size: 20px;
+        font-size: 18px;
         font-family: "saira";
-        font-weight: 700;
+        font-weight: 600;
         transition: background-color 0.3s ease-in-out,
           transform 0.3s ease-in-out;
       }
@@ -2564,6 +2580,13 @@ button.navbar-buttons-main.navigation-contact-btn {
         gap: 25px;
 
         .form-group {
+          label {
+            font-size: 16px;
+            font-family: 'Nunito';
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: #a1a1a1;
+          }
           option {
             background-color: rgba(17, 18, 22, 0.9607843137);
           }
@@ -2612,7 +2635,7 @@ button.navbar-buttons-main.navigation-contact-btn {
         font-size: 20px;
         font-weight: 600;
         font-family: "Saira";
-        line-height: 38px;
+        line-height: 25px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -3044,6 +3067,14 @@ body.light-mode {
 }
 }
 @media only screen and (max-width: 1024px) {
+
+.close-btn-x {
+  padding: 5px;
+}
+.close-btn-x img {
+  width:25px !important;
+  height: 25px !important;
+}
   .prog_content h1 {
     left: -400px;
   }
@@ -3064,20 +3095,13 @@ body.light-mode {
         display: none;
     }
 
-    .second-section-inner-res .tabs-container .tab-button-second.active  {
-        background-color: #F24B74;
-        color: white;
-    }
 
     div#p_h_heading_1 h1 {
         color: #f24b74 !important;
         font-size: 35px;
     }
 
-    div#p_h_heading_2 h1 {
 
-        font-size: 35px;
-    }
     .second-section-inner-res .tabs-container {
         display: flex;
         gap: 9px;
@@ -3088,26 +3112,11 @@ body.light-mode {
   .p_service_wrapper {
     grid-template-columns: 1fr 1fr;
   }
-    .second-section-redponsive {
-        display: block
-    }
-   .second-section-animated {
-    display: none;
-    }
-    
-    .tab-panel h3 {
-        font-size: 32px;
-    }
-
-    .send-msg-cplumn {
-        display: none;
-    }
-
     .second-section-inner-res .tabs-container .tab-button-second  {
         padding: 10px 25px;
         background-color: white;
         border-radius: 8px;
-        font-size: 20px;
+        font-size: 16px;
         color: #F24B74;
         border: none;
     }
@@ -3116,22 +3125,11 @@ body.light-mode {
         color: white;
     }
 
-    div#p_h_heading_1 h1 {
-        color: #f24b74 !important;
-        font-size: 35px;
-    }
-
     div#p_h_heading_2 h1 {
 
         font-size: 35px;
     }
-    .second-section-inner-res .tabs-container {
-        display: flex;
-        gap: 9px;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
+
     .second-section-inner-res .tab-item {
       padding: 20px;
       border: 1px solid #ffffff3d;
@@ -3794,6 +3792,9 @@ body.light-mode {
   }
 }
 @media only screen and (max-width: 600px) {
+  button#toggle {
+    display: none;
+  }
   .p_service_wrapper {
     grid-template-columns:1fr;
 }
@@ -3872,9 +3873,7 @@ body.light-mode {
     font-size: 18px;
     line-height: 25px;
   }
-  .close-btn-x {
-    width: 20px;
-  }
+ 
   .mobile-menu {
     top: 56px;
   }
