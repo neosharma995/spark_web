@@ -461,7 +461,13 @@ body.light-mode {
     gap: 12px;
     box-shadow: 2px 2px 8px #0000004d;
   }
-
+   h3 {
+          color: #000000;
+          font-size: 36px;
+          font-weight: 700;
+          line-height: 56.66px;
+          text-align: center;
+        }
   .testimonials {
     .testimonials-pagination {
       .testimonial-heading {
@@ -471,14 +477,9 @@ body.light-mode {
             height: 50px;
             filter: brightness(0.1);
           }
+        
         }
-        h3 {
-          color: #000000;
-          font-size: 36px;
-          font-weight: 700;
-          line-height: 56.66px;
-          text-align: center;
-        }
+     
       }
     }
   }
@@ -1040,6 +1041,7 @@ nav.main-header-navigation {
         font-family: "Saira";
         line-height: 38px;
         font-weight: 500;
+        word-wrap: break-word;
       }
     }
   }
@@ -1840,6 +1842,10 @@ body.light-mode {
 }
 
 //about us page css End
+body.light-mode .testimonials .testimonials-pagination .testimonial-heading {
+  h3 {
+    color: #222;
+  }}
 
 // Testimmonial CSS Start
 
@@ -1860,7 +1866,8 @@ body.light-mode {
         text-align: center;
       }
     }
-
+    
+ 
     .pagination-top {
       text-align: center;
       display: flex;
@@ -3474,6 +3481,9 @@ body.light-mode {
   }
 }
 @media only screen and (max-width: 768px) {
+  body.light-mode .proj_images img {
+    filter: opacity(0.2);
+}
   .prog_content {
     height: 60vh;
 }
