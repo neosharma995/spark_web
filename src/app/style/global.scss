@@ -2439,6 +2439,24 @@ button.navbar-buttons-main.navigation-contact-btn {
   }
 }
 
+.stickey-form {
+  .option-container {
+    label {
+      font-size: 20px;
+      font-weight: 600;
+      font-family: "Saira";
+      line-height: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(95.49deg, #18191d 1.53%, #1d1e21 50.01%,#363c48 99.61% );
+      padding: 20px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  }
+}
+
 // Service Popup
 
 .service-popup {
@@ -2698,28 +2716,6 @@ button.navbar-buttons-main.navigation-contact-btn {
     }
   }
 
-  .stickey-form {
-    .option-container {
-      label {
-        font-size: 20px;
-        font-weight: 600;
-        font-family: "Saira";
-        line-height: 25px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: linear-gradient(
-          95.49deg,
-          #18191d 1.53%,
-          #1d1e21 50.01%,
-          #363c48 99.61%
-        );
-        padding: 20px 25px;
-        border-radius: 8px;
-        cursor: pointer;
-      }
-    }
-  }
 }
 
 // Internship Page CSS
@@ -3289,8 +3285,9 @@ body.light-mode {
   .stickey-form .form-group {
     flex-direction: column;
   }
-  .stikey-side-popup .stickey-form .option-container label {
-    font-size: 26px;
+  .stikey-side-popup .stickey-form .option-container label .heading {
+    font-size: 20px;
+    line-height: 35px;
   }
   .stikey-side-popup .stickey-form .step h3 {
     font-size: 30px;
@@ -3714,9 +3711,7 @@ body.light-mode {
   .stikey-side-popup .stickey-form .form-group {
     gap: 5px;
   }
-  .stikey-side-popup .stickey-form .form-group label {
-    font-size: 18px;
-  }
+
   .stikey-side-popup .stickey-form .form-group .form-input-design {
     font-size: 16px;
     padding: 12px;
@@ -3729,10 +3724,7 @@ body.light-mode {
     padding: 5px 35px;
     font-size: 18px;
   }
-  .stikey-side-popup .stickey-form .option-container label {
-    font-size: 22px;
-    line-height: 35px;
-  }
+
   .stikey-side-popup .stickey-form .step h3 {
     font-size: 25px;
   }
@@ -3934,12 +3926,10 @@ body.light-mode {
 }
 @media only screen and (max-width: 468px) {
   .testimonials .testimonial-background-img {
-    /* background-image: url(/images/testimonial-background-img.png); */
     background: linear-gradient(95.49deg, #18191d 1.53%, #1d1e21 50.01%, #363c48 99.61%);
     border-radius: 25px;
   }
-  body.light-mode .testimonials .testimonial-background-img{
-    /* background-image: url(/images/testimonial-background-img.png); */
+  body.light-mode .testimonials .testimonial-background-img {
     background: linear-gradient(95.49deg, #fff 1.53%, #fff 50.01%, #f4f4f4 99.61%);
     border-radius: 25px;
     border: 1.5px solid #eff4f7;
@@ -4019,18 +4009,17 @@ body.light-mode {
   .stikey-side-popup .stickey-form .class-stickey-popup-formss.second-form .form-inner {
     gap: 5px;
   }
-  .stikey-side-popup .stickey-form .form-group label {
-    font-size: 16px;
-  }
+
   .stikey-side-popup .stickey-form .form-group .form-input-design {
     font-size: 14px;
     padding: 10px;
+    width: 100%;
   }
   .stikey-side-popup .stickey-form .next-btn-st-form button.proceed-button {
     padding: 5px 25px;
     font-size: 16px;
   }
-  .stikey-side-popup .stickey-form .option-container label {
+  .stikey-side-popup .stickey-form .option-container label .heading {
     font-size: 18px;
     line-height: 25px;
   }
