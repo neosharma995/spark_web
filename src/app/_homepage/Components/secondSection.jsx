@@ -79,7 +79,8 @@ const SecondSection = ({ section_1 }) => {
           
             <div className="left_section">           
               <div className="tab_left_img">
-              <img src="./images/circle.png" alt="" />
+              <img class="dark-version" src="./images/circle.png" alt="" />
+              <img class="light-version" src ="./images/light-process-section.png" alt =""/>
               </div>
                 <div className="tabs_holder">
                     <div className="tabs">

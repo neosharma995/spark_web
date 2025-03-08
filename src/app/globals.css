@@ -222,10 +222,10 @@ body.light-mode {
     color: #ededed;
     }
     .prog_content.active h1 {
-      color: #f24b74
+      color: #363C48
   }
   .prog_content.active h1:before {
-    background: #f24b74;
+    background: #363C48;
   }
   .prog_content h1 {
     color: #ededed
@@ -409,9 +409,11 @@ div#section_section {
 .des_flex h1 {
   font-size: 300px;
   color: #111216;
-  text-shadow: 0px 4px 30px #f24b74;
+  text-shadow: 0px 4px 15px #f24b74;
   font-family: "Saira";
+  -webkit-text-stroke: 2px #f24b74;
 }
+
 
 .tab_left_img {
   position: relative;
