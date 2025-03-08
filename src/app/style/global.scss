@@ -461,13 +461,7 @@ body.light-mode {
     gap: 12px;
     box-shadow: 2px 2px 8px #0000004d;
   }
-   h3 {
-          color: #000000;
-          font-size: 36px;
-          font-weight: 700;
-          line-height: 56.66px;
-          text-align: center;
-        }
+
   .testimonials {
     .testimonials-pagination {
       .testimonial-heading {
@@ -3484,12 +3478,14 @@ body.light-mode {
   }
 }
 @media only screen and (max-width: 768px) {
+  .testimonials .testimonial-frontt .testimonial-main-text-des p {
+    max-width: 300px;
+    font-size: 16px;
+}
   body.light-mode .proj_images img {
     filter: opacity(0.2);
 }
-  .prog_content {
-    height: 60vh;
-}
+
   .swiper-wrapper {
     gap: 0px;
 }
