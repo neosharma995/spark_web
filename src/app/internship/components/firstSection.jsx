@@ -35,14 +35,16 @@ const FirstSection = () => {
         <div className='paragraph-section'>
           <p>{mainData?.description}</p>
         </div>
-        <div className='image-section'>
-          <Image src={mainData?.image} alt='img'
-            layout="responsive"
-            width={100}
-            height={50}
-            style={{ width: '100%', height: 'auto' }}
-          />
+        <div className='intership-image-section'> 
+          <div className='image-section'>
+            <Image src={mainData?.image} alt='img'
+              layout="responsive"
+              width={100}
+              height={100}
+            />
+          </div>
         </div>
+       
       </div>
       <div className='second-section'>
         <h2>{mainDataSecond?.heading}</h2>

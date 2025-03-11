@@ -17,10 +17,10 @@ const Page = () => {
         <Portfolio />
       </div>
 
-      <div className="mobile_view">
+      {/* <div className="mobile_view">
 
         <PortfolioMobile />
-      </div>
+      </div> */}
     </div>
   )
 }

@@ -318,7 +318,26 @@ img.light-version {
 img.dark-logo {
   display: none;
 }
+.about-us-page .short-description p {
+  font-size: 50px;
+}
+.internship .page-title h1 {
+  margin: 0px;
+}
 body.light-mode {
+  .internship .first-section .paragraph-section p {
+    color: #363C48;
+  }
+  .internship .second-section p {
+    color: #363C48;
+  }
+  .about-us-page .description-column-main .main-description p {
+    color: #363C48;
+  }
+  .about-us-page .about-card .card-description p {
+    color: #363C48;
+  }
+  
   img.dark-version {
     display: none;
   }
@@ -448,16 +467,21 @@ img.dark-logo {
       }
     }
   }
-
+  .internship .tabs-button {
+    background-color: #fde8ee;
+  }
+  .internship .tabs-button.active {
+    background-color: #f24b74;
+  }
   .internship {
     .first-section {
-      background: white;
-      box-shadow: 2px 0px 10px #80808099;
+      background: linear-gradient(to right, #fff, #f4f4f4);
+      box-shadow: 2px 0px 24px rgba(149, 157, 165, 0.25) ;
     }
 
     .single-course-wrapper {
-      background: white;
-      box-shadow: 2px 0px 10px #80808099;
+      background: linear-gradient(to right, #fff, #f4f4f4);
+      border: 1.5px solid #DBEEFB;
     }
 
     .page-title {
@@ -559,7 +583,7 @@ img.dark-logo {
 }
 
 .page-main-outer {
-  margin: 85px 0;
+  margin: 50px 0;
 }
 
 // Universal input form design
@@ -1658,14 +1682,6 @@ body.light-mode {
   height: auto;
 }
 
-h3.technologys {
-  background: #ed4561;
-  color: white !important;
-  padding: 0px 15px;
-  width: max-content;
-  border-radius: 44px;
-  font-size: 18px !important;
-}
 
 //about us page css Start
 
@@ -1696,12 +1712,7 @@ body.light-mode {
   .about-us-page {
     .para-section {
       .about-card {
-        background: linear-gradient(
-          95.49deg,
-          #ffffff 1.53%,
-          #ffffff 50.01%,
-          #f4f4f4 78.14%
-        );
+        background: linear-gradient(to right, #fff, #f4f4f4);
         box-shadow: 0px 8px 24px 0px #959da540;
       }
     }
@@ -1784,9 +1795,11 @@ body.light-mode {
   .description-column-main {
     .main-description {
       p {
+        color: rgba(255, 255, 255, 0.6509803922);
         font-size: 25px;
-        font-weight: 600;
-        line-height: 46px;
+        font-weight: 500;
+        line-height: 40px;
+        letter-spacing: 0.5px;
       }
     }
   }
@@ -1819,6 +1832,10 @@ body.light-mode {
     .card-description {
       p {
         padding: 50px;
+        color: rgba(255, 255, 255, 0.6509803922);
+        line-height: 42px;
+        letter-spacing: 0.5px;
+        font-weight: 500;
       }
     }
   }
@@ -1856,13 +1873,13 @@ body.light-mode {
   }
 
   .para-section {
-    margin: 100px 0px;
+   margin-top: 50px;
   }
 
   .image-gallery-container {
     .top-big-image {
       img {
-        max-height: 660px;
+        max-height: 600px;
         object-fit: cover;
         height: 100% !important;
         width: 100% !important;
@@ -2165,12 +2182,18 @@ body.light-mode {
 // Services page css end
 
 // Portfolio Page CSS
+.portfolio-inner .page-title {
+  margin: 50px 0px;
+}
 
 body.light-mode {
   .portfolio {
     .card-small-headings {
       h3 {
         color: black;
+      }
+      h3.technologys {
+        color: #fff;
       }
     }
   }
@@ -2182,6 +2205,19 @@ body.light-mode {
       display: grid;
       gap: 40px;
       grid-template-columns: 1fr 1fr;
+    }
+    .card-small-headings h3 {
+      font-size: 25px;
+      color: #fff;
+      font-family: 'Saira';
+      font-weight: 700;
+    }
+    h3.technologys {
+      background: #f24b74;
+      padding: 0 15px;
+      width: fit-content;
+      border-radius: 44px;
+      margin-top: 15px;
     }
   }
 
@@ -2237,14 +2273,6 @@ body.light-mode {
     }
   }
 
-  .card-small-headings {
-    h3 {
-      font-size: 22px;
-      line-height: 39.79px;
-      text-transform: uppercase;
-      color: white;
-    }
-  }
 
   .card-small-headings {
     margin: 20px 0px;
@@ -2719,7 +2747,16 @@ button.navbar-buttons-main.navigation-contact-btn {
 }
 
 // Internship Page CSS
+
 .internship {
+  .intership-image-section {
+    width: 25%;
+    text-align: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+}
   .first-section {
     display: flex;
     background: linear-gradient(
@@ -2728,7 +2765,7 @@ button.navbar-buttons-main.navigation-contact-btn {
       #1d1e21 50.01%,
       #363c48 99.61%
     );
-    padding: 30px 0px 30px 30px;
+    padding: 30px 0px 0px 30px;
     border-radius: 8px;
   }
 
@@ -2746,20 +2783,34 @@ button.navbar-buttons-main.navigation-contact-btn {
   .first-section {
     .paragraph-section {
       p {
-        padding-right: 200px;
+        color: rgba(255, 255, 255, 0.65);
+        line-height: 45px;
+        letter-spacing: 0.5px;
+        padding-bottom: 30px;
       }
     }
   }
-
+  .paragraph-section {
+    width:75%;
+    padding-right: 100px;
+}
   .second-section {
     h2 {
       font-size: 50px;
-      line-height: 81px;
+      line-height: 65px;
+    }
+    p {
+      font-size: 25px;
+      color:rgba(255, 255, 255, 0.65);
+      margin-top: 20px;
+      line-height: 45px;
+      letter-spacing: 0.5px;
+  
     }
   }
 
   .second-section {
-    margin: 100px auto;
+    margin: 60px 0px 50px 0px;
   }
 
   .first-section {
@@ -2777,12 +2828,11 @@ button.navbar-buttons-main.navigation-contact-btn {
   }
 
   .tabs-button {
-    padding: 10px 20px;
+    padding:13px 30px;
     cursor: pointer;
     border: none;
     background-color: white;
     border-radius: 40px;
-    margin-right: 5px;
     font-size: 24px;
     line-height: 22px;
     font-weight: 600;
@@ -2846,6 +2896,7 @@ button.navbar-buttons-main.navigation-contact-btn {
     .tabs-container-btns {
       display: flex;
       gap: 30px;
+      flex-wrap: wrap;
     }
   }
 }
@@ -2868,8 +2919,27 @@ button.navbar-buttons-main.navigation-contact-btn {
 }
 
 // Blog Page CSS
+.page-main-outer {
+  .page-heading h1 {
+    font-size: 60px;
+    margin: 0px;
+  }
+  
+  .page-heading p {
+    font-size: 30px;
+    color: #ffffff9c; 
+    line-height: 39px; 
+    letter-spacing: 0.5px;
+  }
+}
 
 body.light-mode {
+  .page-main-outer .page-heading p {
+    font-size: 30px;
+    color: #363C48;
+    line-height: 39px; 
+    letter-spacing: 0.5px;
+  }
   .blogs {
     .categories {
       .category {
@@ -2899,7 +2969,7 @@ body.light-mode {
   }
 
   .page-heading {
-    margin-bottom: 50px;
+    margin: 50px 0px;
   }
 
   .image-section {
@@ -3012,6 +3082,9 @@ body.light-mode {
 
 // Blog Single page css
 .single-post {
+  .single-post-inner {
+    margin-top: 50px;
+}
   .blog-img img {
     max-width: 1275px;
     max-height: 461px;
@@ -3027,14 +3100,20 @@ body.light-mode {
 
   .heading-seaction {
     h1 {
-      font-size: 70px;
-      line-height: 84px;
+      font-size: 60px;
+      line-height: 70px;
     }
   }
 
   .blog-content {
     font-size: 30px;
     font-weight: 600;
+    h2.wp-block-heading {
+      margin-top: 20px;
+  }
+  p {
+    color: #ffffffbf;
+  }
   }
 }
 .proj_heading h2 {
@@ -3042,10 +3121,16 @@ body.light-mode {
   position: relative;
   z-index: 999;
 }
-
+.courses-main-outer .tab-content-wrapper ul li strong {
+  color: #f24b74;
+}
 // ******************************************** Media Query Start ******************************************************//
 
 @media only screen and (max-width: 1440px) {
+  .about-us-page .about-us-main .page-title h1 {
+    font-size: 60px;
+}
+
   .description_outer {
     margin-left: 80px;
   }
@@ -3059,6 +3144,12 @@ body.light-mode {
 }
 
 @media only screen and (max-width: 1300px) {
+  .internship .paragraph-section {
+    width: 100%;
+  }
+  .about-us-page .about-us-main .page-title h1 {
+    font-size: 50px;
+  }
   .about-us-home .main-description {
     font-size: 25px;
     padding-bottom: 30px;
@@ -3118,6 +3209,9 @@ body.light-mode {
 
 }
 @media only screen and (max-width: 1200px) { 
+  .blogs .blogs-inner {
+    grid-template-columns: 1fr 1fr;
+}
   .swiper-wrapper {
     gap: 0px; 
 }
@@ -3132,6 +3226,24 @@ body.light-mode {
 }
 }
 @media only screen and (max-width: 1024px) {
+  .page-main-outer .page-heading h1 {
+    font-size: 50px;
+}
+.page-main-outer .page-heading p {
+  font-size: 25px;
+}
+body.light-mode .page-main-outer .page-heading p {
+  font-size: 25px;
+}
+  .portfolio .portfolio-inner .cards {
+    grid-template-columns: 1fr;
+}
+  .internship .intership-image-section {
+    width: 100%;
+  }
+  .internship .paragraph-section {
+    padding-right: 0px;
+  }
   .light-mode 
   {
     .second-section-inner-res .tab-item {
@@ -3535,6 +3647,36 @@ body.light-mode {
   }
 }
 @media only screen and (max-width: 768px) {
+  .page-main-outer .page-heading h1 {
+    font-size: 35px;
+}
+  body.light-mode .internship .page-title img {
+    margin-left: 0px; 
+}
+  .blogs .blogs-inner {
+    grid-template-columns: 1fr;
+
+}
+  .portfolio .portfolio-inner .card-small-headings h3 {
+    font-size: 18px;
+}
+.portfolio .portfolio-inner h3.technologys {
+  padding: 7px 15px;
+}
+  .single-course-wrapper ul li {
+    margin-bottom: 10px;
+    line-height: 26px;
+}
+  .internship .second-section p {
+    font-size: 18px;
+    line-height: 35px;
+  }
+  .internship .first-section .paragraph-section p {
+    line-height: 35px;
+  }
+  .about-us-page .about-us-main .page-title h1 {
+    font-size: 35px;
+}
   .testimonials .testimonial-frontt .testimonial-main-text-des p {
     max-width: 300px;
     font-size: 16px;
@@ -3650,7 +3792,7 @@ body.light-mode {
   }
   h1 {
     font-size: 35px;
-    line-height: 55px;
+    line-height: 42px;
   }
   p {
     font-size: 22px;
@@ -3778,7 +3920,7 @@ body.light-mode {
   .internship .page-title {
     display: flex;
     flex-direction: column;
-    margin: 0px 0px 30px 0px;
+    margin: 50px 0px 30px 0px;
   }
   .internship .page-title .programe-img {
     display: flex;
@@ -3819,7 +3961,7 @@ body.light-mode {
     grid-template-columns: 1fr;
   }
   .portfolio .portfolio-inner .cards .portfolio-card img {
-    height: 400px !important;
+    height: 100% !important;
   }
   .portfolio .overlay {
     padding: 20px;
@@ -3920,11 +4062,23 @@ body.light-mode {
     font-size: 18px;
     padding: 8px 50px;
   }
-  .portfolio .portfolio-inner .cards .portfolio-card img {
-    height: 350px !important;
-  }
 }
 @media only screen and (max-width: 468px) {
+  .blogs .page-heading {
+    margin: 30px 0px;
+}
+  .page-main-outer .page-heading h1 {
+    font-size: 30px;
+    line-height: 42px;
+}
+body.light-mode .page-main-outer .page-heading p {
+  font-size: 20px;
+  line-height: 30px;
+}
+.page-main-outer .page-heading p {
+  font-size: 20px;
+  line-height: 30px;
+}
   .testimonials .testimonial-background-img {
     background: linear-gradient(95.49deg, #18191d 1.53%, #1d1e21 50.01%, #363c48 99.61%);
     border-radius: 25px;
@@ -3945,6 +4099,9 @@ body.light-mode {
   p.short-description {
     margin-top: 50px;
   }
+  .about-us-page .about-us-main .page-title h1 {
+    font-size: 25px;
+}
   h1 {
     font-size: 25px;
     line-height: 35px;
@@ -3957,9 +4114,7 @@ body.light-mode {
   .mobile-menu {
     top: 56px;
   }
-  .portfolio .portfolio-inner .cards .portfolio-card img {
-    height: 250px !important;
-  }
+
   .header-section .header .menu-item img {
     width: 25px;
     height: 25px;
