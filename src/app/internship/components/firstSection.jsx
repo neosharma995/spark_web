@@ -36,12 +36,14 @@ const FirstSection = () => {
           <p>{mainData?.description}</p>
         </div>
         <div className='intership-image-section'> 
+
           <div className='image-section'>
-            <Image src={mainData?.image} alt='img'
+            <Image src={mainData?.image} 
+              alt='img'
               layout="responsive"
               width={100}
-              height={100}
-            />
+              height={100} 
+              />
           </div>
         </div>
        
@@ -55,4 +57,4 @@ const FirstSection = () => {
   )
 }
 
-export default FirstSection
+export default FirstSection;
