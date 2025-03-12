@@ -3,7 +3,7 @@
 // import FullScreenView from '../_homepage/Components/fullScreen'
 // import PortfolioDesk from './components/portFolioPage'
 import Portfolio from './components/portfolio'
-import PortfolioMobile from './components/portfolio'
+// import PortfolioMobile from './components/portfolio'
  
 
 const Page = () => {
