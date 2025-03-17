@@ -32,4 +32,4 @@ const FourthSection = () => {
     );
 }
 
-export default FourthSection;
+export default FourthSection
