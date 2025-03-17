@@ -8,7 +8,6 @@ const AboutUsMain = () => {
     const mainData = pagesDataApi?.pagesDataApi?.find(page => page.slug === 'about-us')?.acf?.third_section;
     const [mainImage, setMainImage] = useState(null);
 
-    // Ensure the first image is set as the main image on initial render
     useEffect(() => {
         if (mainData?.image_gallery?.length > 0) {
             setMainImage(mainData.image_gallery[0].images);
