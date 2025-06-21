@@ -760,11 +760,48 @@ img.dark-logo {
 
 // Service section animation css
 .services-section {
+
+  .section-number span {
+    font-size: 80px;
+    font-weight: 900;
+    color: #000;
+    text-shadow: 0 0 5px #f24b74,0 0 10px #f24b74, 0 0 20px #f24b74,0 0 40px #f24b74, 0 0 80px #f24b74;
+    font-family: 'Saira';
+}
+  h1 {
+    font-size: 50px;
+    font-family: "saira";
+    font-weight: 700;
+    line-height: 45px;
+  }
+  p.subheading {
+    font-size: 25px;
+    font-family: 'Saira';
+    font-weight: 500;
+  }
+  p.pharagraph {
+    color: #A1A7A7;
+    font-size: 20px;
+    line-height: 35px;
+    font-weight: 500;
+  }
+  .btn {
+    font-size: 22px;
+    background-color: #f24b74;
+    padding: 8px 30px;
+    cursor: pointer;
+    border-radius: 40px;
+    font-family: saira;
+    font-weight: 600;
+    border: none;
+    color: #fff;
+    margin-top: 30px;
+  }
   .inner-service-content {
     display: flex;
-    flex-direction: column;
     gap: 30px;
     padding: 20px;
+    text-align: left;
   }
 
   .panel {
@@ -792,10 +829,6 @@ img.dark-logo {
     filter: grayscale(100%);
   }
 
-  h1 {
-    z-index: 1;
-    text-shadow: 1px 1px 3px black;
-  }
 }
 
 // Services Page Lite mode
@@ -808,9 +841,6 @@ body.light-mode {
 }
 
 .services-page {
-  h1 {
-    font-size: 5rem;
-  }
 
   h2 {
     font-size: 2rem;
@@ -1535,17 +1565,7 @@ body.light-mode {
   }
 }
 
-.btn {
-  font-size: 25px;
-  background-color: #f24b74;
-  border: navajowhite;
-  padding: 16px 60px;
-  cursor: pointer;
-  border-radius: 40px;
-  font-family: saira;
-  font-weight: 600;
-  line-height: 35.35px;
-}
+
 
 // Home Second Section CSS Start
 .marquee {

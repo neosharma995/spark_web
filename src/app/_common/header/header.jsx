@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import HeaderMain from './components/headerMain';
 
 const Header = () => {
+  
   const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {

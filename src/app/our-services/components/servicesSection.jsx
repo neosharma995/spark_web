@@ -1,20 +1,26 @@
 "use client";
 import React, { useEffect, useContext, useState } from "react";
 import { gsap } from "gsap";
-import ContactPopup from './popupForm';
+import ContactPopup from "./popupForm";
 import { ScrollTrigger } from "gsap/all";
-import { SectorDataContext } from '@/context/apiContext';
+import { SectorDataContext } from "@/context/apiContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ServicesSection = () => {
   const pagesDataApi = useContext(SectorDataContext);
-  const [selectedService, setSelectedService] = useState('');
+  const [selectedService, setSelectedService] = useState("");
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-  const mainData = pagesDataApi?.pagesDataApi?.find(page => page.slug === 'our-services')?.acf;
+  const mainData = pagesDataApi?.pagesDataApi?.find(
+    (page) => page.slug === "our-services"
+  )?.acf;
 
-  console.log('mainData', mainData);
+  console.log("mainData", mainData);
+
+  const pageTitle =
+    pagesDataApi?.pagesDataApi?.find((page) => page.slug === "our-services")
+      ?.title?.rendered || "";
 
   const handleContactClick = (e, serviceName) => {
     e.preventDefault();
@@ -38,7 +44,9 @@ const ServicesSection = () => {
           backgroundPosition: "50% 0px",
         },
         {
-          backgroundPosition: `50% ${window.innerHeight * (1 - getRatio(section))}px`,
+          backgroundPosition: `50% ${
+            window.innerHeight * (1 - getRatio(section))
+          }px`,
           ease: "none",
           scrollTrigger: {
             trigger: section,
@@ -54,22 +62,24 @@ const ServicesSection = () => {
 
   return (
     <div className="services-section">
+      <h2>{pageTitle}</h2>
+
       {mainData?.services.map((service, index) => (
-        <div key={index}>
+        <div className="inner-section" key={index}>
           <section className="panel">
             <div
               className="bg"
-              style={{ 
-                        backgroundImage: `url(${service.service_background_image})`, 
-                        
-                      }}
-            >
-                </div>
-              <div className="inner-service-content">
-
+              style={{
+                backgroundImage: `url(${service.service_background_image})`,
+              }}
+            ></div>
+            <div className="inner-service-content">
+              <div className="service-text">
+                <div className="section-number"> <span>{index + 1}</span></div>
                 <h1>{service.service_name}</h1>
-                <p>{service.short_description}</p>
-                <p>{service.long_description}</p>
+                <p className="subheading">{service.short_description}</p>
+                <p className="pharagraph">{service.long_description}</p>
+
                 <div className="contact-button">
                   <button
                     onClick={(e) => handleContactClick(e, service.service_name)}
@@ -77,6 +87,10 @@ const ServicesSection = () => {
                   >
                     Talk To Our Experts
                   </button>
+                </div>
+              </div>
+              <div className="service-img">
+                <h1>{service.service_name}</h1>
               </div>
             </div>
           </section>
@@ -86,7 +100,9 @@ const ServicesSection = () => {
       <ContactPopup
         isOpen={isPopupOpen}
         onClose={() => setIsPopupOpen(false)}
-        serviceNames={mainData?.services?.map(service => service.service_name) || []}
+        serviceNames={
+          mainData?.services?.map((service) => service.service_name) || []
+        }
         selectedService={selectedService}
       />
     </div>

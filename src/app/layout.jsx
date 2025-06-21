@@ -8,6 +8,31 @@ import { Toaster } from "sonner";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+
+
+      <head>
+        <title>Spark Web Solution</title>
+        {/* ✅ Favicon/logo added here */}
+        <link rel="icon" href="/siteLogo/logo.jpg" type="image/jpeg" />
+        <link rel="icon" href="/favicon.ico" sizes="any"/>
+
+
+        {/* Optional: JSON-LD for Google logo detection */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Spark Web Solution",
+              url: "https://sparkweb.co.in",
+             logo: "https://sparkweb.co.in/siteLogo/logo.jpg"
+            }),
+          }}
+        />
+      </head>
+
+
       <body>
         <ThemeProvider>
           <Toaster position="top-right" />
