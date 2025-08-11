@@ -650,6 +650,7 @@ img.dark-logo {
   border-radius: 3px;
   padding: 7px;
   cursor: pointer;
+  float: right;
 }
 
 .tab_left_img img {
@@ -759,21 +760,42 @@ img.dark-logo {
 }
 
 // Service section animation css
+.services-page {
+    margin: 50px 0px;
+}
 .services-section {
-
+  .page-title {
+      margin: 50px 0;
+  }
+  .inner-section {
+    background: linear-gradient(87.35deg, rgba(14, 16, 20, 0.901961) 15.02%, rgba(41, 49, 64, 0.901961) 97.79%),
+    linear-gradient(88.5deg, rgba(0, 0, 0, 0.2) 16.61%, rgba(0, 0, 0, 0.2) 98.33%);
+    border-radius: 50px;
+    margin-bottom: 50px;
+  }
+  .section-number {
+    isolation: isolate;
+    --neon: #ff4d8d;
+}
   .section-number span {
     font-size: 80px;
     font-weight: 900;
     color: #000;
-    text-shadow: 0 0 5px #f24b74,0 0 10px #f24b74, 0 0 20px #f24b74,0 0 40px #f24b74, 0 0 80px #f24b74;
+    text-shadow: 0px 1px 30px #f24b74;
     font-family: 'Saira';
-}
-  h1 {
-    font-size: 50px;
-    font-family: "saira";
-    font-weight: 700;
-    line-height: 45px;
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    -webkit-text-stroke: 2px var(--neon);
   }
+.text-card {
+    font-family: Saira;
+    font-weight: 700;
+    font-size: 50px;
+    text-transform: uppercase;
+    color: #F24B74;
+}
   p.subheading {
     font-size: 25px;
     font-family: 'Saira';
@@ -800,33 +822,13 @@ img.dark-logo {
   .inner-service-content {
     display: flex;
     gap: 30px;
-    padding: 20px;
-    text-align: left;
-  }
-
-  .panel {
-    position: relative;
-    height: 100vh;
+    padding: 50px;
     align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    color: white;
-    text-align: center;
-    display: flex;
+    justify-content: space-between;
   }
-
-  .bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    pointer-events: all;
-    filter: grayscale(100%);
+  .service-text {
+    flex: 0 0 70%;
+    max-width: 70%;
   }
 
 }
@@ -834,8 +836,9 @@ img.dark-logo {
 // Services Page Lite mode
 body.light-mode {
   .services-section {
-    .bg {
-      filter: grayscale(0%);
+    .inner-section {
+      background: linear-gradient(95.49deg, #ffffff 1.53%, #ffffff 32.47%, #f4f4f4 52.92%);
+      box-shadow: 0px 8px 24px 0px rgba(149, 157, 165, 0.2509803922);
     }
   }
 }
@@ -2162,7 +2165,7 @@ body.light-mode {
     flex-direction: column;
     align-items: center;
     gap: 30px;
-    padding: 100px 0;
+    padding: 10px 0;
 
     .expertises-list {
       display: flex;
@@ -2233,11 +2236,9 @@ body.light-mode {
       font-weight: 700;
     }
     h3.technologys {
-      background: #f24b74;
-      padding: 0 15px;
       width: fit-content;
       border-radius: 44px;
-      margin-top: 15px;
+      margin-top: 10px;
     }
   }
 
@@ -2290,6 +2291,7 @@ body.light-mode {
       height: 500px !important;
       width: 100% !important;
       object-fit: cover;
+      filter: brightness(0.9);
     }
   }
 
@@ -2514,14 +2516,8 @@ button.navbar-buttons-main.navigation-contact-btn {
 
   .service-popup-content {
     background-color: rgba(17, 18, 22, 0.9607843137);
-    padding: 40px;
-    border-radius: 20px;
-
-    .form-top-bar {
-      display: flex;
-      justify-content: space-between;
-    }
-
+    padding: 30px;
+    border-radius: 40px;
     .service-popup-form {
       .service-popup-form-inner {
         display: flex;

@@ -67,15 +67,11 @@ const ContactPopup = ({ isOpen, onClose, serviceNames, selectedService }) => {
             <div className="popup-overlay">
                 <div
                     className='popup-image-container'
-                    style={{
-                        backgroundImage: "url('/images/377dfb3a6f6be92038a856784c55436b.jpg')",
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                    }}
+                
                 >
                     <div className="service-popup-content">
                         <div className='form-top-bar'>
-                            <h2></h2>
+                           
                             <button className="close-btn-x" onClick={onClose}>
                                 <Image
                                     src="/images/123.png"

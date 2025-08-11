@@ -3,11 +3,14 @@ import React, { useEffect, useContext, useState } from "react";
 import { gsap } from "gsap";
 import ContactPopup from "./popupForm";
 import { ScrollTrigger } from "gsap/all";
+import Image from 'next/image';
 import { SectorDataContext } from "@/context/apiContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ServicesSection = () => {
+
+
   const pagesDataApi = useContext(SectorDataContext);
   const [selectedService, setSelectedService] = useState("");
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -61,22 +64,20 @@ const ServicesSection = () => {
   }, [mainData]);
 
   return (
-    <div className="services-section">
-      <h2>{pageTitle}</h2>
-
+    <div className='container'>
+       <div className="services-section">
+        <div className='page-title'>
+          <h1>{pageTitle}</h1>
+        </div>
+        
       {mainData?.services.map((service, index) => (
         <div className="inner-section" key={index}>
           <section className="panel">
-            <div
-              className="bg"
-              style={{
-                backgroundImage: `url(${service.service_background_image})`,
-              }}
-            ></div>
+          
             <div className="inner-service-content">
               <div className="service-text">
                 <div className="section-number"> <span>{index + 1}</span></div>
-                <h1>{service.service_name}</h1>
+                <div className="text-card">{service.service_name}</div>
                 <p className="subheading">{service.short_description}</p>
                 <p className="pharagraph">{service.long_description}</p>
 
@@ -90,7 +91,14 @@ const ServicesSection = () => {
                 </div>
               </div>
               <div className="service-img">
-                <h1>{service.service_name}</h1>
+                  <Image src={service.service_image}
+                      alt={service.service_image}
+                      className=''
+                      layout="responsive"
+                      width={100}
+                      height={100}
+                  />
+                
               </div>
             </div>
           </section>
@@ -106,6 +114,8 @@ const ServicesSection = () => {
         selectedService={selectedService}
       />
     </div>
+    </div>
+   
   );
 };
 
