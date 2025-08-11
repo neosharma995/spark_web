@@ -13,8 +13,7 @@ export default function RootLayout({ children }) {
       <head>
         <title>Spark Web Solution</title>
         {/* ✅ Favicon/logo added here */}
-        <link rel="icon" href="/siteLogo/logo.jpg" type="image/jpeg" />
-        <link rel="icon" href="/favicon.ico" sizes="any"/>
+        <link rel="icon"href="/favicon.ico" />
 
 
         {/* Optional: JSON-LD for Google logo detection */}
