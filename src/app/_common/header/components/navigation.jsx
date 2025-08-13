@@ -7,14 +7,11 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-// Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
 const Navigation = () => {
   const [isNavVisible, setNavVisible] = useState(false);
   const [isLoremVisible, setLoremVisible] = useState(false);
-  // isScrolling will be true when user scrolls down more than 20px.
-  // When at the top, we always show the inner navigation (Menu/Contact).
   const [isScrolling, setScrolling] = useState(false);
 
   const navRef = useRef(null);
@@ -22,122 +19,144 @@ const Navigation = () => {
   const navContainerRef = useRef(null);
   const scrollImgRef = useRef(null);
 
+  // Hover timing refs (keep your original 0.3s behavior)
+  const hoverInDelay = useRef(null);
+  const hoverOutDelay = useRef(null);
+
+  // Hover TL for glow pulse
+  const hoverGlowTl = useRef(null);
+
   const pagesDataApi = useContext(SectorDataContext);
   const mainData = pagesDataApi?.pagesDataApi?.find((page) => page.slug === 'contact-us')?.acf;
   const { headerDataApi } = useContext(SectorDataContext);
   const mainDataHeader = headerDataApi?.find((page) => page.slug === 'header')?.acf;
 
-  // Functions to open either menu or contact with a hover delay.
-  const toggleNav = () => {
-    // Delay the menu display by 0.3s before setting state
-    gsap.delayedCall(0.3, () => {
-      setNavVisible(true);
-      setLoremVisible(false);
+  // ---------- Smooth open/close helpers (CLICK ONLY) ----------
+  const openPanel = (ref, setVisible) => {
+    setVisible(true); // mount it
+    requestAnimationFrame(() => {
+      const el = ref.current;
+      if (!el) return;
+      gsap.set(el, { height: 0, autoAlpha: 0, overflow: 'hidden' });
+      const h = el.scrollHeight || el.getBoundingClientRect().height || 0;
+      gsap.to(el, {
+        height: h,
+        autoAlpha: 1,
+        duration: 0.35,
+        ease: 'power2.out',
+        onComplete: () => gsap.set(el, { height: 'auto' })
+      });
     });
+  };
+
+  const closePanel = (ref, setVisible) => {
+    const el = ref.current;
+    if (!el) { setVisible(false); return; }
+    gsap.to(el, {
+      height: 0,
+      autoAlpha: 0,
+      duration: 0.28,
+      ease: 'power2.in',
+      onComplete: () => setVisible(false)
+    });
+  };
+
+  const toggleNav = () => {
+    if (isNavVisible) {
+      closePanel(navRef, setNavVisible);
+    } else {
+      if (isLoremVisible) closePanel(loremRef, setLoremVisible);
+      openPanel(navRef, setNavVisible);
+    }
   };
 
   const toggleLorem = () => {
-    gsap.delayedCall(0.3, () => {
-      setLoremVisible(true);
-      setNavVisible(false);
-    });
+    if (isLoremVisible) {
+      closePanel(loremRef, setLoremVisible);
+    } else {
+      if (isNavVisible) closePanel(navRef, setNavVisible);
+      openPanel(loremRef, setLoremVisible);
+    }
   };
 
   const closeBoth = () => {
-    // Animate close for each open section if needed
-    setNavVisible(false);
-    setLoremVisible(false);
+    if (isNavVisible) closePanel(navRef, setNavVisible);
+    if (isLoremVisible) closePanel(loremRef, setLoremVisible);
   };
 
-  // When hovering over the scroll image, remove the scrolling state with a delay.
-  const handleScrollImageHover = () => {
-    gsap.delayedCall(0.3, () => {
-      setScrolling(false);
-    });
-  };
-
-  // When mouse leaves the scroll image, bring it back after a delay.
-  const handleScrollImageLeave = () => {
-    gsap.delayedCall(0.3, () => {
-      setScrolling(true);
-    });
-  };
-
-  // --- GSAP Animations ---
-
-  // Animate the scroll image when isScrolling changes.
+  // --- Scroll image fade/scale (unchanged) ---
   useEffect(() => {
-    if (scrollImgRef.current) {
-      if (isScrolling) {
-        // Animate scroll image in: fade and scale in
-        gsap.killTweensOf(scrollImgRef.current);
-        gsap.fromTo(
-          scrollImgRef.current,
-          { opacity: 0, scale: 0.8 },
-          { opacity: 1, scale: 1, duration: 0.5, ease: 'power3.out', delay: 0.2 }
-        );
-      } else {
-        // Animate scroll image out
-        gsap.killTweensOf(scrollImgRef.current);
-        gsap.to(scrollImgRef.current, {
-          opacity: 0,
-          scale: 0.8,
-          duration: 0.5,
-          ease: 'power3.in',
-          delay: 0.2
-        });
-      }
+    if (!scrollImgRef.current) return;
+    const el = scrollImgRef.current;
+    gsap.killTweensOf(el);
+    if (isScrolling) {
+      gsap.fromTo(
+        el,
+        { opacity: 0, scale: 0.8 },
+        { opacity: 1, scale: 1, duration: 0.5, ease: 'power3.out', delay: 0.2 }
+      );
+    } else {
+      gsap.to(el, { opacity: 0, scale: 0.8, duration: 0.5, ease: 'power3.in', delay: 0.2 });
     }
   }, [isScrolling]);
 
-  // Animate menu section open and close on hover or click.
-  useEffect(() => {
-    if (isNavVisible && navRef.current) {
-      gsap.killTweensOf(navRef.current);
-      gsap.fromTo(
-        navRef.current,
-        { opacity: 0, y: -20 },
-        { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out', delay: 0.2 }
-      );
-    } else if (!isNavVisible && navRef.current) {
-      gsap.killTweensOf(navRef.current);
-      gsap.to(navRef.current, {
-        opacity: 0,
-        y: -20,
-        duration: 0.5,
-        ease: 'power3.in',
-        delay: 0.2
-      });
-    }
-  }, [isNavVisible]);
+  // --- Hover animation: Lift + Glow Pulse (only on scroll logo) ---
+  const handleScrollImageHover = () => {
+    // keep your original delayed hide behavior
+    if (hoverOutDelay.current) { hoverOutDelay.current.kill(); hoverOutDelay.current = null; }
 
-  // Animate contact section open and close on hover or click.
-  useEffect(() => {
-    if (isLoremVisible && loremRef.current) {
-      gsap.killTweensOf(loremRef.current);
-      gsap.fromTo(
-        loremRef.current,
-        { opacity: 0, y: -20 },
-        { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out', delay: 0.2 }
-      );
-    } else if (!isLoremVisible && loremRef.current) {
-      gsap.killTweensOf(loremRef.current);
-      gsap.to(loremRef.current, {
-        opacity: 0,
-        y: -20,
-        duration: 0.5,
-        ease: 'power3.in',
-        delay: 0.2
-      });
-    }
-  }, [isLoremVisible]);
+    const el = scrollImgRef.current;
+    if (!el) return;
 
-  // GSAP scroll trigger for the container
+    // kill previous hover TL if any
+    if (hoverGlowTl.current) hoverGlowTl.current.kill();
+
+    // Build timeline: lift + scale, then pulse boxShadow while hovered
+    hoverGlowTl.current = gsap.timeline();
+    hoverGlowTl.current
+      .to(el, { scale: 1.08, y: -6, duration: 0.22, ease: 'power2.out' }, 0)
+      .to(
+        el,
+        {
+          // soft golden glow pulse; adjust rgba for your brand color if you want
+          boxShadow: '0 8px 24px rgba(0,0,0,0.18), 0 0 24px rgba(213,165,78,0.35)',
+          duration: 0.6,
+          ease: 'power1.inOut',
+          yoyo: true,
+          repeat: -1
+        },
+        0.05
+      );
+
+    hoverInDelay.current = gsap.delayedCall(0.3, () => setScrolling(false));
+  };
+
+  const handleScrollImageLeave = () => {
+    // keep your original delayed show behavior
+    if (hoverInDelay.current) { hoverInDelay.current.kill(); hoverInDelay.current = null; }
+
+    const el = scrollImgRef.current;
+    if (!el) return;
+
+    // stop pulsing and return to normal
+    if (hoverGlowTl.current) { hoverGlowTl.current.kill(); hoverGlowTl.current = null; }
+    gsap.to(el, {
+      scale: 1,
+      y: 0,
+      boxShadow: '0 0 0 rgba(0,0,0,0)',
+      duration: 0.25,
+      ease: 'power2.inOut'
+    });
+
+    hoverOutDelay.current = gsap.delayedCall(0.3, () => setScrolling(true));
+  };
+
+  // --- Scroll trigger for the container (unchanged) ---
   useEffect(() => {
     gsap.to(navContainerRef.current, {
       scrollTrigger: {
         trigger: navContainerRef.current,
-        start: 'top top+=20', // Trigger when the top is 20px from top
+        start: 'top top+=20',
         toggleClass: { targets: navContainerRef.current, className: 'scrolled-nav' },
         onEnter: () => setScrolling(true),
         onLeaveBack: () => setScrolling(false)
@@ -145,16 +164,13 @@ const Navigation = () => {
     });
   }, []);
 
-  // Listen for window scroll events.
-  // When the user scrolls beyond 20px, we reset any open menus and show the scroll image.
-  // Otherwise (at the top), we hide the scroll image and always show the navigation inner.
+  // --- Close on scroll away from top (unchanged) ---
   useEffect(() => {
     const handleWindowScroll = () => {
       if (window.scrollY > 20) {
         setScrolling(true);
         closeBoth();
       } else {
-        // At the top, always show the inner navigation (buttons) and hide the scroll image.
         setScrolling(false);
       }
     };
@@ -166,27 +182,16 @@ const Navigation = () => {
     closeBoth();
   };
 
-  // --- (Optional) Hover animations for menu (if you need additional effects on menu items, add them here) ---
-  // For example, you could add delay on hover in/out for menu items.
-  // For now, these are not attached to the links so they won't interfere with your base code.
-  // Uncomment and adjust if needed:
-  //
-  // const handleMenuHover = (e) => {
-  //   gsap.to(e.currentTarget, { scale: 1.05, duration: 0.3, ease: 'power3.out', delay: 0.1 });
-  // };
-  // const handleMenuHoverOut = (e) => {
-  //   gsap.to(e.currentTarget, { scale: 1, duration: 0.3, ease: 'power3.in', delay: 0.1 });
-  // };
-
   return (
-    <div
-      className={`navigation-container ${isScrolling ? 'scrolled-nav' : ''}`}
-      ref={navContainerRef}
-    >
-      {/* When scrolling, display the scroll image */}
+    <div className={`navigation-container ${isScrolling ? 'scrolled-nav' : ''}`} ref={navContainerRef}>
+      {/* Scroll image with Lift + Glow Pulse hover */}
       <div className="scroll-img" ref={scrollImgRef}>
         {isScrolling && (
-          <div onMouseEnter={handleScrollImageHover} onMouseLeave={handleScrollImageLeave} className="xyz">
+          <div
+            onMouseEnter={handleScrollImageHover}
+            onMouseLeave={handleScrollImageLeave}
+            className="xyz"
+          >
             <Image
               className="nav-logo-menu"
               src={mainDataHeader?.scroll_image_menu}
@@ -198,16 +203,12 @@ const Navigation = () => {
           </div>
         )}
       </div>
-      
 
-      {/* Always show navigation inner when not scrolling.
-          On top, the inner navigation (Menu/Contact) is always visible. */}
       {!isScrolling && (
         <div className="navigation-inner">
           {isNavVisible && (
             <div className="nav-wrapper" ref={navRef}>
               <div className="menu-wrapper-main">
-                {/* Hover on the logo may also trigger the menu open */}
                 <div onMouseEnter={toggleNav}>
                   <Link href="/" className="nav-link-logo-menu">
                     <Image
@@ -222,44 +223,16 @@ const Navigation = () => {
                 </div>
                 <nav className="main-header-navigation">
                   <ul>
-                    <li>
-                      <Link href="/" onClick={handleNavLinkClick}>
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/about-us" onClick={handleNavLinkClick}>
-                        About
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/internship" onClick={handleNavLinkClick}>
-                        Internship
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/portfolio" onClick={handleNavLinkClick}>
-                        Portfolio
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/our-services" onClick={handleNavLinkClick}>
-                        Our Services
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/blog" onClick={handleNavLinkClick}>
-                        Blogs
-                      </Link>
-                    </li>
+                    <li><Link href="/" onClick={handleNavLinkClick}>Home</Link></li>
+                    <li><Link href="/about-us" onClick={handleNavLinkClick}>About</Link></li>
+                    <li><Link href="/internship" onClick={handleNavLinkClick}>Internship</Link></li>
+                    <li><Link href="/portfolio" onClick={handleNavLinkClick}>Portfolio</Link></li>
+                    <li><Link href="/our-services" onClick={handleNavLinkClick}>Our Services</Link></li>
+                    <li><Link href="/blog" onClick={handleNavLinkClick}>Blogs</Link></li>
                   </ul>
                   <div className="after-nav-area">
                     <ul>
-                      <li>
-                        <Link href="/contact-us" onClick={handleNavLinkClick}>
-                          Get In Touch
-                        </Link>
-                      </li>
+                      <li><Link href="/contact-us" onClick={handleNavLinkClick}>Get In Touch</Link></li>
                     </ul>
                   </div>
                 </nav>
@@ -283,18 +256,10 @@ const Navigation = () => {
                 <h5>Contact Us</h5>
                 <ul className="mail-no">
                   {mainDataHeader?.email_id && (
-                    <li>
-                      <a href={`mailto:${mainDataHeader.email_id}`}>
-                        {mainDataHeader.email_id}
-                      </a>
-                    </li>
+                    <li><a href={`mailto:${mainDataHeader.email_id}`}>{mainDataHeader.email_id}</a></li>
                   )}
                   {mainDataHeader?.contact_no && (
-                    <li>
-                      <a href={`tel:${mainDataHeader.contact_no}`}>
-                        {mainDataHeader.contact_no}
-                      </a>
-                    </li>
+                    <li><a href={`tel:${mainDataHeader.contact_no}`}>{mainDataHeader.contact_no}</a></li>
                   )}
                 </ul>
                 <ul className="address">
@@ -303,35 +268,16 @@ const Navigation = () => {
               </nav>
               <div className="after-nav-area">
                 <div className="social-icons">
-                  <a
-                    href={mainData?.facebook_link || '#'}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaFacebookF />
-                  </a>
-                  <a
-                    href={mainData?.instragram_link || '#'}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaInstagram />
-                  </a>
-                  <a
-                    href={mainData?.linkedin_link || '#'}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaLinkedinIn />
-                  </a>
+                  <a href={mainData?.facebook_link || '#'} target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+                  <a href={mainData?.instragram_link || '#'} target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+                  <a href={mainData?.linkedin_link || '#'} target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
                 </div>
               </div>
             </div>
           )}
 
-          {/* The buttons for the user to choose which section to open */}
           <div className="all-buttons-container">
-            {(!isNavVisible && !isLoremVisible) && (
+            {(!isNavVisible && !isLoremVisible) ? (
               <div className="menu-button-container">
                 <button
                   onClick={toggleNav}
@@ -349,8 +295,7 @@ const Navigation = () => {
                   Contact
                 </button>
               </div>
-            )}
-            {(isNavVisible || isLoremVisible) && (
+            ) : (
               <button
                 onClick={closeBoth}
                 aria-label="Close Menu or Contact"

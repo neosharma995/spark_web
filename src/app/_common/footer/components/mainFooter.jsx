@@ -29,7 +29,8 @@ const MainFooter = () => {
 </div>
     </div>
     <div className='copyright-section'>
-        <p>{mainData?.copyright}</p>
+        {/* <p>{mainData?.copyright}</p> */}
+        <p> Copyright © 2025 Spark Web Solution. All rights reserved </p>
     </div>
     </div>
     </div>
