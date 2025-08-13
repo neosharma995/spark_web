@@ -825,6 +825,9 @@ img.dark-logo {
     padding: 50px;
     align-items: center;
     justify-content: space-between;
+    .service-img {
+      width: 20%;
+   }
   }
   .service-text {
     flex: 0 0 70%;
