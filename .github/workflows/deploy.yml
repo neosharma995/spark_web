@@ -28,11 +28,11 @@ jobs:
         if: ${{ success() }}
         uses: appleboy/ssh-action@v1
         with:
-          debug: true   
+          debug: true
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSHKEY }}
           script: |
-            cd spark_web
+            cd ~spark/spark_web
             bash ./.scripts/deploy.sh
