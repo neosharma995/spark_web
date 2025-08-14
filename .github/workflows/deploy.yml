@@ -33,7 +33,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSHKEY }}
-          script: "whoami"
-          # script: |
-          #   cd  ~/spark/spark_web
-          #   bash ./.scripts/deploy.sh
+          script: |
+            cd spark_web
+            bash ./.scripts/deploy.sh
