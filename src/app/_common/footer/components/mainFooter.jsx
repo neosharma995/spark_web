@@ -10,6 +10,9 @@ const MainFooter = () => {
     const { footerDataApi } = useContext(SectorDataContext);
     const mainData = footerDataApi?.find(page => page.slug === 'footer')?.acf
 
+    console.log(`mainData`)
+    console.log(mainData)
+
   return (
     <div>
      <div className='footer'>
