@@ -34,5 +34,5 @@ jobs:
           key: ${{ secrets.SSHKEY }}
           command_timeout: 15m
           script: |
-            cd /home/spark/spark_web
+            cd  ~/spark/spark_web
             bash ./.scripts/deploy.sh
