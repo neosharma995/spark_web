@@ -1,38 +1,25 @@
 name: Deploy
+
+# Trigger the workflow on push and
+# pull request events on the master branch
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]  
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
+# Authenticate to the the server via ssh
+# and run our deployment script
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Smoke test SSH (whoami, ls)
-        uses: appleboy/ssh-action@v1
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          port: ${{ secrets.PORT }}
-          key: ${{ secrets.SSHKEY }}
-          command_timeout: 5m
-          script: |
-            whoami
-            uname -a
-            ls -la /home/spark
-
+      - uses: actions/checkout@v3
       - name: Deploy to Server
-        if: ${{ success() }}
-        uses: appleboy/ssh-action@v1
+        uses: appleboy/ssh-action@master 
         with:
-          debug: true
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          port: ${{ secrets.PORT }}
-          key: ${{ secrets.SSHKEY }}
-          script: |
-            cd ~spark/spark_web
-            bash ./.scripts/deploy.sh
+          host: ${{ secrets.HOST }}   
+          username: ${{ secrets.USERNAME }}   
+          port: ${{ secrets.PORT }}  
+          key: ${{ secrets.SSHKEY }}  
+          script: "cd ~/spark/spark_web && ./.scripts/deploy.sh"
