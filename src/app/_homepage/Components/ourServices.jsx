@@ -37,7 +37,7 @@ const HomeOurService = () => {
         gsap.to("#p_h_heading_1", {
             x: "-140%",  
             repeat: -1,
-            duration: 8,
+            duration: 13,
             ease: "linear",
             yoyo: true,  
         });
@@ -45,7 +45,7 @@ const HomeOurService = () => {
         gsap.to("#p_h_heading_2", {
             x: "-40%",  
             repeat: -1,
-            duration: 5,
+            duration: 10,
             ease: "linear",
             yoyo: true,  
         });

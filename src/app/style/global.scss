@@ -211,7 +211,8 @@ body::selection {
 // CSS For light mode
 body.light-mode {
   .stikey-side-popup .stickey-form .class-stickey-popup-formss.second-form .form-inner .form-group option {
-    background-color: #f24b74;
+  
+   background: linear-gradient(95.49deg, #ffffff 1.53%, #ffffff 32.47%, #f4f4f4 52.92%);
   }
   background-color: #ffffff;
   color: #18191d !important;
@@ -683,6 +684,7 @@ img.dark-logo {
   }
 
   .main-description {
+    white-space: break-spaces;
     font-size: 32px;
     color: rgba(255, 255, 255, 0.6509803922);
     font-family: "Nunito";
@@ -1739,23 +1741,26 @@ body.light-mode {
 
 //about us page css Start
 
+
+
 body.light-mode {
+  form.contact-us-form .form-inner-section .form-control {
+
+    input, textarea{
+      border: 1px solid #ccc;
+      background: linear-gradient(95.49deg, #ffffff 1.53%, #f4f6ff 50.01%, #ffffff 99.61%);
+      color: #222;
+      padding: 12px;
+      font-size: 18px;
+    }
+
+  }
   .contact-us-page .contact-card .card .send-msg-cplumn h3 {
     font-size: 30px;
     color: #f24b74;
     line-height: 47.22px;
   }
 
-  .form_section .left-side input,
-  .form_section .left-side textarea {background: linear-gradient( 95.49deg,#ffffff 1.53%,#ffffff 50.01%,#ffffff 99.61%);
-    outline: none;
-    border: 1px solid black;
-    color: #000;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 35px;
-    border-radius: 5px;
-  }
 
   .about-us-page {
     .para-section {
@@ -1848,6 +1853,7 @@ body.light-mode {
         font-weight: 500;
         line-height: 40px;
         letter-spacing: 0.5px;
+        white-space: break-spaces;
       }
     }
   }
@@ -1884,6 +1890,7 @@ body.light-mode {
         line-height: 42px;
         letter-spacing: 0.5px;
         font-weight: 500;
+        white-space: break-spaces;
       }
     }
   }
@@ -2238,12 +2245,13 @@ body.light-mode {
   .portfolio {
     .card-small-headings {
       h3 {
-        color: black;
+        color:#18191d;
       }
-      h3.technologys {
-        color: #fff;
-      }
+     
     }
+  }
+  .services-section p.pharagraph {
+     color:#18191d;
   }
 }
 
@@ -2646,6 +2654,9 @@ button.navbar-buttons-main.navigation-contact-btn {
     color: #f24b74;
   }
 }
+.light-mode .stikey-side-popup .stickey-form .class-stickey-popup-formss.second-form .form-inner .form-group label {
+color: #18191d;
+}
 
 .stikey-side-popup {
   .stickey-form {
@@ -2737,7 +2748,7 @@ button.navbar-buttons-main.navigation-contact-btn {
 
         .form-group {
           label {
-            font-size: 16px;
+            font-size: 20px;
             font-family: 'Nunito';
             font-weight: 500;
             letter-spacing: 0.5px;
@@ -2797,7 +2808,7 @@ button.navbar-buttons-main.navigation-contact-btn {
     flex-direction: column;
     justify-content: end;
     align-items: end;
-}
+  }
   .first-section {
     display: flex;
     background: linear-gradient(
@@ -2846,6 +2857,7 @@ button.navbar-buttons-main.navigation-contact-btn {
       margin-top: 20px;
       line-height: 45px;
       letter-spacing: 0.5px;
+      white-space: break-spaces;
   
     }
   }
@@ -2904,6 +2916,7 @@ button.navbar-buttons-main.navigation-contact-btn {
       background: transparent;
       border: unset;
       font-weight: 600;
+      text-underline-offset: 10px;
     }
   }
 
@@ -3163,12 +3176,23 @@ body.light-mode {
   z-index: 999;
 }
 .courses-main-outer .tab-content-wrapper ul li strong {
-  color: #f24b74;
+  color: #ffffffe0;
+  font-weight: 800;
+}
+.courses-main-outer .tab-content-wrapper ul li {
+    color: #ffffffab;
+    line-height: 45px;
+    letter-spacing: 0.3px;
 }
 .contact-us-page .page_title {
     margin-top: 50px;
 }
-
+.light-mode .courses-main-outer .tab-content-wrapper ul li {
+  color: #18191d;
+  strong {
+    color: #18191d;
+  }
+} 
 
 
 
