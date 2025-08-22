@@ -7,7 +7,7 @@ const Loader = () => {
       <div className="loader-content">
         <div className="loader-image">
           <Image
-            src="/siteLogo/logo.jpg"
+            src="/logo.jpg"
             alt="Loading..."
             width={300}
             height={100}
