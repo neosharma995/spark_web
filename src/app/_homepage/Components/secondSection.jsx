@@ -22,6 +22,7 @@ const SecondSection = ({ section_1 }) => {
 
         let sections = gsap.utils.toArray('.content_section_wrapper');
         if (sections.length === 0) return;
+        
 
         // Enhanced smooth scrolling with more refined parameters
         const tl = gsap.timeline({
@@ -29,11 +30,11 @@ const SecondSection = ({ section_1 }) => {
                 trigger: `.${section_1}`,
                 pin: true,
                 start: 'top top',
-               
-                scrub: 4, 
+                 end: '+=3000',
+                scrub: 1.2, 
                 snap: {
-                    snapTo: 2 / (sections.length - 1),
-                    duration: { min: 2, max: 4 },
+                    snapTo: 1 / (sections.length - 1),
+                    duration: { min: 0.2, max: 0.6 },
                     delay: 3,
                     ease: 'power1.inOut'
                 },

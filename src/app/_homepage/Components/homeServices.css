@@ -93,3 +93,29 @@
   z-index: 1; /* content above particles */
   text-align: center;
 }
+
+
+/* Branding Section CSS */
+.brand-split{
+  display:grid; grid-template-columns: 1fr 1.4fr; gap:48px;
+  align-items:start; padding-block: 100px;
+}
+.brand-left{ display:grid; grid-template-columns:auto 1px 1fr; gap:16px; position:sticky; top:96px; align-self:start; }
+.brand-index{ color:#f24b74; font-weight:700; }
+.brand-index--bottom{ grid-column:1; align-self:end; opacity:.5; }
+.brand-rule{ background:#1f1f22; width:1px; }
+.brand-title{ font-size:42px; margin:0 0 12px; }
+.brand-copy{ opacity:.85; margin:0 0 16px; max-width:520px; }
+.brand-list{ margin:0; padding-left:18px; line-height:1.8; }
+.brand-right{ align-self:center; }
+.brand-grid{ display:grid; grid-template-columns: repeat(2, minmax(220px,1fr)); gap:18px; }
+.brand-card{
+  position:relative; border-radius:18px; overflow:hidden;
+  box-shadow:0 12px 40px rgba(0,0,0,.18);
+  transform: rotate(var(--rot, 0deg));
+}
+.brand-card img{ display:block; width:100%; height:100%; object-fit:cover; aspect-ratio: 16/10; }
+@media (max-width: 1024px){
+  .brand-split{ grid-template-columns:1fr; }
+  .brand-left{ position:relative; top:auto; }
+}
