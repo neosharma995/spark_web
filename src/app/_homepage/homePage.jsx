@@ -1,9 +1,10 @@
 'use client';
 
-import { ThreeRenderScene } from '@/components/ThreeScene'
+// import { ThreeRenderScene } from '@/components/ThreeScene'
 import SecondSectionOld from './Components/secondSection'
 import SecondSectionResponsive from './Components/secondSectionResponsive'
 import AboutUsSection from './Components/aboutUsSection';
+import HeroNew from './Components/heroNew';
 import OurServices from './Components/ourServices';
 
 import TestimonialSection from './Components/testimonialSection';
@@ -20,6 +21,7 @@ function HomePage() {
   let section_3 = 'section_3'
   let section_4 = 'section_4'
   let section_5 = 'section_5'
+  let section_6 = 'section_6'
 
   const [showButton, setShowButton] = useState(true);
   const secondSectionRef = useRef(null);
@@ -67,13 +69,15 @@ function HomePage() {
           <img src="./images/swipe-down.png" alt=""  />
         </button>
       )}
-
+{/* 
       <div className={`${section_0} section_outer_wrapper`} ref={firstSectionRef}>
-
         <ThreeRenderScene />
+      </div> */}
+
+      <div className={`${section_6} Section-hero-new`} 
+>        <HeroNew/>
       </div>
-
-
+      
       <div className={`${section_2} section_outer_wrapper`} ref={secondSectionRef}>
         <AboutUsSection />
       </div>
