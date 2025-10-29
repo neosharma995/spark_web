@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
-import HeroParticles from "./heroPartical";
+// import HeroParticles from "./heroPartical";
+
+import HeroParticles from "./heroPartical.jsx";
 
 
 const HeroNew = () => {
