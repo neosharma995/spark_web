@@ -16,7 +16,7 @@ import { useEffect, useRef, useState } from 'react';
 
 
 function HomePage() {
-  let section_0 = 'section_0'
+  // let section_0 = 'section_0'
   let section_1 = 'section_1'
   let section_2 = 'section_2'
   let section_3 = 'section_3'
