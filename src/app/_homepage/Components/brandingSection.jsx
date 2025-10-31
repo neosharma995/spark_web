@@ -98,7 +98,7 @@ const BrandingSection = () => {
             <div className="spwproc__text">
               <h1 className="spwproc__title">Branding</h1>
               <p className="spwproc__para">
-                We turn your vision into a distinct, consistent brand—strategy, voice, identity, and guidelines—so you’re instantly recognizable and built for growth.
+               {` We turn your vision into a distinct, consistent brand—strategy, voice, identity, and guidelines—so you’re instantly recognizable and built for growth.`}
               </p>
               <ul className="spwproc__list">
                 <li>Brand Strategy</li>
@@ -127,7 +127,7 @@ const BrandingSection = () => {
             <div className="spwproc__text">
               <h1 className="spwproc__title"> Design</h1>
               <p className="spwproc__para">
-                "We craft designs that don’t just look good — they grow your brand, boost engagement, and convert visitors into loyal customers."
+               {`We craft designs that don’t just look good — they grow your brand, boost engagement, and convert visitors into loyal customers.`}
               </p>
               <ul className="spwproc__list">
                 <li><b>Pitch Deck</b> Design</li>
@@ -155,7 +155,7 @@ const BrandingSection = () => {
             <div className="spwproc__text">
               <h1 className="spwproc__title"> Web & Digital</h1>
               <p className="spwproc__para">
-                Your website should not just look beautiful — it should perform beautifully too. We design and develop digital experiences that engage users, enhance SEO, and convert visitors into loyal customers.
+               {` Your website should not just look beautiful — it should perform beautifully too. We design and develop digital experiences that engage users, enhance SEO, and convert visitors into loyal customers.`}
               </p>
               <ul className="spwproc__list">
                 <li>Web Design</li>
@@ -183,7 +183,7 @@ const BrandingSection = () => {
             <div className="spwproc__text">
               <h1 className="spwproc__title">Video & Motion </h1>
               <p className="spwproc__para">
-                In today’s scroll-fast world, video stops the thumb. We create high-impact videos and motion graphics that tell your story, build your brand, and keep audiences watching till the end.
+               {` In today’s scroll-fast world, video stops the thumb. We create high-impact videos and motion graphics that tell your story, build your brand, and keep audiences watching till the end.`}
               </p>
               <ul className="spwproc__list">
                 <li>Branded Video Content</li>
@@ -212,7 +212,7 @@ const BrandingSection = () => {
             <div className="spwproc__text">
               <h1 className="spwproc__title"> Go Live</h1>
               <p className="spwproc__para">
-                We launch your project with precision — deploying, testing, and monitoring every detail to ensure seamless performance, long-term stability, and measurable growth.
+                {`We launch your project with precision — deploying, testing, and monitoring every detail to ensure seamless performance, long-term stability, and measurable growth.`}
               </p>
               <ul className="spwproc__list">
                 <li>Seamless Deployment</li>
