@@ -207,6 +207,164 @@ body::selection {
   background-color: #f24b74;
   color: white;
 }
+ /****** Homepage New Section CSS Start Here  *****/
+ h1.spwproc__title {
+    font-size: 60px;
+}
+ .Section-hero-new {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(95.49deg,#18191d 1.53%,#1d1e21 50.01%,#363c48 99.61%);
+    padding: 80px 0px;
+}
+.hero-heading {
+    font-size: 60px;
+    width: 44%;
+    margin: 0 auto;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+.hero-heading span { 
+    color: #f24b74;
+    font-weight: 600;
+}
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.hero-new .hero-subheading {
+    width: 50%;
+    margin: 0 auto;
+    letter-spacing: 0.5px;
+    line-height: 45px;
+    padding: 20px 0px 50px 0px;
+}
+/* Button Base */
+.hero-button {
+  position: relative;
+  display: inline-block;
+  padding: 14px 32px;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  overflow: hidden;
+  background: transparent;
+  transition: color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+  z-index: 1; 
+    width: 200px;
+    font-size: 20px;
+    font-family: 'Nunito';
+    letter-spacing: 0.5px;
+}
+
+.hero-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #f24b74, #ff6b9e, #ffa64d);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: 0; 
+}
+
+.hero-button span {
+  position: relative;
+  z-index: 2; 
+}
+.hero-button:hover::before {
+  transform: translateX(0);
+}
+
+.hero-button:hover {
+  color: #fff;
+  transform: translateY(-2px);
+  border-color: transparent;
+  box-shadow: 0 0 0 4px rgba(255, 107, 158, 0.4);
+}
+
+.hero-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(255, 107, 158, 0.4);
+}
+
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-new .container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+/******* Branding Section CSS Start *********/
+.hero-particles {
+    width: 100% !important;
+}
+.spwproc {
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    color: #ffffff;
+    min-height: 100vh;
+}
+.spwproc__stack {
+    position: relative;
+    height: 100vh;
+}
+
+.spwproc__panel {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.spwproc__inner {
+    display: grid;
+    width: 100%;
+    gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: space-between;
+}
+.spwproc__media img {
+    width: 100%;
+    border-radius: 30px;
+    height: 600px;
+    object-fit: cover;
+}
+.spwproc__para {
+    font-size: 22px;
+    line-height: 30px;
+    color: hsla(0, 0%, 100%, .8);
+    font-weight: 400;
+    letter-spacing: .5px;
+    margin-bottom: 30px;
+}
+ul.spwproc__list li {
+    font-size: 22px;
+    line-height: 50px;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: .5px;
+    list-style: none;
+}
+ul.spwproc__list  {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+ /****** Homepage New Section CSS End Here  *****/
+
 
 // CSS For light mode
 body.light-mode {
@@ -3202,6 +3360,12 @@ body.light-mode {
 // ******************************************** Media Query Start ******************************************************//
 
 @media only screen and (max-width: 1440px) {
+  .spwproc__media img {
+    height: 500px;
+}
+  .hero-heading {
+    width: 60%;
+}
   .about-us-page .about-us-main .page-title h1 {
     font-size: 60px;
 }
@@ -3284,6 +3448,24 @@ body.light-mode {
 
 }
 @media only screen and (max-width: 1200px) { 
+  ul.spwproc__list li {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 20px;
+}
+.spwproc__media img {
+  height: 400px;
+}
+h1.spwproc__title {
+font-size: 50px;
+}
+.hero-heading {
+  width: 70%;
+  font-size: 50px;
+}
+.hero-new .hero-subheading {
+  width: 80%;
+}
   .blogs .blogs-inner {
     grid-template-columns: 1fr 1fr;
 }
@@ -3301,6 +3483,18 @@ body.light-mode {
 }
 }
 @media only screen and (max-width: 1024px) {
+    .spwproc__stack {
+    margin-top: 80px;
+}
+.spwproc__inner {
+    grid-template-columns: 1fr;
+}
+  .hero-heading {
+    width: 100%;
+}
+.hero-new .hero-subheading {
+    width: 100%;
+}
   .page-main-outer .page-heading h1 {
     font-size: 50px;
 }
@@ -3405,6 +3599,7 @@ body.light-mode .page-main-outer .page-heading p {
   }
   button#scrollDown {
     display: block;
+    z-index: 9;
   }
   p {
     font-size: 25px;
@@ -3731,6 +3926,30 @@ body.light-mode .page-main-outer .page-heading p {
   }
 }
 @media only screen and (max-width: 768px) {
+.spwproc__stack {
+  margin-top: 50px;
+}
+ul.spwproc__list li {
+  font-size: 18px;
+  line-height: 35px;
+}
+.spwproc__para {
+  font-size: 20px;
+  line-height: 28px;
+  margin-bottom: 20px;
+}
+.spwproc__media img {
+    height: 300px;
+}
+h1.spwproc__title {
+    font-size: 46px;
+}
+.hero-new .hero-subheading {
+  line-height: 35px;
+}
+.hero-heading {
+  font-size: 40px;
+}
   .contact-us-page .contact-card .card .card-ipper-sec {
     padding: 20px;
 }
@@ -4170,6 +4389,16 @@ body.light-mode .page-main-outer .page-heading p {
   }
 }
 @media only screen and (max-width: 468px) {
+  .spwproc__stack {
+    margin-top: 50px;
+}
+  h1.spwproc__title {
+    font-size: 35px;
+    line-height: 40px;
+}
+.hero-heading {
+  font-size: 35px;
+}
   .expertise h1 {
     font-size: 40px;
 }
