@@ -1,10 +1,10 @@
 'use client';
 
 import { useRef, useLayoutEffect, useState } from 'react';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -98,7 +98,7 @@ const BrandingSection = () => {
             <div className="spwproc__text">
               <h1 className="spwproc__title">Branding</h1>
               <p className="spwproc__para">
-               We turn your vision into a distinct, consistent brand—strategy, voice, identity, and guidelines—so you’re instantly recognizable and built for growth.
+                We turn your vision into a distinct, consistent brand—strategy, voice, identity, and guidelines—so you’re instantly recognizable and built for growth.
               </p>
               <ul className="spwproc__list">
                 <li>Brand Strategy</li>
@@ -109,7 +109,14 @@ const BrandingSection = () => {
               </ul>
             </div>
             <div className="spwproc__media">
-              <img src="/images/Branding.png" alt="Discovery" />
+              <Image
+                src="/images/Branding.png"
+                alt="Branding visual"
+                width={1200}
+                height={800}
+                sizes="(max-width: 1024px) 100vw, 600px"
+                priority
+              />
             </div>
           </div>
         </div>
@@ -131,7 +138,13 @@ const BrandingSection = () => {
               </ul>
             </div>
             <div className="spwproc__media">
-              <img src="/images/Design.png" alt="Design Work" />
+              <Image
+                src="/images/Design.png"
+                alt="Design work"
+                width={1200}
+                height={800}
+                sizes="(max-width: 1024px) 100vw, 600px"
+              />
             </div>
           </div>
         </div>
@@ -140,9 +153,9 @@ const BrandingSection = () => {
         <div className="spwproc__panel">
           <div className="spwproc__inner">
             <div className="spwproc__text">
-              <h1  className="spwproc__title"> Web & Digital</h1>
+              <h1 className="spwproc__title"> Web & Digital</h1>
               <p className="spwproc__para">
-               Your website should not just look beautiful — it should perform beautifully too. We design and develop digital experiences that engage users, enhance SEO, and convert visitors into loyal customers.
+                Your website should not just look beautiful — it should perform beautifully too. We design and develop digital experiences that engage users, enhance SEO, and convert visitors into loyal customers.
               </p>
               <ul className="spwproc__list">
                 <li>Web Design</li>
@@ -153,7 +166,13 @@ const BrandingSection = () => {
               </ul>
             </div>
             <div className="spwproc__media">
-              <img src="/images/website.png" alt="Development" />
+              <Image
+                src="/images/website.png"
+                alt="Web & Digital"
+                width={1200}
+                height={800}
+                sizes="(max-width: 1024px) 100vw, 600px"
+              />
             </div>
           </div>
         </div>
@@ -172,11 +191,17 @@ const BrandingSection = () => {
                 <li>Award Submissions</li>
                 <li>Short Films & Ads</li>
                 <li>3D Animation & Motion Graphics</li>
-                    
               </ul>
             </div>
             <div className="spwproc__media">
-              <img src="/images/video&motion.png" alt="Testing" />
+              {/* Tip: avoid '&' in filenames to prevent URL issues; rename to 'video-motion.png' if possible */}
+              <Image
+                src="/images/video&motion.png"
+                alt="Video and Motion"
+                width={1200}
+                height={800}
+                sizes="(max-width: 1024px) 100vw, 600px"
+              />
             </div>
           </div>
         </div>
@@ -194,11 +219,17 @@ const BrandingSection = () => {
                 <li>Website Performance Testing </li>
                 <li>SEO Optimization & Tracking </li>
                 <li>Post-Launch Monitoring </li>
-                <li>Ongoing Maintenance & Support </li> 
+                <li>Ongoing Maintenance & Support </li>
               </ul>
             </div>
             <div className="spwproc__media">
-             <img src="/images/live-site.png" alt="Launch" />
+              <Image
+                src="/images/live-site.png"
+                alt="Go Live"
+                width={1200}
+                height={800}
+                sizes="(max-width: 1024px) 100vw, 600px"
+              />
             </div>
           </div>
         </div>
