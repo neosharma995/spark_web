@@ -363,6 +363,24 @@ ul.spwproc__list  {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+body.light-mode {
+  .hero-heading {
+    color:#363c48;
+  }
+  .hero-subheading {
+    color: #222;
+  }
+  .hero-button {
+    color: #363C48;
+    border: 2px solid #363C48;
+  }
+  .spwproc__para {
+    color: #363C48;
+  }
+  ul.spwproc__list li {
+    color: #363C48;
+  }
+}
  /****** Homepage New Section CSS End Here  *****/
 
 
